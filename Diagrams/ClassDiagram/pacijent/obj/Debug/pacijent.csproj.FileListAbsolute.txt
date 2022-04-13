@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\pacijent\bin\Debug\pacijent.exe.config
+C:\Users\User\Desktop\pacijent\bin\Debug\pacijent.exe
+C:\Users\User\Desktop\pacijent\bin\Debug\pacijent.pdb
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\pacijent\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\pacijent\obj\Debug\App.g.cs
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent_MarkupCompile.cache
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent_MarkupCompile.lref
+C:\Users\User\Desktop\pacijent\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.g.resources
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.Properties.Resources.resources
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.csproj.GenerateResource.cache
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.exe
+C:\Users\User\Desktop\pacijent\obj\Debug\pacijent.pdb
