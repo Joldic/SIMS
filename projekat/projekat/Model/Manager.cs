@@ -10,13 +10,18 @@ namespace Model
 {
    public class Manager
 {
-      private uint id;
-      private String name;
-      private String surname;
-      private String adress;
-      private String email;
-      private Gender gender;
-      private DateTime dateOfBirth;
+      private uint Id { get; set; }
+      private String Name { get; set; }
+      private String Surname { get; set; }
+      private String Adress { get; set; }
+      private String Email { get; set; }
+      private Gender Gender { get; set; }
+      private DateTime DateOfBirth { get; set; }
+
+        public Manager()
+        {
+
+        }
 
    
    }
