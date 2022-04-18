@@ -51,7 +51,7 @@ namespace Model
 
         public Secretary(string username, string password, string name, string surname, string adress, string email, Gender gender, DateTime dateOfBirth, Role role)
         {
-            Username = username;
+            Username = username; // test
             Password = password;
             Name = name;
             Surname = surname;
