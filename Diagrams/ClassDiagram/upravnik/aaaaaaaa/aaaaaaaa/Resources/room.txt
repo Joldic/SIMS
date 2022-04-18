@@ -2,5 +2,5 @@
 2;sala202;operatingRoom;37
 3;soba300;relaxationRoom;40
 4;soba600;ordinaryRoom;18
-5;soba105A;operatingRoom;35
 6;sala200B;operatingRoom;50
+7;jjj;operatingRoom;80
