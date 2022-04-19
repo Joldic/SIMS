@@ -50,3 +50,7 @@ C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\Appointme
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\AppointmentsView.baml
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\AppointmentDataView.g.cs
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\AppointmentDataView.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\bin\Debug\Prism.dll
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\bin\Debug\Prism.pdb
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\bin\Debug\Prism.xml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\projekat.csproj.CopyComplete

@@ -52,7 +52,37 @@ namespace Repository
       
         public Boolean DeleteApointment(uint id)
         {
-            throw new NotImplementedException();
+            Boolean retVal = false;
+            IEnumerable<Appointment> appointments = GetAll();
+
+            appointments = appointments.Where(a => a.Id != id).ToList();
+
+            string temp_file = _projectPath + "\\Resources\\temp1.txt";
+            string appointment_file = _projectPath + "\\Resources\\appointment.txt";
+
+            using(var sr = new StreamReader(appointment_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while((line = sr.ReadLine()) != null)
+                {
+                    Appointment appointment = ConvertCSVFormatToAppointment(line);
+                    if(appointment.Id != id)
+                    {
+                        retVal = true;
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Delete(appointment_file);
+            File.Move(temp_file, appointment_file);
+
+            return retVal;
+
+            
+
+                return retVal;
         }
       
 

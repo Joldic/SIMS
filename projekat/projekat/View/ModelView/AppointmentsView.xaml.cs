@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controller;
 using Model;
+using Prism.Commands;
 using projekat.Controller;
 using projekat.View.Converter;
 
@@ -31,12 +32,14 @@ namespace projekat.View.ModelView
         private DoctorController _doctorController;
         private PatientControler _patientControler;
 
+
         private uint _id;
         private DateTime _startAppointment;
         private DateTime _endAppointment;
         private uint _doctorId;
         private uint _patientId;
         private uint _roomId;
+        private uint _idDelete;
 
         public ObservableCollection<Appointment> Data { get; set; }
         public AppointmentsView()
@@ -53,7 +56,7 @@ namespace projekat.View.ModelView
            // AppointmentConverter.ConvertAppointmentListToAppointmentViewList(_appointmentController.GetAll().ToList()));
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
-
+           // DataGridXAML.ItemsSource = Data;
             for (int i = 0; i < Data.Count(); i++)
             {
                 Room room = _roomController.FindRoom(Data[i].IdRoom);
@@ -66,12 +69,14 @@ namespace projekat.View.ModelView
                 Data[i].PatientSurname = patient.Surname;
 
                 DataGridXAML.Items.Add(Data[i]);
-                
+        
             }
                 
             DataContext = this.Data;
 
         }
+
+       
 
         public DateTime StartAppointment
         {
@@ -109,6 +114,19 @@ namespace projekat.View.ModelView
                 if (_id != value)
                 {
                     _id = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public uint IdDelete
+        {
+            get => _idDelete;
+            set
+            {
+                if (_idDelete != value)
+                {
+                    _idDelete = value;
                     OnPropertyChanged();
                 }
             }
@@ -159,6 +177,19 @@ namespace projekat.View.ModelView
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            InitializeComponent();
+            DataContext = this;
+
+            Appointment ap = DataGridXAML.SelectedItem as Appointment;
+            _appointmentController.DeleteApointment(ap.Id);
+
+            for (int i = 0; i < Data.Count(); i++)
+            {
+                if (Data[i].Id == ap.Id)
+                {
+                    DataGridXAML.Items.Remove(Data[i]);
+                }
+            }
 
         }
 
@@ -175,6 +206,23 @@ namespace projekat.View.ModelView
 
         private void Appointment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string content = IdToDelete.Text;
+            uint ID = uint.Parse(content);
+
+            _appointmentController.DeleteApointment(ID);
+
+            for (int i = 0; i < Data.Count(); i++)
+            {
+                if(Data[i].Id == ID)
+                {
+                    DataGridXAML.Items.Remove(Data[i]);
+                }
+            }
 
         }
     }
