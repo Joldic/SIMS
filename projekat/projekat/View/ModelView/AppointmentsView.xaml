@@ -1,0 +1,33 @@
+﻿<Window x:Class="projekat.View.ModelView.AppointmentsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.ModelView"
+        mc:Ignorable="d"
+        Title="AppointmentsView" Height="450" Width="800">
+    <Canvas>
+        <ListBox Name="Appointment" ItemsSource="{Binding}" Height="500" Width="700">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <TextBlock Text="ID :" Margin="2"/>
+                        <TextBlock Text="{Binding Id}" Margin="2"/>
+                        <TextBlock Text="Start: " Margin="2"/>
+                        <TextBlock Text="{Binding StartAppointment,StringFormat=dd.MM.yyyy. }" Margin="2"/>
+                        <TextBlock Text="End: " Margin="2" />
+                        <TextBlock Text="{Binding EndAppointment,StringFormat=dd.MM.yyyy. }" Margin="2"/>
+                        <TextBlock Text="IdDoctor: " Margin="2" />
+                        <TextBlock Text="{Binding IdDoctor}" Margin="2" />
+                        <TextBlock Text="IdPatient" Margin="2" />
+                        <TextBlock Text="{Binding IdPatient}" Margin="2" />
+                        <TextBlock Text="IdRoom: " Margin="2" />
+                        <TextBlock Text="{Binding IdRoom}" Margin="2" />
+                    
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Canvas>
+</Window>

@@ -11,7 +11,7 @@ namespace Model
 {
    public class Doctor
    {
-      private uint id;
+      public uint Id { get; set; }
       private String name;
       private String surname;
       private DateTime dateOfBirth;

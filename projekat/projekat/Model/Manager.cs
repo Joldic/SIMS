@@ -23,6 +23,15 @@ namespace Model
 
         }
 
-   
-   }
+        public Manager(uint id, string name, string surname, string adress, string email, Gender gender, DateTime dateOfBirth)
+        {
+            Id = id;
+            Name = name;
+            Surname = surname;
+            Adress = adress;
+            Email = email;
+            Gender = gender;
+            DateOfBirth = dateOfBirth;
+        }
+    }
 }

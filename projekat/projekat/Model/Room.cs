@@ -9,7 +9,7 @@ namespace Model
 {
    public class Room
    {
-      private uint id;
+      public uint Id { get; set; }
       private String name;
       private RoomType type;
       private uint squareFootage;

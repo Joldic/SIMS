@@ -15,6 +15,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using projekat.View.Secretary;
+
+
+
 
 namespace projekat.View.Dialogs
 {
@@ -75,7 +79,7 @@ namespace projekat.View.Dialogs
             _secretaryController = app.SecretaryController;
             try
             {
-                Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
+                Model.Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
                 //Secretary secretary = _secretaryController.GetSecretary(1);
                 if (secretary.Password != Password)
                 {
@@ -85,9 +89,14 @@ namespace projekat.View.Dialogs
                 }
                 else
                 {
-                    MessageBoxResult result;
-
-                    result = MessageBox.Show("DOBRA SIFRA");
+                    
+                    new SecretaryHomepage()
+                    {
+                        Owner = Application.Current.MainWindow
+                    }
+                    .ShowDialog();
+                    this.Close();
+            
                 }
             }
             catch
