@@ -63,6 +63,7 @@
     <Compile Include="Repository\AllergenRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
+    <Compile Include="Repository\DoctorRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RecipeRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Service\AllergenService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
+    <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RecipeService.cs" />
     <Compile Include="Service\RoomService.cs" />
@@ -187,6 +189,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\appointment.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\room.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\doctor.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\patient.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

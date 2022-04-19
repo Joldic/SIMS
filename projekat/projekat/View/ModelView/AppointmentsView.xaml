@@ -5,29 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projekat.View.ModelView"
         mc:Ignorable="d"
-        Title="AppointmentsView" Height="450" Width="800">
-    <Canvas>
-        <ListBox Name="Appointment" ItemsSource="{Binding}" Height="500" Width="700">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="2">
-                        <TextBlock Text="ID :" Margin="2"/>
-                        <TextBlock Text="{Binding Id}" Margin="2"/>
-                        <TextBlock Text="Start: " Margin="2"/>
-                        <TextBlock Text="{Binding StartAppointment,StringFormat=dd.MM.yyyy. }" Margin="2"/>
-                        <TextBlock Text="End: " Margin="2" />
-                        <TextBlock Text="{Binding EndAppointment,StringFormat=dd.MM.yyyy. }" Margin="2"/>
-                        <TextBlock Text="IdDoctor: " Margin="2" />
-                        <TextBlock Text="{Binding IdDoctor}" Margin="2" />
-                        <TextBlock Text="IdPatient" Margin="2" />
-                        <TextBlock Text="{Binding IdPatient}" Margin="2" />
-                        <TextBlock Text="IdRoom: " Margin="2" />
-                        <TextBlock Text="{Binding IdRoom}" Margin="2" />
+        Title="AppointmentsView" Height="450" Background ="Gray" Width="1000">
+    <Grid>
+        <DataGrid x:Name="DataGridXAML" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="980" Height="300">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
                     
-                    </StackPanel>
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Appointment ID" Binding="{Binding Id}" Width="95"/>
+                <DataGridTextColumn Header="Start" Binding="{Binding StartAppointment}"  Width="130"/>
+                <DataGridTextColumn Header="End"  Binding="{Binding EndAppointment}" Width="130"/>
+                <DataGridTextColumn Header="Doctor ID" Binding="{Binding IdDoctor}" Width="80"/>
+                <DataGridTextColumn Header="Doctor Name" Binding="{Binding DoctorName}" Width="80"/>
+                <DataGridTextColumn Header="Doctor Surname" Binding="{Binding DoctorSurname}" Width="80"/>
+                <DataGridTextColumn Header="Patient ID" Binding="{Binding IdPatient}" Width="70" />
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientName}" Width="70" />
+                <DataGridTextColumn Header="Patient Surame" Binding="{Binding PatientSurname}" Width="70" />
+                <DataGridTextColumn Header="Room ID" Binding="{Binding IdRoom}" Width="60"/>
+                <DataGridTextColumn Header="Room name" Binding="{Binding RoomName}" Width="*"/>
+                
+            </DataGrid.Columns>
+       </DataGrid>
+    </Grid>
 
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </Canvas>
 </Window>

@@ -11,32 +11,38 @@ namespace Controller
 {
    public class RoomControler
    {
-      public Room CreateNewRoom(Room room)
+        private readonly RoomService _service;
+
+        public RoomControler(RoomService service)
+        {
+            _service = service;
+        }
+        public Room CreateNewRoom(Room room)
       {
-         throw new NotImplementedException();
+            return _service.CreateNewRoom(room);
       }
       
       public Room FindRoom(uint id)
       {
-         throw new NotImplementedException();
+            return _service.FindRoom(id);
       }
       
       public Room ChangeRoom(Room room)
       {
-         throw new NotImplementedException();
+            return _service.ChangeRoom(room);
       }
       
       public Boolean DeleteRoom(uint id)
       {
-         throw new NotImplementedException();
+            return _service.DeleteRoom(id);
       }
       
       public IEnumerable<Room> GetAll()
       {
-         throw new NotImplementedException();
+            return _service.GetAll();
       }
       
-      public RoomService roomService;
+      
    
    }
 }

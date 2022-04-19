@@ -1,53 +1,50 @@
-// File:    PatientRepository.cs
-// Author:  3500x
-// Created: 12 April 2022 19:14:48
-// Purpose: Definition of Class PatientRepository
-
+﻿using Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Model;
+using System.Text;
+using System.Threading.Tasks;
 using projekat.Exception;
 
-namespace Repository
+namespace projekat.Repository
 {
-   public class PatientRepository
-   {
+    public class DoctorRepository
+    {
         private const string NOT_FOUND_ERROR = "Account with {0}:{1} can not be found!";
         private readonly string _path;
         private readonly string _delimeter;
         private readonly string _dateTimeFormat;
-        private uint _patientrMaxId;
+        private uint _doctorMaxId;
         private static string _projectPath = System.Reflection.Assembly.GetExecutingAssembly().Location
         .Split(new string[] { "bin" }, StringSplitOptions.None)[0];
         private FileStream temp;
 
-        public PatientRepository(string path, string delimeter, string dateTimeFormat)
+        public DoctorRepository(string path, string delimeter, string dateTimeFormat)
         {
             _path = path;
             _delimeter = delimeter;
             _dateTimeFormat = dateTimeFormat;
-            _patientrMaxId = GetMaxId(GetAll());
+            _doctorMaxId = GetMaxId(GetAll());
         }
 
-        private uint GetMaxId(IEnumerable<Patient> patients)
+        private uint GetMaxId(IEnumerable<Doctor> doctors)
         {
-            return patients.Count() == 0 ? 0 : patients.Max(patient => patient.Id);
+            return doctors.Count() == 0 ? 0 : doctors.Max(doctor => doctor.Id);
         }
 
 
-        public Patient AddPatient(Patient patient)
+        public Doctor AddDoctor(Doctor doctor)
         {
             throw new NotImplementedException();
         }
 
-        public Patient GetPatient(uint id)
+        public Doctor GetDoctor(uint id)
         {
             try
             {
 
-                return GetAll().SingleOrDefault(patient => patient.Id == id);
+                return GetAll().SingleOrDefault(doctor => doctor.Id == id);
 
             }
             catch (ArgumentException)
@@ -58,27 +55,27 @@ namespace Repository
             }
         }
 
-        public Patient UpdatePatient(Patient patient)
+        public Doctor UpdateDoctor(Doctor doctor)
         {
             throw new NotImplementedException();
         }
 
-        public Boolean RemovePatient(uint id)
+        public Boolean RemoveDoctor(uint id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Patient> GetAll()
+        public IEnumerable<Doctor> GetAll()
         {
             return File.ReadAllLines(_path)
-             .Select(ConvertCSVFormatToPatient)
+             .Select(ConvertCSVFormatToDoctor)
              .ToList();
         }
 
-        private Patient ConvertCSVFormatToPatient(string patientCSVFormat)
+        private Doctor ConvertCSVFormatToDoctor(string doctorCSVFormat)
         {
-            Patient patient = new Patient();
-            string[] tokens = patientCSVFormat.Split(_delimeter.ToCharArray());
+            Doctor doctor = new Doctor();
+            string[] tokens = doctorCSVFormat.Split(_delimeter.ToCharArray());
 
             uint Id = uint.Parse(tokens[0]);
             string Name = tokens[1];
@@ -87,12 +84,14 @@ namespace Repository
             string Email = tokens[4];
             Enum.TryParse(tokens[5], out Gender gender);
             DateTime.Parse(tokens[6]);
+            Enum.TryParse(tokens[7], out Specialization spec);
 
-            return new Patient(
+            return new Doctor(
                 Id,
                 Name,
                 Surname,
                 DateTime.Parse(tokens[6]),
+                spec,
                 Adress,
                 Email,
                 gender
@@ -101,17 +100,17 @@ namespace Repository
 
         }
 
-        private string ConvertPatientToCSVFormat(Patient patient)
+        private string ConvertPatientToCSVFormat(Doctor doctor)
         {
             return string.Join(_delimeter,
-                patient.Id,
-                patient.Name,
-                patient.Surname,
-                patient.Adress,
-                patient.Email,
-                patient.Gender,
-                patient.DateOfBirth
-                );
+                doctor.Id,
+                doctor.Name,
+                doctor.Surname,
+                doctor.Adress,
+                doctor.Email,
+                doctor.Gender,
+                doctor.DateOfBirth,
+                doctor.Specialization);
 
         }
 
@@ -119,6 +118,5 @@ namespace Repository
         {
             File.AppendAllText(path, line + Environment.NewLine);
         }
-
     }
 }

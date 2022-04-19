@@ -11,32 +11,37 @@ namespace Controller
 {
    public class PatientControler
    {
+        private readonly PatientService _service;
+
+        public PatientControler(PatientService service)
+        {
+            _service = service;
+        }
       public Patient CreateNewPatient(Patient patient)
       {
-         throw new NotImplementedException();
+            return _service.CreateNewPatient(patient);
       }
       
-      public Patient ReadPatient(uint idPatient)
+      public Patient ReadPatient(uint id)
       {
-         throw new NotImplementedException();
+            return _service.ReadPatient(id);
       }
       
       public Patient UpdatePatient(Patient patient)
       {
-         throw new NotImplementedException();
+            return _service.UpdatePatient(patient);
       }
       
-      public Boolean DeletePatient(uint idPatient)
+      public Boolean DeletePatient(uint id)
       {
-         throw new NotImplementedException();
+            return _service.DeletePatient(id);
       }
       
       public IEnumerable<Patient> GetAll()
       {
-         throw new NotImplementedException();
+            return _service.GetAll();
       }
       
-      public PatientService patientService;
    
    }
 }

@@ -25,6 +25,14 @@ namespace Model
         public Room Room { get; set; }
 
         public uint IdRoom { get; set; }
+
+
+        public string RoomName { get; set; }
+        public string DoctorName { get; set; }
+        public string DoctorSurname { get; set; }
+        public string PatientName { get; set; }
+        public string PatientSurname { get; set; }
+
         public Appointment()
         {
 

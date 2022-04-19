@@ -3,44 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Model;
+using projekat.Repository;
 
-using projekat.Service;
 
-namespace projekat.Controller
+namespace projekat.Service
 {
-    public class DoctorController
+    public class DoctorService
     {
-        private readonly DoctorService _service;
+        private readonly DoctorRepository _repo;
 
-        public DoctorController(DoctorService service)
+        public DoctorService(DoctorRepository repo)
         {
-            _service = service;
+            _repo = repo;
         }
         public Doctor CreateNewDoctor(Doctor doctor)
         {
-            return _service.CreateNewDoctor(doctor);
+            return _repo.AddDoctor(doctor);
         }
 
         public Doctor ReadDoctor(uint id)
         {
-            return _service.ReadDoctor(id);
+            return _repo.GetDoctor(id);
         }
 
         public Doctor UpdateDoctor(Doctor doctor)
         {
-            return _service.UpdateDoctor(doctor);
+            return _repo.UpdateDoctor(doctor);
         }
 
         public Boolean DeleteDoctor(uint id)
         {
-            return _service.DeleteDoctor(id);
+            return _repo.RemoveDoctor(id);
         }
 
         public IEnumerable<Doctor> GetAll()
         {
-            return _service.GetAll();
+            throw new NotImplementedException();
         }
 
     }

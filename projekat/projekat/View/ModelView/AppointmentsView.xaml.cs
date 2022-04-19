@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Controller;
 using Model;
+using projekat.Controller;
 using projekat.View.Converter;
 
 namespace projekat.View.ModelView
@@ -26,6 +27,10 @@ namespace projekat.View.ModelView
     public partial class AppointmentsView : Window
     {
         private AppointmentController _appointmentController;
+        private RoomControler _roomController;
+        private DoctorController _doctorController;
+        private PatientControler _patientControler;
+
         private uint _id;
         private DateTime _startAppointment;
         private DateTime _endAppointment;
@@ -40,11 +45,30 @@ namespace projekat.View.ModelView
             //DataContext = this.Data;
             var app = Application.Current as App;
             _appointmentController = app.AppointmentController;
-
+            _roomController = app.RoomControler;
+            _doctorController = app.DoctorController;
+            _patientControler = app.PatientControler;
+            
            // Data = new ObservableCollection<Window>(
            // AppointmentConverter.ConvertAppointmentListToAppointmentViewList(_appointmentController.GetAll().ToList()));
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
+
+            for (int i = 0; i < Data.Count(); i++)
+            {
+                Room room = _roomController.FindRoom(Data[i].IdRoom);
+                Doctor doctor = _doctorController.ReadDoctor(Data[i].IdDoctor);
+                Patient patient = _patientControler.ReadPatient(Data[i].IdPatient);
+                Data[i].RoomName = room.Name;
+                Data[i].DoctorName = doctor.Name;
+                Data[i].DoctorSurname = doctor.Surname;
+                Data[i].PatientName = patient.Name;
+                Data[i].PatientSurname = patient.Surname;
+
+                DataGridXAML.Items.Add(Data[i]);
+                
+            }
+                
             DataContext = this.Data;
 
         }

@@ -27,6 +27,8 @@ namespace projekat
         private string TRANSACTION_FILE = _projectPath + "\\Resources\\Data\\transactions.csv";
         private string ROOM_FILE = _projectPath + "\\Resources\\room.txt";
         private string USER_FILE = _projectPath + "\\Resources\\user.txt";
+        private string DOCTOR_FILE = _projectPath + "\\Resources\\doctor.txt";
+        private string PATIENT_FILE = _projectPath + "\\Resources\\patient.txt";
         private string APPOINTMENT_FILE = _projectPath + "\\Resources\\appointment.txt";
 
         private const string CSV_DELIMITER = ";";
@@ -39,6 +41,11 @@ namespace projekat
         public SecretaryController SecretaryController { get; set; }
         public AppointmentController AppointmentController { get; set; }
 
+        public RoomControler RoomControler { get; set; }
+
+        public DoctorController DoctorController { get; set; }
+        public PatientControler PatientControler { get; set; }
+
         public App()
         {
 
@@ -46,15 +53,22 @@ namespace projekat
 
             var appointmentRepo = new AppointmentRepository(APPOINTMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var secretaryRepo = new SecretaryRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
-
-
+            var roomRepo = new RoomRepository(ROOM_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var doctorRepo = new DoctorRepository(DOCTOR_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var patientRepo = new PatientRepository(PATIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
      
             var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
+            var roomService = new RoomService(roomRepo);
+            var doctorService = new DoctorService(doctorRepo);
+            var patientService = new PatientService(patientRepo);
         
 
             SecretaryController = new SecretaryController(secretaryService);
             AppointmentController = new AppointmentController(appointmentService);
+            RoomControler = new RoomControler(roomService);
+            DoctorController = new DoctorController(doctorService);
+            PatientControler = new PatientControler(patientService);
         }
     }
 }
