@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Caliburn.Micro;
 using Controller;
 using Model;
 using Prism.Commands;
@@ -42,21 +44,25 @@ namespace projekat.View.ModelView
         private uint _idDelete;
 
         public ObservableCollection<Appointment> Data { get; set; }
+        
+        public ObservableCollection<string> Patientss { get; set; }
+
+        public ObservableCollection<Patient> People { get; set; }
+
         public AppointmentsView()
         {
             InitializeComponent();
-            //DataContext = this.Data;
             var app = Application.Current as App;
             _appointmentController = app.AppointmentController;
             _roomController = app.RoomControler;
             _doctorController = app.DoctorController;
             _patientControler = app.PatientControler;
-            
-           // Data = new ObservableCollection<Window>(
-           // AppointmentConverter.ConvertAppointmentListToAppointmentViewList(_appointmentController.GetAll().ToList()));
+
+            People = new ObservableCollection<Patient>(_patientControler.GetAll()); //**********************************************
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
-           // DataGridXAML.ItemsSource = Data;
+
+  
             for (int i = 0; i < Data.Count(); i++)
             {
                 Room room = _roomController.FindRoom(Data[i].IdRoom);
@@ -71,12 +77,13 @@ namespace projekat.View.ModelView
                 DataGridXAML.Items.Add(Data[i]);
         
             }
-                
-            DataContext = this.Data;
+
+
+           // DataContext = this.Data;
 
         }
 
-       
+    
 
         public DateTime StartAppointment
         {

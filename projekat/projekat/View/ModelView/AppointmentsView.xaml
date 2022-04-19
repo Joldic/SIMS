@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projekat.View.ModelView"
         mc:Ignorable="d"
-        Title="AppointmentsView" Height="450" Background ="Gray" Width="1136"
+        Title="AppointmentsView" Height="800" Background ="Gray" Width="1136"
         x:Name="_window">
     <Grid>
         <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="984" Height="300">
@@ -50,6 +50,16 @@
         <Label Content="Id for deletion" HorizontalAlignment="Left" Margin="1040,31,0,0" VerticalAlignment="Top"/>
         <TextBox Name ="IdToDelete" Text="{Binding IdDelete, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="1040,72,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="1060,95,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        
+        <ComboBox Name="Patients" ItemsSource="{Binding People}" HorizontalAlignment="Left" Margin="472,434,0,0" VerticalAlignment="Top" Width="200">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
     </Grid>
 
 </Window>
