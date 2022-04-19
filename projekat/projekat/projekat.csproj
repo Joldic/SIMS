@@ -62,18 +62,29 @@
     <Compile Include="Exception\NotFoundException.cs" />
     <Compile Include="Repository\AllergenRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
-    <Compile Include="Repository\ApointmentRepository.cs" />
+    <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RecipeRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Service\AllergenService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
-    <Compile Include="Service\ApointmentService.cs" />
+    <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RecipeService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SecretaryService.cs" />
+    <Compile Include="View\Converter\AbstractConverter.cs" />
+    <Compile Include="View\Converter\AppointmentConverter.cs" />
+    <Compile Include="View\ModelView\AppointmentDataView.xaml.cs">
+      <DependentUpon>AppointmentDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\AppointmentsView.xaml.cs">
+      <DependentUpon>AppointmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Secretary\SecretaryHomepage.xaml.cs">
+      <DependentUpon>SecretaryHomepage.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,7 +107,7 @@
     </Compile>
     <Compile Include="Controller\AllergenController.cs" />
     <Compile Include="Controller\AnamnesisController.cs" />
-    <Compile Include="Controller\ApointmentController.cs" />
+    <Compile Include="Controller\AppointmentController.cs" />
     <Compile Include="Controller\PatientControler.cs" />
     <Compile Include="Controller\RecipeController.cs" />
     <Compile Include="Controller\RoomControler.cs" />
@@ -113,6 +124,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ModelView\AppointmentDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\AppointmentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Secretary\SecretaryHomepage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Allergen.cs" />
@@ -156,12 +179,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\Converter\" />
-    <Folder Include="View\Model\" />
+    <Folder Include="View\Manager\" />
     <Folder Include="View\Util\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\user.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\appointment.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

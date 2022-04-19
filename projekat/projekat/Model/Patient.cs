@@ -10,7 +10,7 @@ namespace Model
 {
    public class Patient
     {
-      private uint id;
+      public uint Id { get; set; }
       private String name;
       private String surname;
       private String adress;
