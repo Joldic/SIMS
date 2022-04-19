@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\
 projekat
 none
 false
 DEBUG;TRACE
-C:\Users\3500x\Desktop\SIMS\projekat\projekat\App.xaml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\App.xaml
 7-716612100
 
-54-129205102
-141353075756
+552083673576
+14558943514
 View\Components\BindablePasswordBox.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\MainWindow.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\Secretary\SecretaryHomepage.xaml;
 
-False
+True
 
