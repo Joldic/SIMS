@@ -77,7 +77,7 @@ namespace projekat.View
             _secretaryController = app.SecretaryController;
             try
             {
-                Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
+                Model.Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
                 //Secretary secretary = _secretaryController.GetSecretary(1);
                 if (secretary.Password != Password)
                 {
@@ -118,6 +118,8 @@ namespace projekat.View
                 Owner = Application.Current.MainWindow
             }
                .ShowDialog();
+            this.Close();
+            
         }
 
         private void Doctor_Click(object sender, RoutedEventArgs e)

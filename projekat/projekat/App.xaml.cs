@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using projekat.Repository;
 using projekat.Service;
+using Controller;
+using Repository;
+using Service;
 
 namespace projekat
 {
@@ -24,6 +27,7 @@ namespace projekat
         private string TRANSACTION_FILE = _projectPath + "\\Resources\\Data\\transactions.csv";
         private string ROOM_FILE = _projectPath + "\\Resources\\room.txt";
         private string USER_FILE = _projectPath + "\\Resources\\user.txt";
+        private string APPOINTMENT_FILE = _projectPath + "\\Resources\\appointment.txt";
 
         private const string CSV_DELIMITER = ";";
         private const string DATETIME_FORMAT = "dd.MM.yyyy.";
@@ -33,22 +37,24 @@ namespace projekat
  
 
         public SecretaryController SecretaryController { get; set; }
+        public AppointmentController AppointmentController { get; set; }
 
         public App()
         {
 
 
 
-
+            var appointmentRepo = new AppointmentRepository(APPOINTMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var secretaryRepo = new SecretaryRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
 
 
      
             var secretaryService = new SecretaryService(secretaryRepo);
-
+            var appointmentService = new AppointmentService(appointmentRepo);
         
 
             SecretaryController = new SecretaryController(secretaryService);
+            AppointmentController = new AppointmentController(appointmentService);
         }
     }
 }
