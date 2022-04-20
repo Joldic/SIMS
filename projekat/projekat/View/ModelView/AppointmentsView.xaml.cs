@@ -62,7 +62,7 @@ namespace projekat.View.ModelView
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
 
-  
+            Patients.ItemsSource = People;
             for (int i = 0; i < Data.Count(); i++)
             {
                 Room room = _roomController.FindRoom(Data[i].IdRoom);
