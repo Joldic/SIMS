@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\App.xaml
-7-716612100
+8487208374
 
-552083673576
+56-1460736138
 18283789420
-View\Components\BindablePasswordBox.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\MainWindow.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\Secretary\SecretaryHomepage.xaml;
+View\Components\BindablePasswordBox.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\MainWindow.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\OperationsView.xaml;View\Secretary\SecretaryHomepage.xaml;
 
-False
+True
 

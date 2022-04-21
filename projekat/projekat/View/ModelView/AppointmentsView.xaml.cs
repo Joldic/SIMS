@@ -69,6 +69,8 @@ namespace projekat.View.ModelView
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
 
             Patients.ItemsSource = People;
+            Patients_Copy.ItemsSource = People;
+
             for (int i = 0; i < Data.Count(); i++)
             {
                 Room room = _roomController.FindRoom(Data[i].IdRoom);
@@ -89,8 +91,14 @@ namespace projekat.View.ModelView
             Doc = new ObservableCollection<Doctor>(_doctorController.GetAll());
 
             Doctors.ItemsSource = Doc;
+            Doctors_Copy.ItemsSource = Doc;
 
-
+            Appointment ap = DataGridXAML.SelectedItem as Appointment;
+            if (ap != null)
+            {
+                Doctors_Copy.SelectedValue = ap.DoctorUsername;
+             
+            }
         }
 
     
@@ -210,10 +218,7 @@ namespace projekat.View.ModelView
 
         }
 
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -276,6 +281,16 @@ namespace projekat.View.ModelView
 
 
         }
+
+     
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+  
 
         /* private void Button_Click(object sender, RoutedEventArgs e)
          {

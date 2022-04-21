@@ -1,2 +1,5 @@
-﻿1;dunjica;123;dunja;dunjic;micurinova 72;dunja@gmail.com;F;12.12.2020.;general
-2;nina;123;nikolina;nikolic;micurinova 72;nina@gmail.com;F;12.12.2020.;dermatologist
+﻿1;dunja;123;dunja;dunjic;micurinova 72;dunja@gmail.com;F;3/8/2000 12:00:00 AM;general
+2;nenad;123;nenad;nenadic;micurinova 72;nenad@gmail.com;M;3/10/2000 12:00:00 AM;orl
+3;anja;123;anja;anjic;majevicka 17;anja@gmail.com;F;4/5/1999 12:00:00 AM;dermatologist
+4;nina;123;nina;ninic;majevicka 44;nina@gmail.com;F;2/6/1998 12:00:00 AM;orl
+5;jasminka;123;jasminka;jasnic;cara lazara 30;jasna@proton.com;F;5/8/1996 12:00:00 AM;general

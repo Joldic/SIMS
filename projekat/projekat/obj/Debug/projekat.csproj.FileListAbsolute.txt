@@ -57,3 +57,5 @@ C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\projekat.csproj.CopyComp
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\bin\Debug\Caliburn.Micro.Core.dll
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\bin\Debug\Caliburn.Micro.Core.pdb
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\bin\Debug\Caliburn.Micro.Core.xml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\OperationsView.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\OperationsView.baml

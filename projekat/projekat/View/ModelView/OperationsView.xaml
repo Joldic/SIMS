@@ -1,0 +1,51 @@
+﻿<Window x:Class="projekat.View.ModelView.OperationsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.ModelView"
+        mc:Ignorable="d"
+        Title="OperationsView" Height="600" Width="1200">
+    <Grid>
+        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="1116" Height="300">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Appointment ID" Binding="{Binding Id}" Width="95"/>
+                <DataGridTextColumn Header="Start" Binding="{Binding StartAppointment}"  Width="130"/>
+                <DataGridTextColumn Header="End"  Binding="{Binding EndAppointment}" Width="130"/>
+                <!-- <DataGridTextColumn Header="Doctor ID" Binding="{Binding IdDoctor}" Width="80"/> -->
+                <DataGridTextColumn Header="Doctor Name" Binding="{Binding DoctorName}" Width="100"/>
+                <DataGridTextColumn Header="Doctor Surname" Binding="{Binding DoctorSurname}" Width="100"/>
+                <!-- <DataGridTextColumn Header="Patient ID" Binding="{Binding IdPatient}" Width="70" /> -->
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientName}" Width="100" />
+                <DataGridTextColumn Header="Patient Surame" Binding="{Binding PatientSurname}" Width="100" />
+                <!-- <DataGridTextColumn Header="Room ID" Binding="{Binding IdRoom}" Width="60"/> -->
+                <DataGridTextColumn Header="Room name" Binding="{Binding RoomName}" Width="80"/>
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Delete"  Click="DeleteButton_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

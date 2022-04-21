@@ -36,5 +36,14 @@ namespace projekat.View.Secretary
             }.ShowDialog();
            
         }
+
+
+        private void Operations_Click(object sender, RoutedEventArgs e)
+        {
+            new OperationsView()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+        }
     }
 }
