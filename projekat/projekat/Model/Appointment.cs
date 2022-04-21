@@ -26,6 +26,10 @@ namespace Model
 
         public uint IdRoom { get; set; }
 
+        public string PatientUsername { get; set; }
+
+        public string DoctorUsername { get; set; }
+
 
         public string RoomName { get; set; }
         public string DoctorName { get; set; }
@@ -52,6 +56,15 @@ namespace Model
 
         public Appointment(uint id, DateTime startAppointment, DateTime endAppointment, uint idDoctor, uint idPatient, uint idRoom) : this(id, startAppointment, endAppointment)
         {
+            IdDoctor = idDoctor;
+            IdPatient = idPatient;
+            IdRoom = idRoom;
+        }
+
+        public Appointment(DateTime startAppointment, DateTime endAppointment, uint idDoctor, uint idPatient, uint idRoom)
+        {
+            StartAppointment = startAppointment;
+            EndAppointment = endAppointment;
             IdDoctor = idDoctor;
             IdPatient = idPatient;
             IdRoom = idRoom;

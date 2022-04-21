@@ -55,6 +55,18 @@ namespace projekat.Repository
             }
         }
 
+        public Doctor FindDoctorByUsername(string username)
+        {
+            try
+            {
+                return GetAll().SingleOrDefault(user => user.Username == username);
+            }
+            catch (ArgumentException)
+            {
+                throw new NotFoundException(string.Format(NOT_FOUND_ERROR, "username", username));
+            }
+        }
+
         public Doctor UpdateDoctor(Doctor doctor)
         {
             throw new NotImplementedException();
@@ -78,23 +90,27 @@ namespace projekat.Repository
             string[] tokens = doctorCSVFormat.Split(_delimeter.ToCharArray());
 
             uint Id = uint.Parse(tokens[0]);
-            string Name = tokens[1];
-            string Surname = tokens[2];
-            string Adress = tokens[3];
-            string Email = tokens[4];
-            Enum.TryParse(tokens[5], out Gender gender);
-            DateTime.Parse(tokens[6]);
-            Enum.TryParse(tokens[7], out Specialization spec);
+            string Username = tokens[1];
+            string Password = tokens[2];
+            string Name = tokens[3];
+            string Surname = tokens[4];
+            string Adress = tokens[5];
+            string Email = tokens[6];
+            Enum.TryParse(tokens[7], out Gender gender);
+            DateTime.Parse(tokens[8]);
+            Enum.TryParse(tokens[9], out Specialization spec);
 
             return new Doctor(
                 Id,
                 Name,
                 Surname,
-                DateTime.Parse(tokens[6]),
+                DateTime.Parse(tokens[8]),
                 spec,
                 Adress,
                 Email,
-                gender
+                gender,
+                Username,
+                Password
             );
 
 

@@ -27,6 +27,11 @@ namespace projekat.Service
             return _repo.GetDoctor(id);
         }
 
+        public Doctor FindDoctorByUsername(string username)
+        {
+            return _repo.FindDoctorByUsername(username);
+        }
+
         public Doctor UpdateDoctor(Doctor doctor)
         {
             return _repo.UpdateDoctor(doctor);
@@ -39,7 +44,7 @@ namespace projekat.Service
 
         public IEnumerable<Doctor> GetAll()
         {
-            throw new NotImplementedException();
+            return _repo.GetAll();
         }
 
     }

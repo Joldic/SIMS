@@ -18,8 +18,11 @@ namespace Model
         public string Email { get; set; }
         public Gender Gender { get; set; }
 
+        public string Password { get; set; }
+        public string Username { get; set; }
+
         public System.Collections.Generic.List<Allergen> allergen;
-        private DateTime dateTime;
+  
 
         public Patient()
         {
@@ -31,16 +34,33 @@ namespace Model
             Id = id;
         }
 
-        public Patient(uint id, string name, string surname, DateTime dateTime, string adress, string email, Gender gender)
+        public Patient(uint id, string name, string surname, DateTime dateOfBirth, string adress, string email, Gender gender)
         {
             Id = id;
             Name = name;
             Surname = surname;
-            this.dateTime = dateTime;
+            this.DateOfBirth = dateOfBirth;
             Adress = adress;
             Email = email;
             Gender = gender;
         }
+
+        public Patient(uint id, string name, string surname, DateTime dateOfBirth, string adress, string email, Gender gender, string password, string username)
+        {
+            Id = id;
+            Name = name;
+            Surname = surname;
+            this.DateOfBirth = dateOfBirth;
+            Adress = adress;
+            Email = email;
+            Gender = gender;
+            Password = password;
+            Username = username;
+         
+        }
+
+
+
 
         /// <summary>
         /// Property for collection of Allergen

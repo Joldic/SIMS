@@ -28,6 +28,11 @@ namespace Service
             return _repo.GetPatient(id);
         }
 
+        public Patient FindPatientByUsername(string username)
+        {
+            return _repo.FindPatientByUsername(username);
+        }
+
         public Patient UpdatePatient(Patient patient)
         {
             return _repo.UpdatePatient(patient);

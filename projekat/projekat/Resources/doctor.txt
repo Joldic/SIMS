@@ -1,1 +1,2 @@
-﻿1;dunja;dunjic;micurinova 72;dunja@gmail.com;M;12.12.2020.;general
+﻿1;dunjica;123;dunja;dunjic;micurinova 72;dunja@gmail.com;F;12.12.2020.;general
+2;nina;123;nikolina;nikolic;micurinova 72;nina@gmail.com;F;12.12.2020.;dermatologist

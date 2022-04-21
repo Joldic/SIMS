@@ -43,11 +43,17 @@ namespace projekat.View.ModelView
         private uint _roomId;
         private uint _idDelete;
 
+        public string t;
+        public string d;
+        DateTime dt;
+
         public ObservableCollection<Appointment> Data { get; set; }
         
         public ObservableCollection<string> Patientss { get; set; }
 
         public ObservableCollection<Patient> People { get; set; }
+
+        public ObservableCollection<Doctor> Doc { get; set; }
 
         public AppointmentsView()
         {
@@ -79,7 +85,11 @@ namespace projekat.View.ModelView
             }
 
 
-           // DataContext = this.Data;
+            // DataContext = this.Data;
+            Doc = new ObservableCollection<Doctor>(_doctorController.GetAll());
+
+            Doctors.ItemsSource = Doc;
+
 
         }
 
@@ -216,21 +226,73 @@ namespace projekat.View.ModelView
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+     
+
+        private void DP1_SelectedDateChanged(object sender, RoutedEventArgs e)
         {
-            string content = IdToDelete.Text;
-            uint ID = uint.Parse(content);
-
-            _appointmentController.DeleteApointment(ID);
-
-            for (int i = 0; i < Data.Count(); i++)
+            ComboBoxItem cboitem = cboTP.SelectedItem as ComboBoxItem;
+            if(cboitem.Content != null)
             {
-                if(Data[i].Id == ID)
-                {
-                    DataGridXAML.Items.Remove(Data[i]);
-                }
+                t = cboitem.Content.ToString();
+                d = DP1.Text;
+                dt = DateTime.Parse(d + " " + t);
+                
             }
+        }
+
+        private void OK_ButtonClick(object sender, RoutedEventArgs e)
+        {
+           // string patientUsername = (string)Patients.SelectedItem;
+            Patient patientItem = Patients.SelectedItem as Patient;
+            string patientUsername = patientItem.Username;
+
+            Doctor doctorItem = Doctors.SelectedItem as Doctor;
+            string doctorUsername = doctorItem.Username;
+
+            DateTime date = dt;
+
+            Patient p = _patientControler.FindPatientByUsername(patientUsername);
+            Doctor doc = _doctorController.FindDoctorByUsername(doctorUsername);
+
+            string[] words = t.Split(':');
+            string minutes = words[1];
+            int numVal = int.Parse(minutes);
+            numVal += 15;
+            string final_minutes = words[0] + ":" + numVal.ToString();
+            DateTime end_date = DateTime.Parse(d + " " + final_minutes);
+            Appointment appointment = new Appointment(date, end_date, doc.Id, p.Id, 1);  //id sobe smo fiksirali
+            _appointmentController.CreateNewAppointment(appointment);
+            Room room = _roomController.FindRoom(1);
+
+
+            appointment.RoomName = room.Name;
+            appointment.DoctorName = doc.Name;
+            appointment.DoctorSurname = doc.Surname;
+            appointment.PatientName = p.Name;
+            appointment.PatientSurname = p.Surname;
+
+
+            DataGridXAML.Items.Add(appointment);
+
 
         }
+
+        /* private void Button_Click(object sender, RoutedEventArgs e)
+         {
+             string content = IdToDelete.Text;
+             uint ID = uint.Parse(content);
+
+             _appointmentController.DeleteApointment(ID);
+
+             for (int i = 0; i < Data.Count(); i++)
+             {
+                 if(Data[i].Id == ID)
+                 {
+                     DataGridXAML.Items.Remove(Data[i]);
+                 }
+             }
+
+         }
+        */
     }
 }

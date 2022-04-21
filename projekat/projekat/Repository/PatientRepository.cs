@@ -58,6 +58,18 @@ namespace Repository
             }
         }
 
+        public Patient FindPatientByUsername(string username)
+        {
+            try
+            {
+                return GetAll().SingleOrDefault(user => user.Username == username);
+            }
+            catch (ArgumentException)
+            {
+                throw new NotFoundException(string.Format(NOT_FOUND_ERROR, "username", username));
+            }
+        }
+
         public Patient UpdatePatient(Patient patient)
         {
             throw new NotImplementedException();
@@ -81,30 +93,36 @@ namespace Repository
             string[] tokens = patientCSVFormat.Split(_delimeter.ToCharArray());
 
             uint Id = uint.Parse(tokens[0]);
-            string Name = tokens[1];
-            string Surname = tokens[2];
-            string Adress = tokens[3];
-            string Email = tokens[4];
-            Enum.TryParse(tokens[5], out Gender gender);
-            DateTime.Parse(tokens[6]);
+            string Username = tokens[1];
+            string Password = tokens[2];
+            string Name = tokens[3];
+            string Surname = tokens[4];
+            string Adress = tokens[5];
+            string Email = tokens[6];
+            Enum.TryParse(tokens[7], out Gender gender);
+            DateTime.Parse(tokens[8]);
 
             return new Patient(
                 Id,
                 Name,
                 Surname,
-                DateTime.Parse(tokens[6]),
+                DateTime.Parse(tokens[8]),
                 Adress,
                 Email,
-                gender
+                gender,
+                Password,
+                Username
             );
 
-
         }
+        
 
         private string ConvertPatientToCSVFormat(Patient patient)
         {
             return string.Join(_delimeter,
                 patient.Id,
+                patient.Username,
+                patient.Password,
                 patient.Name,
                 patient.Surname,
                 patient.Adress,

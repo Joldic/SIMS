@@ -26,6 +26,11 @@ namespace Controller
       {
             return _service.ReadPatient(id);
       }
+
+       public Patient FindPatientByUsername(string username)
+        {
+            return _service.FindPatientByUsername(username);
+        }
       
       public Patient UpdatePatient(Patient patient)
       {

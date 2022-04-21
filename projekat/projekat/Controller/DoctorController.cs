@@ -28,6 +28,11 @@ namespace projekat.Controller
             return _service.ReadDoctor(id);
         }
 
+        public Doctor FindDoctorByUsername(string username)
+        {
+            return _service.FindDoctorByUsername(username);
+        }
+
         public Doctor UpdateDoctor(Doctor doctor)
         {
             return _service.UpdateDoctor(doctor);
