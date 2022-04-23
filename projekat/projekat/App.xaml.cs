@@ -31,6 +31,7 @@ namespace projekat
         private string DOCTOR_FILE = _projectPath + "\\Resources\\doctor.txt";
         private string PATIENT_FILE = _projectPath + "\\Resources\\patient.txt";
         private string APPOINTMENT_FILE = _projectPath + "\\Resources\\appointment.txt";
+        private string EQUIPMENT_FILE = _projectPath + "\\Resources\\equipment.txt";
 
         private const string CSV_DELIMITER = ";";
         private const string DATETIME_FORMAT = "dd.MM.yyyy.";
@@ -42,6 +43,8 @@ namespace projekat
         public SecretaryController SecretaryController { get; set; }
         public AppointmentController AppointmentController { get; set; }
         public ManagerController ManagerController  { get; set; }
+
+        public EquipmentController EquipmentController { get; set; }
 
         public RoomControler RoomControler { get; set; }
 
@@ -59,6 +62,7 @@ namespace projekat
             var doctorRepo = new DoctorRepository(DOCTOR_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var patientRepo = new PatientRepository(PATIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var managerRepo = new ManagerRepository(MANAGER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var equipmentRepo = new EquipmentRepository(EQUIPMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
      
             var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
@@ -66,6 +70,7 @@ namespace projekat
             var doctorService = new DoctorService(doctorRepo);
             var patientService = new PatientService(patientRepo);
             var managerService = new ManagerService(managerRepo);
+            var equipmentService = new EquipmentService(equipmentRepo);
         
 
             SecretaryController = new SecretaryController(secretaryService);
@@ -74,6 +79,7 @@ namespace projekat
             DoctorController = new DoctorController(doctorService);
             PatientControler = new PatientControler(patientService);
             ManagerController = new ManagerController(managerService);
+            EquipmentController = new EquipmentController(equipmentService);
         }
     }
 }

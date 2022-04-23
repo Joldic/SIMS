@@ -9,10 +9,32 @@ namespace Model
 {
    public class Equipment
    {
-      private uint id;
-      private uint quantity;
-      private string name;
-      private EquipmentType type;
-   
-   }
+        public uint Id { get; set; }
+        public uint Quantity { get; set; }
+        public string Name { get; set; }
+        public EquipmentType Type { get; set; }
+
+        public Equipment()
+        {
+
+        }
+
+        public Equipment(uint id)
+        {
+            Id = id;
+        }
+
+        public Equipment(uint id, uint quantity, string name, EquipmentType type) : this(id)
+        {
+            Quantity = quantity;
+            Name = name;
+            Type = type;
+        }
+
+        public Equipment(uint quantity, string name, EquipmentType type) : this(quantity)
+        {
+            Name = name;
+            Type = type;
+        }
+    }
 }

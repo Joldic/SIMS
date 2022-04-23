@@ -9,7 +9,7 @@ namespace Model
 {
    public enum EquipmentType
    {
-      staticc,
-      dynamic
+      STATIC,
+      DYNAMIC
    }
 }

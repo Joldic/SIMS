@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\ManagerController.cs" />
     <Compile Include="Controller\SecretaryController.cs" />
     <Compile Include="Exception\NotFoundException.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
+    <Compile Include="Repository\EquipmentRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RecipeRepository.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
+    <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\ManagerService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RecipeService.cs" />
@@ -257,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\manager.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\equipment.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

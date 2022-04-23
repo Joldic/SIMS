@@ -1,0 +1,6 @@
+﻿1;10;skalpel;DYNAMIC
+2;3;krevet;STATIC
+3;12;rendgen;STATIC
+4;44;zavoj;DYNAMIC
+5;70;gaza;DYNAMIC
+6;30;spric;DYNAMIC

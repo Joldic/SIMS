@@ -3,7 +3,9 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -49,10 +51,68 @@ namespace projekat.View.ModelView
 
         }
 
+        public uint Id
+        {
+            get => _id;
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public uint SquareFootage
+        {
+            get => _squareFootage;
+            set
+            {
+                if (_squareFootage != value)
+                {
+                    _squareFootage = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public RoomType Type
+        {
+            get => _roomType;
+            set
+            {
+                if (_roomType != value)
+                {
+                    _roomType = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
         
 
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
