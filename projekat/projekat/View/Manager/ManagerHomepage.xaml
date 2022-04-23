@@ -1,0 +1,14 @@
+﻿<Window x:Class="projekat.View.Manager.ManagerHomepage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.Manager"
+        mc:Ignorable="d"
+        Title="ManagerHomepage" Height="450" Width="800">
+    <Grid>
+        <Button Content="Room view" HorizontalAlignment="Center" Margin="0,62,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RoomButton_Click"/>
+        <Button Content="Equipment view" HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="EquipmentButton_Click"/>
+        <Button Content="Renovation" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RenovationButton_Click"/>
+    </Grid>
+</Window>

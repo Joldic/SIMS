@@ -1,6 +1,5 @@
-﻿using Model;
-using projekat.Controller;
-using projekat.View.Dialogs;
+﻿using projekat.Controller;
+using projekat.View.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,32 +14,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-namespace projekat.View
+using Model;
+namespace projekat.View.Dialogs
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ManagerLogin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ManagerLogin : Window
     {
         private string _username;
         private string _password;
-        private SecretaryController _secretaryController;
-        public MainWindow()
+        private ManagerController _managerController;
+
+        public ManagerLogin()
         {
             InitializeComponent();
             DataContext = this;
 
-        
-
-
-
             var app = Application.Current as App;
-            _secretaryController = app.SecretaryController;
+            _managerController = app.ManagerController;
         }
-
         public string Username
         {
             get => _username;
@@ -54,6 +48,8 @@ namespace projekat.View
             }
         }
 
+    
+
         public string Password
         {
             get => _password;
@@ -66,20 +62,15 @@ namespace projekat.View
                 }
             }
         }
-
-        void Execute(object parameter, RoutedEventArgs e)
+        private void Execute(object sender, RoutedEventArgs e)
         {
 
-            //DataContext = this;
-
-
             var app = Application.Current as App;
-            _secretaryController = app.SecretaryController;
+            _managerController = app.ManagerController;
             try
             {
-                Model.Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
-                //Secretary secretary = _secretaryController.GetSecretary(1);
-                if (secretary.Password != Password)
+                Model.Manager manager = _managerController.FindManagerByUsername(Username);
+                if (manager.Password != Password)
                 {
                     MessageBoxResult result;
 
@@ -87,9 +78,14 @@ namespace projekat.View
                 }
                 else
                 {
-                    MessageBoxResult result;
 
-                    result = MessageBox.Show("DOBRA SIFRA");
+                    new ManagerHomepage()
+                    {
+                        Owner = Application.Current.MainWindow
+                    }
+                    .ShowDialog();
+                    this.Close();
+
                 }
             }
             catch
@@ -104,36 +100,5 @@ namespace projekat.View
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
-
-        private void Manager_Click(object sender, RoutedEventArgs e)
-        {
-            new ManagerLogin()
-            {
-                Owner = Application.Current.MainWindow
-            }.ShowDialog();
-            this.Close();
-        }
-
-        private void Secretary_Click(object sender, RoutedEventArgs e)
-        {
-            new SecretaryLogin()
-            {
-                Owner = Application.Current.MainWindow
-            }
-               .ShowDialog();
-            this.Close();
-            
-        }
-
-        private void Doctor_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Patient_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

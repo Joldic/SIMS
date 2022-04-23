@@ -27,6 +27,7 @@ namespace projekat
         private string TRANSACTION_FILE = _projectPath + "\\Resources\\Data\\transactions.csv";
         private string ROOM_FILE = _projectPath + "\\Resources\\room.txt";
         private string USER_FILE = _projectPath + "\\Resources\\user.txt";
+        private string MANAGER_FILE = _projectPath + "\\Resources\\manager.txt";
         private string DOCTOR_FILE = _projectPath + "\\Resources\\doctor.txt";
         private string PATIENT_FILE = _projectPath + "\\Resources\\patient.txt";
         private string APPOINTMENT_FILE = _projectPath + "\\Resources\\appointment.txt";
@@ -40,6 +41,7 @@ namespace projekat
 
         public SecretaryController SecretaryController { get; set; }
         public AppointmentController AppointmentController { get; set; }
+        public ManagerController ManagerController  { get; set; }
 
         public RoomControler RoomControler { get; set; }
 
@@ -56,12 +58,14 @@ namespace projekat
             var roomRepo = new RoomRepository(ROOM_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var doctorRepo = new DoctorRepository(DOCTOR_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var patientRepo = new PatientRepository(PATIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var managerRepo = new ManagerRepository(MANAGER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
      
             var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
             var roomService = new RoomService(roomRepo);
             var doctorService = new DoctorService(doctorRepo);
             var patientService = new PatientService(patientRepo);
+            var managerService = new ManagerService(managerRepo);
         
 
             SecretaryController = new SecretaryController(secretaryService);
@@ -69,6 +73,7 @@ namespace projekat
             RoomControler = new RoomControler(roomService);
             DoctorController = new DoctorController(doctorService);
             PatientControler = new PatientControler(patientService);
+            ManagerController = new ManagerController(managerService);
         }
     }
 }

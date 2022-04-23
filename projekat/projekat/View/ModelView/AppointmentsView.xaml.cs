@@ -240,8 +240,11 @@ namespace projekat.View.ModelView
             {
                 t = cboitem.Content.ToString();
                 d = DP1.Text;
+               // MessageBoxResult result;
+                //result = MessageBox.Show(d);
                 dt = DateTime.Parse(d + " " + t);
-                
+                 MessageBoxResult result;
+                result = MessageBox.Show(dt.ToString());
             }
         }
 
