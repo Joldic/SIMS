@@ -8,7 +8,8 @@
         Title="ManagerHomepage" Height="450" Width="800">
     <Grid>
         <Button Content="Room view" HorizontalAlignment="Center" Margin="0,62,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RoomButton_Click"/>
-        <Button Content="Equipment view" HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="EquipmentButton_Click"/>
-        <Button Content="Renovation" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RenovationButton_Click"/>
+        <Button Content="Equipment view" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="EquipmentButton_Click"/>
+        <Button Content="Renovation" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RenovationButton_Click"/>
+        <Button Content="Realocation" HorizontalAlignment="Center" Margin="0,307,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RealocationButton_Click"/>
     </Grid>
 </Window>

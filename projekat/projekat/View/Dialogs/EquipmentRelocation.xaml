@@ -27,7 +27,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Room Id" Binding="{Binding RoomId, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
                 <DataGridTextColumn Header="Room Name" Binding="{Binding RoomName, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
-                <DataGridTextColumn Header="Room Type" Binding="{Binding RoomType, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                <DataGridTextColumn Header="Room Type" Binding="{Binding Type, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
                 <DataGridTextColumn Header="Equipment Id" Binding="{Binding EquipmentId, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
                 <DataGridTextColumn Header="Equipment Name" Binding="{Binding EquipmentName, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
                 <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
@@ -36,5 +36,6 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Show" HorizontalAlignment="Left" Margin="504,105,0,0" VerticalAlignment="Top" Width="61" Click="ShowButton_Click"/>
     </Grid>
 </Window>

@@ -272,5 +272,8 @@
   <ItemGroup>
     <Resource Include="Resources\equipment.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RoomEquipment.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

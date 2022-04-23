@@ -42,7 +42,10 @@ namespace Controller
             return _service.GetAll();
       }
       
-      
+      public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
+        {
+            return _service.GetAllRoomAndEquipment();
+        }
    
    }
 }

@@ -1,0 +1,9 @@
+﻿1;1;soba 200;operatingRoom;1;skalpel;5
+2;1;soba 200;operatingRoom;2;krevet;2
+3;1;soba 200;operatingRoom;3;rendgen;4
+4;1;soba 200;operatingRoom;4;zavoj;14
+5;2;soba 300;ordinaryRoom;1;skalpel;3
+6;2;soba 300;ordinaryRoom;3;rendgen;2
+7;2;soba 300;ordinaryRoom;4;zavoj;20
+8;2;soba 300;ordinaryRoom;5;gaza;30
+9;2;soba 300;ordinaryRoom;6;spric;12

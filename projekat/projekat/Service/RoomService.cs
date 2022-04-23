@@ -43,7 +43,11 @@ namespace Service
       {
             return _repo.GetAll();
       }
-      
-   
-   }
+
+        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
+        {
+            return _repo.GetAllRoomAndEquipment();
+        }
+
+    }
 }

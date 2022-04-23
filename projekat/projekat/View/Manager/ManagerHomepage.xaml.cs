@@ -51,5 +51,15 @@ namespace projekat.View.Manager
                 Owner = Application.Current.MainWindow
             }.ShowDialog();
         }
+
+        private void RealocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            new EquipmentRelocation()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+        }
+
+
     }
 }

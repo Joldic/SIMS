@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace projekat.Model
+namespace Model
 {
     public class RoomEquipmentDTO
     {
@@ -34,15 +34,6 @@ namespace projekat.Model
         public RoomEquipmentDTO(uint id, uint roomId, string roomName, RoomType type, uint equipmentId, string equipmentName, uint quantity) : this(id)
         {
             RoomId = roomId;
-            RoomName = roomName;
-            Type = type;
-            EquipmentId = equipmentId;
-            EquipmentName = equipmentName;
-            Quantity = quantity;
-        }
-
-        public RoomEquipmentDTO(uint roomId, string roomName, RoomType type, uint equipmentId, string equipmentName, uint quantity) : this(roomId)
-        {
             RoomName = roomName;
             Type = type;
             EquipmentId = equipmentId;

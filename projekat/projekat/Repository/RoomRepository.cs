@@ -22,6 +22,7 @@ namespace Repository
         private uint _roomMaxId;
         private static string _projectPath = System.Reflection.Assembly.GetExecutingAssembly().Location
         .Split(new string[] { "bin" }, StringSplitOptions.None)[0];
+
         private FileStream temp;
 
 
@@ -77,6 +78,13 @@ namespace Repository
                   .ToList();
       }
 
+        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
+        {
+            string path_to_file = _projectPath + "\\Resources\\RoomEquipment.txt";
+            return File.ReadAllLines(path_to_file)
+                .Select(ConvertCSVFormatToRoomEquipment).ToList();
+        }
+
         private Room ConvertCSVFormatToRoom(string roomCSVFormat)
         {
             Room room = new Room();
@@ -96,8 +104,29 @@ namespace Repository
                 SquareFootage,
                 Availability
             );
+        }
 
+        private RoomEquipmentDTO ConvertCSVFormatToRoomEquipment(string roomEquipmentCSVFormat)
+        {
+            RoomEquipmentDTO roomEquipment = new RoomEquipmentDTO();
+            string[] tokens = roomEquipmentCSVFormat.Split(_delimeter.ToCharArray());
+            uint Id = uint.Parse(tokens[0]);
+            uint RoomId = uint.Parse(tokens[1]);
+            string RoomName = tokens[2];
+            Enum.TryParse(tokens[3], out RoomType type);
+            uint EquipmentId = uint.Parse(tokens[4]);
+            string EquipmentName = tokens[5];
+            uint Quantity = uint.Parse(tokens[6]);
 
+            return new RoomEquipmentDTO(
+                Id,
+                RoomId,
+                RoomName,
+                type,
+                EquipmentId,
+                EquipmentName,
+                Quantity
+             );
         }
 
         private string ConvertRoomToCSVFormat(Room room)
