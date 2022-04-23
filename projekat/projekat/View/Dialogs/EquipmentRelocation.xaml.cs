@@ -40,6 +40,7 @@ namespace projekat.View.Dialogs
             DataGridXAML.Items.Clear();
             name = Name.Text;
             quantity = uint.Parse(Quantityy.Text);
+            IList<RoomEquipmentDTO> temp = new List<RoomEquipmentDTO>();
 
             IEnumerable<RoomEquipmentDTO> room_equipment_list = _roomController.GetAllRoomAndEquipment();
             var Data = new ObservableCollection<RoomEquipmentDTO>();
@@ -51,18 +52,22 @@ namespace projekat.View.Dialogs
                 {
                     //MessageBoxResult result = MessageBox.Show(room_equipment.RoomName);
                     Data.Add(room_equipment);
+                    room_equipment.Quantity -= quantity;
                 }
+                temp.Add(room_equipment);
             }
-            
-
-
-
 
             for (int i = 0; i < Data.Count(); i++)
             {
                 DataGridXAML.Items.Add(Data[i]);
             }
 
+
+
+        }
+
+        private void TransferButton_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
