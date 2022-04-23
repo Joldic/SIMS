@@ -67,6 +67,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        
         <Label Content="Patients:" HorizontalAlignment="Left" Margin="413,430,0,0" VerticalAlignment="Top"/>
         <Label Content="Doctors:" HorizontalAlignment="Left" Margin="413,496,0,0" VerticalAlignment="Top"/>
         <Label Content="ADD NEW APPOINTMENT"  HorizontalAlignment="Left" Margin="483,392,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="198"/>

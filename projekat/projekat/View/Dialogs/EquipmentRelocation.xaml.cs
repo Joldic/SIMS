@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using projekat.Controller;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace projekat.View.Dialogs
 {
@@ -24,7 +27,11 @@ namespace projekat.View.Dialogs
     {
         private string name;
         private uint quantity;
+        private string _name;
         private RoomControler _roomController;
+        private EquipmentController _equipmentController;
+        public ObservableCollection<Equipment> equipment_names { get; set; }
+        public ObservableCollection<Room> room_names { get; set; }
         public EquipmentRelocation()
         {
             InitializeComponent();
@@ -32,13 +39,36 @@ namespace projekat.View.Dialogs
 
             var app = Application.Current as App;
             _roomController = app.RoomControler;
+            _equipmentController = app.EquipmentController;
+
+            equipment_names = new ObservableCollection<Equipment>(_equipmentController.GetAll());
+            room_names = new ObservableCollection<Room>(_roomController.GetAll());
+
+            Equipment_name_combo.ItemsSource = equipment_names;
+            Room_from.ItemsSource = room_names;
+            Room_to.ItemsSource = room_names;
         }
 
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
             DataGridXAML.Items.Clear();
-            name = Name.Text;
+            //name = Name.Text;
+            //name = Equipment_name_combo.SelectedItem as string;
+            var eq = Equipment_name_combo.SelectedItem as Equipment;
+            name = eq.Name;
             quantity = uint.Parse(Quantityy.Text);
             IList<RoomEquipmentDTO> temp = new List<RoomEquipmentDTO>();
 
@@ -50,9 +80,8 @@ namespace projekat.View.Dialogs
                 int result = (int)room_equipment.Quantity - (int)quantity;
                 if (room_equipment.EquipmentName == name & result >= 0)
                 {
-                    //MessageBoxResult result = MessageBox.Show(room_equipment.RoomName);
                     Data.Add(room_equipment);
-                    room_equipment.Quantity -= quantity;
+                   // room_equipment.Quantity -= quantity;
                 }
                 temp.Add(room_equipment);
             }
@@ -68,7 +97,16 @@ namespace projekat.View.Dialogs
 
         private void TransferButton_Click(object sender, RoutedEventArgs e)
         {
+            Room room_from = Room_from.SelectedItem as Room;
+            Room room_to = Room_to.SelectedItem as Room;
+            
+            //treba da napravim metodu koja ce da vrati iz RoomEquipment.txt RoomEquipmentDTO po id-u sobe i id ili imena equipmenta
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

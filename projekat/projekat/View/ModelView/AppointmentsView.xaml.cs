@@ -48,8 +48,6 @@ namespace projekat.View.ModelView
         DateTime dt;
 
         public ObservableCollection<Appointment> Data { get; set; }
-        
-        public ObservableCollection<string> Patientss { get; set; }
 
         public ObservableCollection<Patient> People { get; set; }
 

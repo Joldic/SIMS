@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="EquipmentRelocation" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.505,0.636">
-        <TextBox Name="Name" HorizontalAlignment="Center" Margin="0,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Quantityy" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Equipment name" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top"/>
         <Label Content="Quantity" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top"/>
@@ -37,10 +36,30 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Show" HorizontalAlignment="Left" Margin="504,105,0,0" VerticalAlignment="Top" Width="61" Click="ShowButton_Click"/>
-        <TextBox x:Name="Quantityy_Copy" HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Quantityy_Copy1" HorizontalAlignment="Center" Margin="0,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Name="RoomFrom" Content="Room from" HorizontalAlignment="Left" Margin="262,146,0,0" VerticalAlignment="Top" Height="23"/>
         <Label Name="RoomTo" Content="    Room to" HorizontalAlignment="Left" Margin="262,169,0,0" VerticalAlignment="Top"/>
         <Button Content="Transfer" HorizontalAlignment="Left" Margin="504,172,0,0" VerticalAlignment="Top" Width="61" Click="TransferButton_Click"/>
+        <ComboBox Name="Equipment_name_combo" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" Width="120" Height="20">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ComboBox Name="Room_from" HorizontalAlignment="Center" Margin="0,148,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="Room_to" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </Window>
