@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="RoomView" Height="450" Width="800">
     <Grid>
+        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="780" Height="300">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room ID" Binding="{Binding Id}" Width="130"/>
+                <DataGridTextColumn Header="Room Name" Binding="{Binding Name}" Width="130"/>
+                <DataGridTextColumn Header="Room Type" Binding="{Binding Type}" Width="130"/>
+                <DataGridTextColumn Header="Square Footage" Binding="{Binding SquareFootage}" Width="130"/>
+                
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Delete"  Click="DeleteButton_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
         
     </Grid>
 </Window>

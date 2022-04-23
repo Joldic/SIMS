@@ -1,1 +1,4 @@
-﻿1;soba200;operatingRoom;100;true
+﻿1;soba 200;operatingRoom;100;true
+2;soba 300;ordinaryRoom;50;true
+3;soba 100A;relaxationRoom;78;true
+4;soba 205A;operatingRoom;80;true
