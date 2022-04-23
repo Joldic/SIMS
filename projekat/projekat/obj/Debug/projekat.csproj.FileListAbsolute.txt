@@ -107,3 +107,5 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\RenovationD
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Manager\ManagerHomepage.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\EquipmentView.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\RoomView.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\EquipmentRelocation.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\EquipmentRelocation.baml

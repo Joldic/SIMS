@@ -73,6 +73,7 @@
     <Compile Include="Controller\ManagerController.cs" />
     <Compile Include="Controller\SecretaryController.cs" />
     <Compile Include="Exception\NotFoundException.cs" />
+    <Compile Include="Model\RoomEquipmentDTO.cs" />
     <Compile Include="Repository\AllergenRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
@@ -95,6 +96,9 @@
     <Compile Include="Service\SecretaryService.cs" />
     <Compile Include="View\Converter\AbstractConverter.cs" />
     <Compile Include="View\Converter\AppointmentConverter.cs" />
+    <Compile Include="View\Dialogs\EquipmentRelocation.xaml.cs">
+      <DependentUpon>EquipmentRelocation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\ManagerLogin.xaml.cs">
       <DependentUpon>ManagerLogin.xaml</DependentUpon>
     </Compile>
@@ -123,6 +127,10 @@
       <DependentUpon>SecretaryHomepage.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\EquipmentRelocation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

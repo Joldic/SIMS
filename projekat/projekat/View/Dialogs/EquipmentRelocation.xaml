@@ -1,0 +1,40 @@
+﻿<Window x:Class="projekat.View.Dialogs.EquipmentRelocation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.Dialogs"
+        mc:Ignorable="d"
+        Title="EquipmentRelocation" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.505,0.636">
+        <TextBox Name="Name" HorizontalAlignment="Center" Margin="0,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Quantityy" HorizontalAlignment="Center" Margin="0,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Equipment name" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="Quantity" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top"/>
+
+        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="590" Height="193" Margin="0,217,0,0">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room Id" Binding="{Binding RoomId, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                <DataGridTextColumn Header="Room Name" Binding="{Binding RoomName, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                <DataGridTextColumn Header="Room Type" Binding="{Binding RoomType, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                <DataGridTextColumn Header="Equipment Id" Binding="{Binding EquipmentId, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                <DataGridTextColumn Header="Equipment Name" Binding="{Binding EquipmentName, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
