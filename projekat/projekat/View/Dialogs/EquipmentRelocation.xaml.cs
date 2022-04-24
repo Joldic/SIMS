@@ -99,8 +99,28 @@ namespace projekat.View.Dialogs
         {
             Room room_from = Room_from.SelectedItem as Room;
             Room room_to = Room_to.SelectedItem as Room;
-            
+
             //treba da napravim metodu koja ce da vrati iz RoomEquipment.txt RoomEquipmentDTO po id-u sobe i id ili imena equipmenta
+            RoomEquipmentDTO from = _roomController.GetByRoomIdAndEquipmentName(room_from.Id, name);
+            RoomEquipmentDTO to = _roomController.GetByRoomIdAndEquipmentName(room_to.Id, name);
+
+            if(from.Quantity - quantity >= 0)
+            {
+                from.Quantity -= quantity;
+                to.Quantity += quantity;
+            }
+
+            // sada treba da upisem u fajl RoomEquipment.txt promene
+
+            if (_roomController.SaveChangesToFile(from) & _roomController.SaveChangesToFile(to))
+            {
+                MessageBoxResult result = MessageBox.Show("Uspesno prebacivanje");
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Neuspesno prebacivanje");
+            }
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

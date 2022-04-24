@@ -79,10 +79,6 @@ namespace Repository
             File.Move(temp_file, appointment_file);
 
             return retVal;
-
-            
-
-                return retVal;
         }
       
 

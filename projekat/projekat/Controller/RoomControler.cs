@@ -18,33 +18,42 @@ namespace Controller
             _service = service;
         }
         public Room CreateNewRoom(Room room)
-      {
+        {
             return _service.CreateNewRoom(room);
-      }
+        }
       
-      public Room FindRoom(uint id)
-      {
+        public Room FindRoom(uint id)
+        {
             return _service.FindRoom(id);
-      }
+        }
       
-      public Room ChangeRoom(Room room)
-      {
+        public Room ChangeRoom(Room room)
+        {
             return _service.ChangeRoom(room);
-      }
+        }
       
-      public Boolean DeleteRoom(uint id)
-      {
+        public Boolean DeleteRoom(uint id)
+        {
             return _service.DeleteRoom(id);
-      }
+        }
       
-      public IEnumerable<Room> GetAll()
-      {
+        public IEnumerable<Room> GetAll()
+        {
             return _service.GetAll();
-      }
+        }
       
-      public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
+        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
         {
             return _service.GetAllRoomAndEquipment();
+        }
+        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
+        {
+            return _service.GetByRoomIdAndEquipmentName(id, name);
+        }
+
+        public Boolean SaveChangesToFile(RoomEquipmentDTO r)
+        {
+            return _service.SaveChangesToFile(r);
         }
    
    }

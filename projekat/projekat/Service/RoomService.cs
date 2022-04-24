@@ -49,5 +49,14 @@ namespace Service
             return _repo.GetAllRoomAndEquipment();
         }
 
+        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
+        {
+            return _repo.GetByRoomIdAndEquipmentName(id, name);
+        }
+        public Boolean SaveChangesToFile(RoomEquipmentDTO r)
+        {
+            return _repo.SaveChangesToFile(r);
+        }
+
     }
 }
