@@ -109,3 +109,17 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\Equipment
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\RoomView.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\EquipmentRelocation.g.cs
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\EquipmentRelocation.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\EquipmentRelocation.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\ManagerLogin.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\RenovationDialog.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Manager\ManagerHomepage.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\EquipmentView.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\RoomView.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\EquipmentRelocation.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\ManagerLogin.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\RenovationDialog.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Manager\ManagerHomepage.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\EquipmentView.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\RoomView.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateAppointment.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateAppointment.baml

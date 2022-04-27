@@ -105,6 +105,9 @@
     <Compile Include="View\Dialogs\RenovationDialog.xaml.cs">
       <DependentUpon>RenovationDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\UpdateAppointment.xaml.cs">
+      <DependentUpon>UpdateAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\ManagerHomepage.xaml.cs">
       <DependentUpon>ManagerHomepage.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialogs\SecretaryLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\UpdateAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

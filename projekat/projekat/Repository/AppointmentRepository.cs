@@ -86,7 +86,35 @@ namespace Repository
 
         public Appointment UpdateApointment(Appointment apointment)
         {
-            throw new NotImplementedException();
+            string temp_file = _projectPath + "\\Resources\\tempAPP.txt";
+            string _file = _projectPath + "\\Resources\\appointment.txt";
+
+
+            using (var sr = new StreamReader(_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string lineToWrite = ConvertAppointmentToCSVFormat(apointment);
+                    Appointment tempApp = ConvertCSVFormatToAppointment(line);
+                    if (apointment.Id != tempApp.Id)
+                    {
+                        sw.WriteLine(line);
+                    }
+                    else
+                    {
+                        sw.WriteLine(lineToWrite);
+                    }
+                    //sw.WriteLine(lineToWrite);
+                }
+            }
+            File.Delete(_file);
+            File.Move(temp_file, _file);
+
+
+
+            return apointment;
         }
       
 

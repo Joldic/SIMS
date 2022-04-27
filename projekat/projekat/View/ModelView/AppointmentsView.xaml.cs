@@ -21,6 +21,7 @@ using Model;
 using Prism.Commands;
 using projekat.Controller;
 using projekat.View.Converter;
+using projekat.View.Dialogs;
 
 namespace projekat.View.ModelView
 {
@@ -67,7 +68,6 @@ namespace projekat.View.ModelView
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
 
             Patients.ItemsSource = People;
-            Patients_Copy.ItemsSource = People;
 
             for (int i = 0; i < Data.Count(); i++)
             {
@@ -89,14 +89,9 @@ namespace projekat.View.ModelView
             Doc = new ObservableCollection<Doctor>(_doctorController.GetAll());
 
             Doctors.ItemsSource = Doc;
-            Doctors_Copy.ItemsSource = Doc;
 
             Appointment ap = DataGridXAML.SelectedItem as Appointment;
-            if (ap != null)
-            {
-                Doctors_Copy.SelectedValue = ap.DoctorUsername;
-             
-            }
+          
         }
 
     
@@ -216,6 +211,19 @@ namespace projekat.View.ModelView
 
         }
 
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Appointment ap = DataGridXAML.SelectedItem as Appointment;
+            Appointment temp = _appointmentController.GetApointment(ap.Id);
+
+            new UpdateAppointment(temp)
+            {
+                Owner = Application.Current.MainWindow
+            }
+                .ShowDialog();
+            this.Close();
+        }
+
      
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -245,6 +253,10 @@ namespace projekat.View.ModelView
                 result = MessageBox.Show(dt.ToString());
             }
         }
+
+   
+
+
 
         private void OK_ButtonClick(object sender, RoutedEventArgs e)
         {
