@@ -65,7 +65,7 @@ namespace projekat.View.ModelView
 
             People = new ObservableCollection<Patient>(_patientControler.GetAll()); //**********************************************
 
-            Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
+            Data = new ObservableCollection<Appointment>(_appointmentController.GetAllOperations().ToList());
 
             Patients.ItemsSource = People;
 
