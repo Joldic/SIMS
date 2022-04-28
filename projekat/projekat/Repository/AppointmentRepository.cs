@@ -157,7 +157,40 @@ namespace Repository
 
             return apointment;
         }
-      
+
+
+        public Appointment UpdateOperation(Appointment appointment)
+        {
+            string temp_file = _projectPath + "\\Resources\\tempOPP.txt";
+            string _file = _projectPath + "\\Resources\\operations.txt";
+
+
+            using (var sr = new StreamReader(_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string lineToWrite = ConvertAppointmentToCSVFormat(appointment);
+                    Appointment tempApp = ConvertCSVFormatToAppointment(line);
+                    if (appointment.Id != tempApp.Id)
+                    {
+                        sw.WriteLine(line);
+                    }
+                    else
+                    {
+                        sw.WriteLine(lineToWrite);
+                    }
+                    //sw.WriteLine(lineToWrite);
+                }
+            }
+            File.Delete(_file);
+            File.Move(temp_file, _file);
+
+
+
+            return appointment;
+        }
 
 
 

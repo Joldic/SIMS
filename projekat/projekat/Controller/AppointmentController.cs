@@ -41,7 +41,13 @@ namespace Controller
         {
             return _service.UpdateApointment(appointment);
         }
-      
+
+        public Appointment UpdateOperation(Appointment appointment)
+        {
+            return _service.UpdateOperation(appointment);
+        }
+
+
         public Model.Appointment GetApointment(uint id)
         {
             return _service.GetApointment(id);

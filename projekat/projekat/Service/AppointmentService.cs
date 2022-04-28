@@ -42,7 +42,12 @@ namespace Service
         {
             return _repo.UpdateApointment(apointment);
         }
-      
+
+        public Appointment UpdateOperation(Appointment appointment)
+        {
+            return _repo.UpdateOperation(appointment);
+        }
+
         public Appointment GetApointment(uint id)
         {
             return _repo.GetApointment(id);

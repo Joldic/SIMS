@@ -100,8 +100,7 @@ namespace projekat.View.Dialogs
             string final_minutes = words[0] + ":" + numVal.ToString();
             DateTime end_date = DateTime.Parse(d + " " + final_minutes);
 
-            Appointment appointment = new Appointment(temp.Id,date, end_date, doc.Id, p.Id, temp.IdRoom);  //id sobe smo fiksirali
-
+            Appointment appointment = new Appointment(temp.Id,date, end_date, doc.Id, p.Id, temp.IdRoom);
             _appointmentController.UpdateApointment(appointment);
 
         }
