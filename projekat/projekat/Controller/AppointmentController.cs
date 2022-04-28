@@ -18,28 +18,43 @@ namespace Controller
             _service = service;
         }
         public Appointment CreateNewAppointment(Appointment appointment)
-      {
+        {
             return _service.CreateNewAppointment(appointment);
-      }
+        }
+
+        public Appointment CreateNewOperation(Appointment appointment)
+        {
+            return _service.CreateNewOperation(appointment);
+        }
       
-      public Boolean DeleteApointment(uint id)
-      {
+        public Boolean DeleteApointment(uint id)
+        {
             return _service.DeleteApointment(id);
-      }
+        }
+
+        public Boolean DeleteOperation(uint id)
+        {
+            return _service.DeleteOperation(id);
+        }
       
-      public Model.Appointment UpdateApointment(Appointment appointment)
-      {
+        public Model.Appointment UpdateApointment(Appointment appointment)
+        {
             return _service.UpdateApointment(appointment);
-      }
+        }
       
-      public Model.Appointment GetApointment(uint id)
-      {
+        public Model.Appointment GetApointment(uint id)
+        {
             return _service.GetApointment(id);
-      }
+        }
 
         public IEnumerable<Appointment> GetAll()
         {
             return _service.GetAll();
+        }
+
+        public IEnumerable<Appointment> GetAllOperations()
+        {
+            return _service.GetAllOperations();
         }
 
         

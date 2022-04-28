@@ -23,5 +23,13 @@ namespace projekat.View.Dialogs
         {
             InitializeComponent();
         }
+
+        private void DP1_SelectedDateChanged(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem cboitem = cboTP.SelectedItem as ComboBoxItem;
+         
+        }
+
+
     }
 }

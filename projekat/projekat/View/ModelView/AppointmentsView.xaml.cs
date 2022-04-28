@@ -278,6 +278,7 @@ namespace projekat.View.ModelView
             numVal += 15;
             string final_minutes = words[0] + ":" + numVal.ToString();
             DateTime end_date = DateTime.Parse(d + " " + final_minutes);
+
             Appointment appointment = new Appointment(date, end_date, doc.Id, p.Id, 1);  //id sobe smo fiksirali
             _appointmentController.CreateNewAppointment(appointment);
             Room room = _roomController.FindRoom(1);
@@ -296,12 +297,6 @@ namespace projekat.View.ModelView
         }
 
      
-
-        private void Update_Click(object sender, RoutedEventArgs e)
-        {
-
-
-        }
 
   
 

@@ -47,9 +47,17 @@ namespace Repository
             return appointment;
         }
 
+        public Appointment CreateNewOperation(Appointment appointment)
+        {
+            appointment.Id = ++_appointmentMaxId;
+            string temp_file = _projectPath + "\\Resources\\operations.txt";
+            AppendLineToFile(temp_file, ConvertAppointmentToCSVFormat(appointment));
+            return appointment;
+        }
 
 
-      
+
+
         public Boolean DeleteApointment(uint id)
         {
             Boolean retVal = false;
@@ -80,7 +88,40 @@ namespace Repository
 
             return retVal;
         }
-      
+
+
+        public Boolean DeleteOperation(uint id)
+        {
+            Boolean retVal = false;
+            IEnumerable<Appointment> appointments = GetAll();
+
+            appointments = appointments.Where(a => a.Id != id).ToList();
+
+            string temp_file = _projectPath + "\\Resources\\tempOp.txt";
+            string operation_file = _projectPath + "\\Resources\\operations.txt";
+
+            using (var sr = new StreamReader(operation_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Appointment appointment = ConvertCSVFormatToAppointment(line);
+                    if (appointment.Id != id)
+                    {
+                        retVal = true;
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Delete(operation_file);
+            File.Move(temp_file, operation_file);
+
+            return retVal;
+
+        }
+
 
 
 
@@ -144,6 +185,13 @@ namespace Repository
             return File.ReadAllLines(_path)
                 .Select(ConvertCSVFormatToAppointment)
                 .ToList();
+        }
+
+
+        public IEnumerable<Appointment> GetAllOperations()
+        {
+            string path_to_file = _projectPath + "\\Resources\\operations.txt";
+            return File.ReadAllLines(path_to_file).Select(ConvertCSVFormatToAppointment).ToList();
         }
 
         private Appointment ConvertCSVFormatToAppointment(string appointmentCSVFormat)

@@ -108,6 +108,9 @@
     <Compile Include="View\Dialogs\UpdateAppointment.xaml.cs">
       <DependentUpon>UpdateAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\UpdateOperation.xaml.cs">
+      <DependentUpon>UpdateOperation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\ManagerHomepage.xaml.cs">
       <DependentUpon>ManagerHomepage.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialogs\UpdateAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\UpdateOperation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -281,6 +288,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\RoomEquipment.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\operations.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
