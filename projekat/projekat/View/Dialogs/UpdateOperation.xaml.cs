@@ -32,14 +32,6 @@ namespace projekat.View.Dialogs
         private PatientControler _patientControler;
 
 
-        /*private uint _id;
-        private DateTime _startAppointment;
-        private DateTime _endAppointment;
-        private uint _doctorId;
-        private uint _patientId;
-        private uint _roomId;
-        private uint _idDelete;
-        */
 
         public string t;
         public string t2;
@@ -82,12 +74,10 @@ namespace projekat.View.Dialogs
                 t = cboitem.Content.ToString();
                 t2 = cboitem2.Content.ToString();
                 d = DP1.Text;
-                // MessageBoxResult result;
-                //result = MessageBox.Show(d);
+             
                 dt = DateTime.Parse(d + " " + t);
                 dt_end = DateTime.Parse(d + " " + t2);
-                //MessageBoxResult result;
-                //result = MessageBox.Show(dt.ToString());
+                
             }
         }
 
