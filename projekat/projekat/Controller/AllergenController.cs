@@ -48,6 +48,12 @@ namespace Controller
         {
             return _service.GetPatientsAllergens();
         }
-   
+
+        public  Boolean DeletePatiensAllergen(uint id)
+        {
+            return _service.DeletePatiensAllergen(id);
+        }
+
+
    }
 }

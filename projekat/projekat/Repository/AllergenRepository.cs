@@ -155,6 +155,47 @@ namespace Repository
 
 
 
+
+
+
+        public Boolean DeletePatiensAllergen(uint id)
+        {
+            Boolean retval = false;
+
+            string temp_file = _projectPath + "\\Resources\\tempPatAler.txt";
+            string patientAllergens_file = _projectPath + "\\Resources\\PatientAllergen.txt";
+
+            using (var sr = new StreamReader(patientAllergens_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    PatientAllergenDTO patientAll = ConvertCSVFormatToPatientAllergen(line);
+                    if (patientAll.Id != id)
+                    {
+                        retval = true;
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Delete(patientAllergens_file);
+            File.Move(temp_file, patientAllergens_file);
+
+            return retval;
+        }
+
+
+
+
+
+
+
+
+
+
+
         private Allergen ConvertCSVFormatToAllergen(string allergenCSVFormat)
         {
             Allergen allergen = new Allergen();

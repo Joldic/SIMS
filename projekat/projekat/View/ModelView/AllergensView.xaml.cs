@@ -57,7 +57,20 @@ namespace projekat.View.ModelView
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            InitializeComponent();
+            DataContext = this;
+
+            PatientAllergenDTO patientAllergen = DataGridXAML.SelectedItem as PatientAllergenDTO;
+
+            for(int i=0; i< PatientAllergens.Count; i++)
+            {
+                if (patientAllergen.Id == PatientAllergens[i].Id)
+                {
+                    DataGridXAML.Items.Remove(PatientAllergens[i]);
+                }
+            }
+
+            _allergenController.DeletePatiensAllergen(patientAllergen.Id);
 
         }
 

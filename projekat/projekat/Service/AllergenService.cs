@@ -49,5 +49,10 @@ namespace Service
         {
             return _repo.GetPatientsAllergens();
         }
+
+        public Boolean DeletePatiensAllergen(uint id)
+        {
+            return _repo.DeletePatiensAllergen(id);
+        }
     }
 }
