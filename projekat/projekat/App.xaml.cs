@@ -32,6 +32,7 @@ namespace projekat
         private string PATIENT_FILE = _projectPath + "\\Resources\\patient.txt";
         private string APPOINTMENT_FILE = _projectPath + "\\Resources\\appointment.txt";
         private string EQUIPMENT_FILE = _projectPath + "\\Resources\\equipment.txt";
+        private string ALLERGEN_FILE = _projectPath + "\\Resources\\allergen.txt";
 
         private const string CSV_DELIMITER = ";";
         private const string DATETIME_FORMAT = "dd.MM.yyyy.";
@@ -50,6 +51,7 @@ namespace projekat
 
         public DoctorController DoctorController { get; set; }
         public PatientControler PatientControler { get; set; }
+        public AllergenController AllergenControler { get; set; }
 
         public App()
         {
@@ -63,6 +65,7 @@ namespace projekat
             var patientRepo = new PatientRepository(PATIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var managerRepo = new ManagerRepository(MANAGER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var equipmentRepo = new EquipmentRepository(EQUIPMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var allergenRepo = new AllergenRepository(ALLERGEN_FILE, CSV_DELIMITER, DATETIME_FORMAT);
      
             var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
@@ -71,6 +74,7 @@ namespace projekat
             var patientService = new PatientService(patientRepo);
             var managerService = new ManagerService(managerRepo);
             var equipmentService = new EquipmentService(equipmentRepo);
+            var allergenService = new AllergenService(allergenRepo);
         
 
             SecretaryController = new SecretaryController(secretaryService);
@@ -80,6 +84,7 @@ namespace projekat
             PatientControler = new PatientControler(patientService);
             ManagerController = new ManagerController(managerService);
             EquipmentController = new EquipmentController(equipmentService);
+            AllergenControler = new AllergenController(allergenService);
         }
     }
 }

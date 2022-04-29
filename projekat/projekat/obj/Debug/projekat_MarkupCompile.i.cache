@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\App.xaml
-18-894814704
+191857962201
 
-72-526933763
+74-974615437
 18283789420
-View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\MainWindow.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
+View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\MainWindow.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AllergensView.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
 
-True
+False
 

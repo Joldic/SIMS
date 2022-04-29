@@ -10,7 +10,22 @@ namespace Model
    public class Allergen
    {
       public uint Id { get; set; }
-      public string name;
-   
-   }
+      public string Name { get; set; }
+
+        public Allergen()
+        {
+
+        }
+
+        public Allergen(uint id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public Allergen(string name)
+        {
+            Name = name;
+        }
+    }
 }

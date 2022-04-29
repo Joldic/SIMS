@@ -1,4 +1,5 @@
 1;perica;123;pera;peric;bulevar 30;pera@gmail.com;M;12.12.2020.
+2;nikola;123;nikola;nikolic;bulevar 100;nikola@gmail.com;M;12.12.2020.
 3;milica;123;arsenije;lalic;Mileticeva 5;arsa@gmail.com;m;4/29/2022 12:00:00 AM
 4;sladjana;123;sladjana;sladjanic;sarajevska 14;sladja@gmail.com;F;4.9.1969.
 5;adrijana;123;adrijana;adric;Sestara Ninkovic 9;ada@gmail.com;f;3/20/2022 12:00:00 AM
