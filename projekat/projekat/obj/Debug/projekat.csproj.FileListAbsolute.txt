@@ -125,3 +125,7 @@ C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateAppoi
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateAppointment.baml
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateOperation.g.cs
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateOperation.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\PatientView.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\PatientView.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdatePatient.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdatePatient.baml

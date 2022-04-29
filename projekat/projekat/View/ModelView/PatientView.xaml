@@ -1,0 +1,69 @@
+﻿<Window x:Class="projekat.View.ModelView.PatientView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.ModelView"
+        mc:Ignorable="d"
+        Title="PatientView" Height="800" Width="1000">
+    <Grid Margin="0,0,0,-125">
+        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1116" Height="300">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Patient ID" Binding="{Binding Id}" Width="95"/>
+                <DataGridTextColumn Header=" Patient Name" Binding="{Binding Name}" Width="100" />
+                <DataGridTextColumn Header=" Patient Surame" Binding="{Binding Surname}" Width="100" />
+                <DataGridTextColumn Header=" Username" Binding="{Binding Username}" Width="100" />
+                <DataGridTextColumn Header=" DateOfBirth" Binding="{Binding DateOfBirth}" Width="100" />
+                <DataGridTextColumn Header=" Adress" Binding="{Binding Adress}" Width="100" />
+                <DataGridTextColumn Header=" Email" Binding="{Binding Email}" Width="100" />
+                <DataGridTextColumn Header=" Gender" Binding="{Binding Gender}" Width="100" />
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Delete"  Click="DeleteButton_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Update"  Click="UpdateButton_Click">Update</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox Name="Name" HorizontalAlignment="Center" Margin="0,372,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Surname" HorizontalAlignment="Center" Margin="0,425,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Adress" HorizontalAlignment="Center" Margin="0,610,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="254,421,0,0" VerticalAlignment="Top"/>
+        <Label Content="DateOfBirth" HorizontalAlignment="Left" Margin="236,472,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adress" HorizontalAlignment="Left" Margin="265,606,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DP1" SelectedDateChanged="DP1_SelectedDateChanged" HorizontalAlignment="Center" Margin="0,472,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="Client" HorizontalAlignment="Center" Margin="0,568,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Genders}"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="263,567,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,8.739" />
+        <Label Content="            ADD PATIENT" HorizontalAlignment="Center" Margin="0,328,0,0" VerticalAlignment="Top" Width="182" FontWeight="Bold"/>
+        <Button Content="OK" HorizontalAlignment="Center" Margin="0,647,0,0" VerticalAlignment="Top" Height="30" Width="62" Click="AddButton_Click" RenderTransformOrigin="0.578,1.289"/>
+        <TextBox Name="Email" HorizontalAlignment="Center" Margin="0,526,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.507,11.041"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="265,526,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="263,372,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

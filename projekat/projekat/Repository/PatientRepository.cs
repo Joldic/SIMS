@@ -39,7 +39,9 @@ namespace Repository
 
         public Patient AddPatient(Patient patient)
         {
-            throw new NotImplementedException();
+            patient.Id = ++_patientrMaxId;
+            AppendLineToFile(_path, ConvertPatientToCSVFormat(patient));
+            return patient;
         }
 
         public Patient GetPatient(uint id)
@@ -72,13 +74,73 @@ namespace Repository
 
         public Patient UpdatePatient(Patient patient)
         {
-            throw new NotImplementedException();
+            string temp_file = _projectPath + "\\Resources\\tempPAT.txt";
+            string _file = _projectPath + "\\Resources\\patient.txt";
+
+
+            using (var sr = new StreamReader(_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string lineToWrite = ConvertPatientToCSVFormat(patient);
+                    Patient tempApp = ConvertCSVFormatToPatient(line);
+                    if (patient.Id != tempApp.Id)
+                    {
+                        sw.WriteLine(line);
+                    }
+                    else
+                    {
+                        sw.WriteLine(lineToWrite);
+                    }
+                    //sw.WriteLine(lineToWrite);
+                }
+            }
+            File.Delete(_file);
+            File.Move(temp_file, _file);
+
+
+
+            return patient;
         }
+
+
+
 
         public Boolean RemovePatient(uint id)
         {
-            throw new NotImplementedException();
+            Boolean retVal = false;
+            IEnumerable<Patient> patients = GetAll();
+
+            patients = patients.Where(a => a.Id != id).ToList();
+
+            string temp_file = _projectPath + "\\Resources\\tempPat.txt";
+            string patient_file = _projectPath + "\\Resources\\patient.txt";
+
+            using (var sr = new StreamReader(patient_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Patient patient = ConvertCSVFormatToPatient(line);
+                    if (patient.Id != id)
+                    {
+                        retVal = true;
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Delete(patient_file);
+            File.Move(temp_file, patient_file);
+
+            return retVal;
         }
+
+
+
 
         public IEnumerable<Patient> GetAll()
         {

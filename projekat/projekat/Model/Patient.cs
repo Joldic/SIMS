@@ -22,7 +22,15 @@ namespace Model
         public string Username { get; set; }
 
         public System.Collections.Generic.List<Allergen> allergen;
-  
+        private string patientName1;
+        private string patientSurname;
+        private DateTime patientBirthDate;
+        private string patientAdress;
+        private object p;
+        private string patientEmail;
+        private Gender patientGender;
+        private string v;
+        private string patientName2;
 
         public Patient()
         {
@@ -45,6 +53,19 @@ namespace Model
             Gender = gender;
         }
 
+        public Patient(string name, string surname, DateTime dateOfBirth, string adress, string email, Gender gender, string password, string username)
+        {
+            Name = name;
+            Surname = surname;
+            this.DateOfBirth = dateOfBirth;
+            Adress = adress;
+            Email = email;
+            Gender = gender;
+            Password = password;
+            Username = username;
+
+        }
+
         public Patient(uint id, string name, string surname, DateTime dateOfBirth, string adress, string email, Gender gender, string password, string username)
         {
             Id = id;
@@ -59,12 +80,6 @@ namespace Model
          
         }
 
-
-
-
-
-
-   
-   
-   }
+        
+    }
 }

@@ -56,7 +56,7 @@ namespace projekat.View.ModelView
         public OperationsView()
         {
             InitializeComponent();
-            InitializeComponent();
+         
             var app = Application.Current as App;
             _appointmentController = app.AppointmentController;
             _roomController = app.RoomControler;
@@ -67,7 +67,7 @@ namespace projekat.View.ModelView
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAllOperations().ToList());
 
-            Patients.ItemsSource = People;
+            Patients.ItemsSource = People;      //combobox
 
             for (int i = 0; i < Data.Count(); i++)
             {

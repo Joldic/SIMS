@@ -1,0 +1,26 @@
+﻿<Window x:Class="projekat.View.Dialogs.UpdatePatient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.Dialogs"
+        mc:Ignorable="d"
+        Title="UpdatePatient" Height="450" Width="800">
+    <Grid>
+        <TextBox Name="Name" HorizontalAlignment="Left" Margin="323,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Surname" HorizontalAlignment="Left" Margin="323,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Adress" HorizontalAlignment="Left" Margin="323,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="263,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Margin="252,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="DateOfBirth" HorizontalAlignment="Left" Margin="236,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adress" HorizontalAlignment="Left" Margin="263,0,0,0" VerticalAlignment="Center"/>
+        <DatePicker x:Name="DP1" SelectedDateChanged="DP1_SelectedDateChanged" HorizontalAlignment="Left" Margin="323,159,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="Client" HorizontalAlignment="Left" Margin="323,283,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Genders}"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Margin="260,276,0,0" VerticalAlignment="Top" />
+        <Label Content="            UPDATE PATIENT" HorizontalAlignment="Left" Margin="284,34,0,0" VerticalAlignment="Top" Width="183" FontWeight="Bold"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="352,327,0,0" VerticalAlignment="Top" Height="30" Width="62" Click="OKButton_Click"/>
+        <TextBox Name="Email" HorizontalAlignment="Left" Margin="323,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="263,241,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -45,5 +45,16 @@ namespace projekat.View.Secretary
                 Owner = Application.Current.MainWindow
             }.ShowDialog();
         }
+
+    
+
+        private void Patients_Click(object sender, RoutedEventArgs e)
+        {
+            new PatientView()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+
+        }
     }
 }
