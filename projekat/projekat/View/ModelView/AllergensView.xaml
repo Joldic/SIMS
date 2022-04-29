@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AllergensView" Height="450" Width="800">
     <Grid>
-        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Left" VerticalAlignment="Top" Width="800" Height="300">
+        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Height="217">
             <!-- Font Color / Style of Column Headings-->
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}" >
@@ -42,5 +42,16 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <ComboBox Name="Names" HorizontalAlignment="Left" Margin="321,281,0,0" VerticalAlignment="Top" Width="120"  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Content="Allergen Name" HorizontalAlignment="Left" Margin="216,279,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,0.451"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="358,323,0,0" VerticalAlignment="Top" Height="25" Width="46" RenderTransformOrigin="0.374,-0.689" Click="AddButton_Click" />
+        <Label Content="ADD ALLERGENS" HorizontalAlignment="Left" Margin="328,238,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -20,6 +20,7 @@ namespace Repository
         private readonly string _delimeter;
         private readonly string _dateTimeFormat;
         private uint _allergenMaxId;
+        private uint _allergenDTOMaxId;
         private static string _projectPath = System.Reflection.Assembly.GetExecutingAssembly().Location
         .Split(new string[] { "bin" }, StringSplitOptions.None)[0];
 
@@ -33,6 +34,7 @@ namespace Repository
             _delimeter = delimeter;
             _dateTimeFormat = dateTimeFormat;
             _allergenMaxId = GetMaxId(GetAll());
+            _allergenDTOMaxId = GetMaxIdAllergenPatient(GetPatientsAllergens());
         }
 
 
@@ -42,6 +44,10 @@ namespace Repository
             return allergens.Count() == 0 ? 0 : allergens.Max(allergen => allergen.Id);
         }
 
+        private uint GetMaxIdAllergenPatient(IEnumerable<PatientAllergenDTO> dto)
+        {
+            return dto.Count() == 0 ? 0 : dto.Max(dtos => dtos.Id);
+        }
 
 
         public IEnumerable<Allergen> GetAll()
@@ -61,8 +67,17 @@ namespace Repository
         }
 
 
-      
-      public Model.Allergen GetAllergen(uint id)
+        public PatientAllergenDTO AddPatientsAllergen(PatientAllergenDTO dto)
+        {
+            dto.Id = ++_allergenDTOMaxId;
+            string pathDto = _projectPath + "\\Resources\\PatientAllergen.txt";
+            AppendLineToFile(pathDto, ConvertPatientAllergenToCSVFormat(dto));
+            return dto;
+        }
+
+
+
+        public Model.Allergen GetAllergen(uint id)
       {
             try
             {
@@ -185,14 +200,6 @@ namespace Repository
 
             return retval;
         }
-
-
-
-
-
-
-
-
 
 
 

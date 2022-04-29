@@ -54,5 +54,10 @@ namespace Service
         {
             return _repo.DeletePatiensAllergen(id);
         }
+
+        public PatientAllergenDTO AddPatientsAllergen(PatientAllergenDTO dto)
+        {
+            return _repo.AddPatientsAllergen(dto);
+        }
     }
 }

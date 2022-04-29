@@ -32,5 +32,12 @@ namespace Model
             AllergenId = allergenId;
             AllergenName = allergenName;
         }
+
+        public PatientAllergenDTO(uint patientId, uint allergenId, string allergenName)
+        {
+            PatientId = patientId;
+            AllergenId = allergenId;
+            AllergenName = allergenName;
+        }
     }
 }

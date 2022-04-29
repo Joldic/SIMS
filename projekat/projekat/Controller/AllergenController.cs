@@ -54,6 +54,11 @@ namespace Controller
             return _service.DeletePatiensAllergen(id);
         }
 
+        public PatientAllergenDTO AddPatientsAllergen(PatientAllergenDTO dto)
+        {
+            return _service.AddPatientsAllergen(dto);
+        }
+
 
    }
 }

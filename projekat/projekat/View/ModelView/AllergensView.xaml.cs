@@ -23,12 +23,16 @@ namespace projekat.View.ModelView
     public partial class AllergensView : Window
     {
         private Patient patientTemp;
+        private uint IdPat;
         private AllergenController _allergenController;
+
+      
 
 
 
         public ObservableCollection<PatientAllergenDTO> PatientAllergens { get; set; }
 
+        public ObservableCollection<Allergen> NamesOfAllergens { get; set; }
 
 
 
@@ -44,6 +48,10 @@ namespace projekat.View.ModelView
 
             patientTemp = patient;
 
+            IdPat = patientTemp.Id; //*****************
+
+            
+
             for(int i=0; i< PatientAllergens.Count; i++)
             {
                 if(patientTemp.Id == PatientAllergens[i].PatientId)
@@ -52,6 +60,9 @@ namespace projekat.View.ModelView
                 }
             }
 
+
+            NamesOfAllergens = new ObservableCollection<Allergen>(_allergenController.GetAll().ToList());
+            Names.ItemsSource = NamesOfAllergens;
         }
 
 
@@ -77,6 +88,21 @@ namespace projekat.View.ModelView
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
            
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Allergen allergenItem = Names.SelectedItem as Allergen;
+            string allergenName = allergenItem.Name;
+            uint allergenId = allergenItem.Id;
+
+       
+
+            PatientAllergenDTO pa = new PatientAllergenDTO(IdPat, allergenId, allergenName);
+           
+            PatientAllergenDTO x = _allergenController.AddPatientsAllergen(pa);
+
+            DataGridXAML.Items.Add(x);
         }
     }
 }

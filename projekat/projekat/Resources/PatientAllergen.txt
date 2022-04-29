@@ -8,3 +8,5 @@
 8;8;2;Ambrozija
 9;8;3;Prasina
 10;8;4;Grinje
+11;5;1;Polen
+12;5;4;Grinje
