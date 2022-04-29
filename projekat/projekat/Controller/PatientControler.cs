@@ -46,7 +46,11 @@ namespace Controller
       {
             return _service.GetAll();
       }
-      
-   
-   }
+
+        public Patient GetPatient(uint id)
+        {
+            return _service.GetPatient(id);
+        }
+
+    }
 }

@@ -48,5 +48,11 @@ namespace Service
             return _repo.GetAll();
         }
 
+        public Patient GetPatient(uint id)
+        {
+            return _repo.GetPatient(id);
+        }
+
+
     }
 }

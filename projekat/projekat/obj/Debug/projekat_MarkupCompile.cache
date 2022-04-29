@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\
+C:\Users\User\Desktop\projekat\SIMS\projekat\projekat\obj\Debug\
 projekat
 none
 false
 DEBUG;TRACE
-C:\Users\3500x\Desktop\SIMS\projekat\projekat\App.xaml
-151278088553
+C:\Users\User\Desktop\projekat\SIMS\projekat\projekat\App.xaml
+171410735788
 
-681501722734
-18283789420
-View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\MainWindow.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
+70-1806738377
+18-899891248
+View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\PatientLogin.xaml;View\MainWindow.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\RoomView.xaml;View\Patient\PatientHomepage.xaml;View\Secretary\SecretaryHomepage.xaml;
 
-False
+True
 
