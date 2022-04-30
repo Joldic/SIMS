@@ -77,6 +77,7 @@ namespace projekat.View.ModelView
                 Data[i].RoomName = room.Name;
                 Data[i].DoctorName = doctor.Name;
                 Data[i].DoctorSurname = doctor.Surname;
+                Data[i].PatientUsername = patient.Username;
                 Data[i].PatientName = patient.Name;
                 Data[i].PatientSurname = patient.Surname;
 

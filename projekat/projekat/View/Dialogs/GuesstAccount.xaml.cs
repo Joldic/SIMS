@@ -42,8 +42,17 @@ namespace projekat.View.Dialogs
             string Email = "someone@gmail.com";
             Gender G = Gender.m;
 
-            Patient p = new Patient(Name, Surname, date_of_birth, Adress, Email, G, Password, Username);
-            _patientController.CreateNewPatient(p);
+            if(_patientController.FindPatientByUsername(Username) == null)
+            {
+                Patient p = new Patient(Name, Surname, date_of_birth, Adress, Email, G, Password, Username);
+                _patientController.CreateNewPatient(p);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Username " + Username + " already exists!");
+            }
+
+            
 
 
 

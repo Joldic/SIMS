@@ -27,6 +27,7 @@
                 <DataGridTextColumn Header="Doctor Name" Binding="{Binding DoctorName}" Width="100"/>
                 <DataGridTextColumn Header="Doctor Surname" Binding="{Binding DoctorSurname}" Width="100"/>
                 <!-- <DataGridTextColumn Header="Patient ID" Binding="{Binding IdPatient}" Width="70" /> -->
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientUsername}" Width="100" />
                 <DataGridTextColumn Header="Patient Name" Binding="{Binding PatientName}" Width="100" />
                 <DataGridTextColumn Header="Patient Surame" Binding="{Binding PatientSurname}" Width="100" />
                 <!-- <DataGridTextColumn Header="Room ID" Binding="{Binding IdRoom}" Width="60"/> -->
