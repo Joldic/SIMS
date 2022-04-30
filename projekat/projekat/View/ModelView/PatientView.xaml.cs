@@ -127,7 +127,13 @@ namespace projekat.View.ModelView
 
             _patientGender = FindGender(Client.SelectedItem.ToString());
 
-            Patient p = new Patient(_patientName, _patientSurname, _patientBirthDate, _patientAdress,  _patientEmail, _patientGender, "123", _patientName );
+            string username = _patientName;
+            Random rnd = new Random();
+            username += rnd.Next(0, 9).ToString();
+            username += rnd.Next(0, 9).ToString();
+            username += rnd.Next(0, 9).ToString();
+
+            Patient p = new Patient(_patientName, _patientSurname, _patientBirthDate, _patientAdress,  _patientEmail, _patientGender, "123", username);
             Patient x = _patientController.CreateNewPatient(p);
 
             DataGridXAML.Items.Add(x);
