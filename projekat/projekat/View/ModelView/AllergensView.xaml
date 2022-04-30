@@ -33,13 +33,6 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Name="Update"  Click="UpdateButton_Click">Update</Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <ComboBox Name="Names" HorizontalAlignment="Left" Margin="321,281,0,0" VerticalAlignment="Top" Width="120"  >

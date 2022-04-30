@@ -100,6 +100,9 @@
     <Compile Include="View\Dialogs\EquipmentRelocation.xaml.cs">
       <DependentUpon>EquipmentRelocation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\GuesstAccount.xaml.cs">
+      <DependentUpon>GuesstAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\ManagerLogin.xaml.cs">
       <DependentUpon>ManagerLogin.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialogs\EquipmentRelocation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\GuesstAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -131,3 +131,5 @@ C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdatePatie
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdatePatient.baml
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\AllergensView.g.cs
 C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\AllergensView.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\GuesstAccount.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\GuesstAccount.baml
