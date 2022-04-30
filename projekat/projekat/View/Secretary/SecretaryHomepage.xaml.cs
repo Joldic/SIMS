@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using projekat.View.Dialogs;
 using projekat.View.ModelView;
 
 namespace projekat.View.Secretary
@@ -55,6 +56,14 @@ namespace projekat.View.Secretary
                 Owner = Application.Current.MainWindow
             }.ShowDialog();
 
+        }
+
+        private void Guesst_Click(object sender, RoutedEventArgs e)
+        {
+            new GuesstAccount()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
         }
     }
 }

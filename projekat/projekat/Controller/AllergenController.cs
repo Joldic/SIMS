@@ -12,27 +12,53 @@ namespace Controller
 {
    public class AllergenController
    {
-      public Model.Allergen CreateNewAllergen(Model.Allergen allergen)
-      {
-         throw new NotImplementedException();
-      }
+        private readonly AllergenService _service;
+        public AllergenController(AllergenService service)
+        {
+            _service = service;
+        }
+        public Model.Allergen CreateNewAllergen(Model.Allergen allergen)
+        {
+            return _service.CreateNewAllergen(allergen);
+        }
       
-      public Model.Allergen GetAllergen(uint id)
-      {
-         throw new NotImplementedException();
-      }
+        public Model.Allergen GetAllergen(uint id)
+        {
+            return _service.GetAllergen(id);
+        }
       
-      public Model.Allergen UpdateAllergen(Model.Allergen allergen)
-      {
-         throw new NotImplementedException();
-      }
+        public Model.Allergen UpdateAllergen(Model.Allergen allergen)
+        {
+            return _service.UpdateAllergen(allergen);
+        }
       
-      public Boolean DeleteAllergen(uint id)
-      {
-         throw new NotImplementedException();
-      }
+        public Boolean DeleteAllergen(uint id)
+        {
+            return _service.DeleteAllergen(id);  
+        }
       
-      public AllergenService allergenService;
-   
+
+        public IEnumerable<Allergen> GetAll()
+        {
+            return _service.GetAll();
+        }
+      
+
+        public IEnumerable<PatientAllergenDTO> GetPatientsAllergens()
+        {
+            return _service.GetPatientsAllergens();
+        }
+
+        public  Boolean DeletePatiensAllergen(uint id)
+        {
+            return _service.DeletePatiensAllergen(id);
+        }
+
+        public PatientAllergenDTO AddPatientsAllergen(PatientAllergenDTO dto)
+        {
+            return _service.AddPatientsAllergen(dto);
+        }
+
+
    }
 }

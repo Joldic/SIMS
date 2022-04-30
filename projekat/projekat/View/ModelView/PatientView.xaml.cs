@@ -145,5 +145,18 @@ namespace projekat.View.ModelView
                 return Gender.f;
             }
         }
+
+        private void AllergensButton_Click(object sender, RoutedEventArgs e)
+        {
+            Patient patient = DataGridXAML.SelectedItem as Patient;
+            Patient tempPatient = _patientController.ReadPatient(patient.Id);
+
+            new AllergensView(tempPatient)
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+
+            this.Close();
+        }
     }
 }

@@ -73,6 +73,7 @@
     <Compile Include="Controller\ManagerController.cs" />
     <Compile Include="Controller\SecretaryController.cs" />
     <Compile Include="Exception\NotFoundException.cs" />
+    <Compile Include="Model\PatientAllergenDTO.cs" />
     <Compile Include="Model\RoomEquipmentDTO.cs" />
     <Compile Include="Repository\AllergenRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
@@ -99,6 +100,9 @@
     <Compile Include="View\Dialogs\EquipmentRelocation.xaml.cs">
       <DependentUpon>EquipmentRelocation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\GuesstAccount.xaml.cs">
+      <DependentUpon>GuesstAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\ManagerLogin.xaml.cs">
       <DependentUpon>ManagerLogin.xaml</DependentUpon>
     </Compile>
@@ -116,6 +120,9 @@
     </Compile>
     <Compile Include="View\Manager\ManagerHomepage.xaml.cs">
       <DependentUpon>ManagerHomepage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\AllergensView.xaml.cs">
+      <DependentUpon>AllergensView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ModelView\AppointmentDataView.xaml.cs">
       <DependentUpon>AppointmentDataView.xaml</DependentUpon>
@@ -143,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialogs\EquipmentRelocation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\GuesstAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +213,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Manager\ManagerHomepage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\AllergensView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -305,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\operations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\allergen.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PatientAllergen.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

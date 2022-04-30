@@ -1,0 +1,50 @@
+﻿<Window x:Class="projekat.View.ModelView.AllergensView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.ModelView"
+        mc:Ignorable="d"
+        Title="AllergensView" Height="450" Width="800">
+    <Grid>
+        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Height="217">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Patient ID" Binding="{Binding PatientId}" Width="100" />
+                <DataGridTextColumn Header="Allergen ID" Binding="{Binding AllergenId}" Width="95"/>
+                <DataGridTextColumn Header=" Allergen Name" Binding="{Binding AllergenName}" Width="100" />
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Delete"  Click="DeleteButton_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Name="Names" HorizontalAlignment="Left" Margin="321,281,0,0" VerticalAlignment="Top" Width="120"  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Content="Allergen Name" HorizontalAlignment="Left" Margin="216,279,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,0.451"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="358,323,0,0" VerticalAlignment="Top" Height="25" Width="46" RenderTransformOrigin="0.374,-0.689" Click="AddButton_Click" />
+        <Label Content="ADD ALLERGENS" HorizontalAlignment="Left" Margin="328,238,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+    </Grid>
+</Window>

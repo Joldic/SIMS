@@ -70,6 +70,11 @@ namespace projekat.View.Dialogs
             try
             {
                 Model.Manager manager = _managerController.FindManagerByUsername(Username);
+                if (manager == null)
+                {
+                    MessageBoxResult result = MessageBox.Show("Username " + Username + " doesn't exist");
+                    return;
+                }
                 if (manager.Password != Password)
                 {
                     MessageBoxResult result;

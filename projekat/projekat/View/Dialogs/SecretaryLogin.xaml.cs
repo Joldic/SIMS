@@ -80,6 +80,13 @@ namespace projekat.View.Dialogs
             try
             {
                 Model.Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
+
+                if(secretary == null)
+                {
+                    MessageBoxResult result = MessageBox.Show("Username " + Username + " doesn't exist");
+                    return;
+                }
+
                 //Secretary secretary = _secretaryController.GetSecretary(1);
                 if (secretary.Password != Password)
                 {

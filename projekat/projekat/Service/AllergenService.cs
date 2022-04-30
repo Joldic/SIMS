@@ -12,29 +12,52 @@ using System;
 
 namespace Service
 {
-   public class AllergenService
-   {
-      public Model.Allergen CreateNewAllergen(Model.Allergen allergen)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Model.Allergen GetAllergen(uint id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Model.Allergen UpdateAllergen(Model.Allergen allergen)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Boolean DeleteAllergen(uint id)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public AllergenRepository allergenRepository;
-   
-   }
+    public class AllergenService
+    {
+        private readonly AllergenRepository _repo;
+        public AllergenService(AllergenRepository repository)
+        {
+            _repo = repository;
+        }
+        public Model.Allergen CreateNewAllergen(Model.Allergen allergen)
+        {
+            return _repo.CreateNewAllergen(allergen);
+        }
+
+        public Model.Allergen GetAllergen(uint id)
+        {
+            return _repo.GetAllergen(id);
+        }
+
+        public Model.Allergen UpdateAllergen(Model.Allergen allergen)
+        {
+            return _repo.UpdateAllergen(allergen);
+        }
+
+        public Boolean DeleteAllergen(uint id)
+        {
+            return _repo.DeleteAllergen(id);
+        }
+
+        public IEnumerable<Allergen> GetAll()
+        {
+            return _repo.GetAll();
+        }
+
+
+        public IEnumerable<PatientAllergenDTO> GetPatientsAllergens()
+        {
+            return _repo.GetPatientsAllergens();
+        }
+
+        public Boolean DeletePatiensAllergen(uint id)
+        {
+            return _repo.DeletePatiensAllergen(id);
+        }
+
+        public PatientAllergenDTO AddPatientsAllergen(PatientAllergenDTO dto)
+        {
+            return _repo.AddPatientsAllergen(dto);
+        }
+    }
 }
