@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projekat.View.ModelView"
         mc:Ignorable="d"
-        Title="RoomView" Height="450" Width="800">
+        Title="RoomView" Height="650" Width="800">
     <Grid>
         <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="780" Height="300">
             <!-- Font Color / Style of Column Headings-->
@@ -24,7 +24,7 @@
                 <DataGridTextColumn Header="Room Name" Binding="{Binding Name}" Width="130"/>
                 <DataGridTextColumn Header="Room Type" Binding="{Binding Type}" Width="130"/>
                 <DataGridTextColumn Header="Square Footage" Binding="{Binding SquareFootage}" Width="130"/>
-                
+
 
 
                 <DataGridTemplateColumn>
@@ -35,9 +35,26 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Update"  Click="UpdateButton_Click">Update</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
             </DataGrid.Columns>
         </DataGrid>
-        
-        
+        <Label Content="Add room" HorizontalAlignment="Left" Margin="362,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.374,-0.642" FontWeight="Bold"/>
+        <TextBox Name="Room_name" HorizontalAlignment="Center" Margin="0,360,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name ="Client" HorizontalAlignment="Center" Margin="0,395,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding RoomTypes}"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="264,352,0,0" VerticalAlignment="Top" Width="43"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="264,393,0,0" VerticalAlignment="Top" Width="43"/>
+        <TextBox x:Name="Square_footage" HorizontalAlignment="Center" Margin="0,449,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Square footage" HorizontalAlignment="Left" Margin="208,445,0,0" VerticalAlignment="Top" Width="99"/>
+        <Button Content="Add " HorizontalAlignment="Left" Margin="376,493,0,0" VerticalAlignment="Top" Width="53" Height="33" Click="AddButton_Click"/>
+
+
     </Grid>
 </Window>

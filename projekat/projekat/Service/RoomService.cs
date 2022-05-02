@@ -58,5 +58,10 @@ namespace Service
             return _repo.SaveChangesToFile(r);
         }
 
+        public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
+        {
+            return _repo.AddRenovation(r);
+        }
+
     }
 }

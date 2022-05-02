@@ -75,6 +75,7 @@
     <Compile Include="Exception\NotFoundException.cs" />
     <Compile Include="Model\PatientAllergenDTO.cs" />
     <Compile Include="Model\RoomEquipmentDTO.cs" />
+    <Compile Include="Model\RoomRenovationDTO.cs" />
     <Compile Include="Repository\AllergenRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
@@ -117,6 +118,9 @@
     </Compile>
     <Compile Include="View\Dialogs\UpdatePatient.xaml.cs">
       <DependentUpon>UpdatePatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\UpdateRoomDialog.xaml.cs">
+      <DependentUpon>UpdateRoomDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\ManagerHomepage.xaml.cs">
       <DependentUpon>ManagerHomepage.xaml</DependentUpon>
@@ -182,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialogs\UpdatePatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\UpdateRoomDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -326,6 +334,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\PatientAllergen.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\renovation.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
