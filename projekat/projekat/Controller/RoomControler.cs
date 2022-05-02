@@ -55,6 +55,11 @@ namespace Controller
         {
             return _service.SaveChangesToFile(r);
         }
+
+        public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
+        {
+            return _service.AddRenovation(r);
+        }
    
    }
 }

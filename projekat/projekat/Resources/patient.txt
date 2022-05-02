@@ -1,13 +1,13 @@
 1;perica;123;pera;peric;bulevar 30;pera@gmail.com;M;12.12.2020.
 2;nikola;123;nikola;nikolic;bulevar 100;nikola@gmail.com;M;12.12.2020.
-3;milica;123;arsenije;lalic;Mileticeva 5;arsa@gmail.com;m;4/29/2022 12:00:00 AM
+3;milica;123;arsenije;lalic;Mileticeva 5;arsa@gmail.com;m;29/4/2022 12:00:00 AM
 4;sladjana;123;sladjana;sladjanic;sarajevska 14;sladja@gmail.com;F;4.9.1969.
-5;adrijana;123;adrijana;adric;Sestara Ninkovic 9;ada@gmail.com;f;3/20/2022 12:00:00 AM
+5;adrijana;123;adrijana;adric;Sestara Ninkovic 9;ada@gmail.com;f;20/3/2022 12:00:00 AM
 6;ivan;123;ivan;ivic;Gagarinova 17;ivan@gmail.com;m;10/11/2021 12:00:00 AM
 8;isidora;123;isidora;isidoric;Beogradska 5;isidora@gmail.com;f;4/3/2022 12:00:00 AM
-9;Dragan;123;Dragan;Dragic;NS Sajma 8b;dragan@gmail.com;m;12/21/2020 12:00:00 AM
-10;Aleksa;123;Aleksa;Aleksic;Sestara Bikovic 13;aca@gmail.com;m;7/27/2020 12:00:00 AM
+9;Dragan;123;Dragan;Dragic;NS Sajma 8b;dragan@gmail.com;m;21/12/2020 12:00:00 AM
+10;Aleksa;123;Aleksa;Aleksic;Sestara Bikovic 13;aca@gmail.com;m;27/7/2020 12:00:00 AM
 11;Tea;123;Tea;Dzehvyyyy;Micurinova 45;dz@gmail.com;f;4/4/2022 12:00:00 AM
-12;sanjica;123456;N;N;Xxxx;someone@gmail.com;m;4/30/2022 2:57:38 PM
-13;iva;123123;N;N;Xxxx;someone@gmail.com;m;4/30/2022 3:13:40 PM
-14;test577;123;test;testic;fdsfadwsfdsa;test@gmail.com;m;4/30/2022 12:00:00 AM
+12;sanjica;123456;N;N;Xxxx;someone@gmail.com;m;30/4/2022 2:57:38 PM
+13;iva;123123;N;N;Xxxx;someone@gmail.com;m;30/4/2022 3:13:40 PM
+14;test577;123;test;testic;fdsfadwsfdsa;test@gmail.com;m;30/4/2022 12:00:00 AM

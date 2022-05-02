@@ -20,6 +20,7 @@ namespace Repository
         private readonly string _delimeter;
         private readonly string _dateTimeFormat;
         private uint _roomMaxId;
+        private uint _renovationMaxId;
         private static string _projectPath = System.Reflection.Assembly.GetExecutingAssembly().Location
         .Split(new string[] { "bin" }, StringSplitOptions.None)[0];
 
@@ -32,9 +33,16 @@ namespace Repository
             _delimeter = delimeter;
             _dateTimeFormat = dateTimeFormat;
             _roomMaxId = GetMaxId(GetAll());
+            _renovationMaxId = GetMaxRenovationId(GetAllRenovation());
+
         }
 
         private uint GetMaxId(IEnumerable<Room> rooms)
+        {
+            return rooms.Count() == 0 ? 0 : rooms.Max(room => room.Id);
+        }
+
+        private uint GetMaxRenovationId(IEnumerable<RoomRenovationDTO> rooms)
         {
             return rooms.Count() == 0 ? 0 : rooms.Max(room => room.Id);
         }
@@ -58,25 +66,97 @@ namespace Repository
       
       public Room UpdateRoom(Room room)
       {
-         throw new NotImplementedException();
-      }
+            string temp_file = _projectPath + "\\Resources\\tempROO.txt";
+            string _file = _projectPath + "\\Resources\\room.txt";
+
+
+            using (var sr = new StreamReader(_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string lineToWrite = ConvertRoomToCSVFormat(room);
+                    Room tempApp = ConvertCSVFormatToRoom(line);
+                    if (room.Id != tempApp.Id)
+                    {
+                        sw.WriteLine(line);
+                    }
+                    else
+                    {
+                        sw.WriteLine(lineToWrite);
+                    }
+                    //sw.WriteLine(lineToWrite);
+                }
+            }
+            File.Delete(_file);
+            File.Move(temp_file, _file);
+
+
+
+            return room;
+        }
       
       public Boolean RemoveRoom(uint id)
       {
-         throw new NotImplementedException();
-      }
+            Boolean retVal = false;
+           
+
+            string temp_file = _projectPath + "\\Resources\\tempRD.txt";
+            string room_file = _projectPath + "\\Resources\\room.txt";
+
+            using (var sr = new StreamReader(room_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Room room = ConvertCSVFormatToRoom(line);
+                    if (room.Id != id)
+                    {
+                        retVal = true;
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Delete(room_file);
+            File.Move(temp_file, room_file);
+
+            return retVal;
+        }
       
       public Room AddRoom(Room room)
       {
-         throw new NotImplementedException();
+            room.Id = ++_roomMaxId;
+            AppendLineToFile(_path, ConvertRoomToCSVFormat(room));
+            return room;
       }
-      
-      public IEnumerable<Room> GetAll()
+
+        public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
+        {
+            r.Id = ++_renovationMaxId;
+            string path_to_file = _projectPath + "\\Resources\\renovation.txt";
+            AppendLineToFile(path_to_file, ConvertRoomRenovationToCSVFormat(r));
+            return r;
+        }
+
+
+
+        public IEnumerable<Room> GetAll()
       {
             return File.ReadAllLines(_path)
                   .Select(ConvertCSVFormatToRoom)
                   .ToList();
       }
+
+        public IEnumerable<RoomRenovationDTO> GetAllRenovation()
+        {
+            string path_to_file = _projectPath + "\\Resources\\renovation.txt";
+            return File.ReadAllLines(path_to_file)
+                  .Select(ConvertCSVFormatToRoomRenovation)
+                  .ToList();
+        }
 
         public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
         {
@@ -165,6 +245,24 @@ namespace Repository
             );
         }
 
+        private RoomRenovationDTO ConvertCSVFormatToRoomRenovation(string roomCSVFormat)
+        {
+            Room room = new Room();
+            string[] tokens = roomCSVFormat.Split(_delimeter.ToCharArray());
+
+            uint Id = uint.Parse(tokens[0]);
+            uint RoomId = uint.Parse(tokens[1]);
+         
+
+
+            return new RoomRenovationDTO(
+                Id,
+                RoomId,
+                DateTime.Parse(tokens[2]),
+                DateTime.Parse(tokens[3])
+            );
+        }
+
         private RoomEquipmentDTO ConvertCSVFormatToRoomEquipment(string roomEquipmentCSVFormat)
         {
             RoomEquipmentDTO roomEquipment = new RoomEquipmentDTO();
@@ -196,6 +294,16 @@ namespace Repository
                 room.Type,
                 room.SquareFootage,
                 room.Availability);
+
+        }
+
+        private string ConvertRoomRenovationToCSVFormat(RoomRenovationDTO room)
+        {
+            return string.Join(_delimeter,
+                room.Id,
+                room.IdRoom,
+                room.Start,
+                room.End);
 
         }
 
