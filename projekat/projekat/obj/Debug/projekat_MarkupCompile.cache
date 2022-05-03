@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\
 projekat
 none
 false
 DEBUG;TRACE
-C:\Users\3500x\Desktop\SIMS\projekat\projekat\App.xaml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\App.xaml
 211716330861
 
 76-1907739847
-18283789420
+18-1820575708
 View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\GuesstAccount.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\Dialogs\UpdateRoomDialog.xaml;View\MainWindow.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AllergensView.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
 
 False

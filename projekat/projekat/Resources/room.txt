@@ -2,5 +2,4 @@
 2;soba 300;ordinaryRoom;50;true
 3;soba 100A;relaxationRoom;78;true
 4;soba 205A;operatingRoom;80;true
-5;soba 310;ordinaryRoom;34;true
 6;update;relaxationRoom;68;True
