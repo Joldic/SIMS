@@ -100,7 +100,38 @@ namespace Repository
       public Boolean RemoveRoom(uint id)
       {
             Boolean retVal = false;
+            string appointment_file = _projectPath + "\\Resources\\appointment.txt";
+            AppointmentRepository _appointmentRepo = new AppointmentRepository(appointment_file, ";", "dd/MM/yyyy HH:mm:ss tt") ;
            
+            IEnumerable<Appointment> appointments = _appointmentRepo.GetAll();
+
+            foreach (Appointment appointment in appointments)
+            {
+                if(appointment.IdRoom == id)
+                {
+                    return retVal;
+                }
+            }
+
+            IEnumerable<RoomEquipmentDTO> dtos = GetAllRoomAndEquipment();
+            
+            foreach (RoomEquipmentDTO dto in dtos)
+            {
+                if(dto.RoomId == id)
+                {
+                    return retVal;
+                }
+            }
+
+            IEnumerable<RoomRenovationDTO> renovations = GetAllRenovation();
+            foreach (RoomRenovationDTO r in renovations)
+            {
+                if(r.IdRoom == id)
+                {
+                    return retVal;
+                }
+            }
+
 
             string temp_file = _projectPath + "\\Resources\\tempRD.txt";
             string room_file = _projectPath + "\\Resources\\room.txt";

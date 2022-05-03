@@ -119,15 +119,21 @@ namespace projekat.View.ModelView
         {
             Room room = DataGridXAML.SelectedItem as Room;
 
-            for(int i=0; i<Data.Count(); i++)
+            if (_roomController.DeleteRoom(room.Id))
             {
-                if(Data[i].Id == room.Id)
+                for (int i = 0; i < Data.Count(); i++)
                 {
-                    DataGridXAML.Items.Remove(Data[i]);
+                    if (Data[i].Id == room.Id)
+                    {
+                        DataGridXAML.Items.Remove(Data[i]);
+                    }
                 }
             }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Can't delete this room!");
+            }
 
-            _roomController.DeleteRoom(room.Id);
 
         }
 
