@@ -147,3 +147,5 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\Allergens
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\PatientView.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateRoomDialog.g.cs
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateRoomDialog.baml
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateRoomDialog.g.cs
+C:\Users\3500x\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateRoomDialog.baml

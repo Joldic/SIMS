@@ -26,11 +26,16 @@ namespace projekat.View.Dialogs
         private string _username;
         private string _password;
         private ManagerController _managerController;
+        public uint _IdLoggedIn;
 
         public ManagerLogin()
         {
             InitializeComponent();
             DataContext = this;
+
+
+            _IdLoggedIn = 555;
+
 
             var app = Application.Current as App;
             _managerController = app.ManagerController;
@@ -83,8 +88,9 @@ namespace projekat.View.Dialogs
                 }
                 else
                 {
+                    _IdLoggedIn = manager.Id;
 
-                    new ManagerHomepage()
+                    new ManagerHomepage(_IdLoggedIn)
                     {
                         Owner = Application.Current.MainWindow
                     }

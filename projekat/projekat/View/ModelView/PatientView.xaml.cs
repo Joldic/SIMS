@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -73,6 +74,10 @@ namespace projekat.View.ModelView
         {
 
             d = DP1.Text;
+            string[] words = d.Split('/');
+            string new_date = "";
+            new_date += words[1] + "/" + words[0] + "/" + words[2];
+            //MessageBoxResult result = MessageBox.Show(new_date);
             _patientBirthDate = DateTime.Parse(d);
 
         }

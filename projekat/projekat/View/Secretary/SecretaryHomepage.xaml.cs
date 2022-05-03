@@ -21,8 +21,12 @@ namespace projekat.View.Secretary
     /// </summary>
     public partial class SecretaryHomepage : Window
     {
-        public SecretaryHomepage()
+        public uint _id_logged_in;
+        public SecretaryHomepage(uint id)
         {
+
+            _id_logged_in = id;
+
             InitializeComponent();
             DataContext = this;
         }
@@ -64,6 +68,16 @@ namespace projekat.View.Secretary
             {
                 Owner = Application.Current.MainWindow
             }.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            _id_logged_in = 555;
+            new MainWindow()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -162,7 +162,7 @@ namespace Repository
             string Adress = tokens[5];
             string Email = tokens[6];
             Enum.TryParse(tokens[7], out Gender gender);
-            DateTime.Parse(tokens[8]);
+           // DateTime.Parse(tokens[8]);
 
             return new Patient(
                 Id,

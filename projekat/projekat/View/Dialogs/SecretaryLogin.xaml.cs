@@ -25,9 +25,14 @@ namespace projekat.View.Dialogs
     /// <summary>
     /// Interaction logic for SecretaryLogin.xaml
     /// </summary>
+    ///
+    
     public partial class SecretaryLogin : Window
     {
         private string _username;
+
+        public uint _IdLoggenIn;
+
         private string _password;
         private SecretaryController _secretaryController;
         public SecretaryLogin()
@@ -35,7 +40,7 @@ namespace projekat.View.Dialogs
             InitializeComponent();
             DataContext = this;
 
-
+            _IdLoggenIn = 555;
 
 
 
@@ -96,8 +101,8 @@ namespace projekat.View.Dialogs
                 }
                 else
                 {
-                    
-                    new SecretaryHomepage()
+                    _IdLoggenIn = secretary.Id;
+                    new SecretaryHomepage(_IdLoggenIn)
                     {
                         Owner = Application.Current.MainWindow
                     }

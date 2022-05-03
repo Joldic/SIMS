@@ -21,8 +21,13 @@ namespace projekat.View.Manager
     /// </summary>
     public partial class ManagerHomepage : Window
     {
-        public ManagerHomepage()
+        private uint _id_logged_in;
+        public ManagerHomepage(uint id)
         {
+
+            _id_logged_in = id;
+
+
             InitializeComponent();
             DataContext = this;
         }
@@ -60,6 +65,14 @@ namespace projekat.View.Manager
             }.ShowDialog();
         }
 
-
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            _id_logged_in = 555;
+            new MainWindow()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
+        }
     }
 }
