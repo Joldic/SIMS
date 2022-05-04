@@ -28,7 +28,7 @@ namespace projekat.View.ModelView
     /// <summary>
     /// Interaction logic for AppointmentsView.xaml
     /// </summary>
-    public partial class AppointmentsView : Window
+    public partial class AppViewByDoc : Window
     {
         private AppointmentController _appointmentController;
         private RoomControler _roomController;
@@ -54,7 +54,7 @@ namespace projekat.View.ModelView
 
         public ObservableCollection<Doctor> Doc { get; set; }
 
-        public AppointmentsView()
+        public AppViewByDoc()
         {
             InitializeComponent();
             var app = Application.Current as App;
@@ -85,8 +85,6 @@ namespace projekat.View.ModelView
         
             }
 
-
-            // DataContext = this.Data;
             Doc = new ObservableCollection<Doctor>(_doctorController.GetAll());
 
             Doctors.ItemsSource = Doc;
@@ -238,8 +236,6 @@ namespace projekat.View.ModelView
 
         }
 
-     
-
         private void DP1_SelectedDateChanged(object sender, RoutedEventArgs e)
         {
             ComboBoxItem cboitem = cboTP.SelectedItem as ComboBoxItem;
@@ -254,10 +250,6 @@ namespace projekat.View.ModelView
                 result = MessageBox.Show(dt.ToString());
             }
         }
-
-   
-
-
 
         private void OK_ButtonClick(object sender, RoutedEventArgs e)
         {
@@ -296,24 +288,5 @@ namespace projekat.View.ModelView
 
 
         }
-
-
-        /* private void Button_Click(object sender, RoutedEventArgs e)
-         {
-             string content = IdToDelete.Text;
-             uint ID = uint.Parse(content);
-
-             _appointmentController.DeleteApointment(ID);
-
-             for (int i = 0; i < Data.Count(); i++)
-             {
-                 if(Data[i].Id == ID)
-                 {
-                     DataGridXAML.Items.Remove(Data[i]);
-                 }
-             }
-
-         }
-        */
     }
 }

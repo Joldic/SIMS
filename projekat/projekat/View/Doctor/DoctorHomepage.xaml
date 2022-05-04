@@ -1,0 +1,13 @@
+﻿<Window x:Class="projekat.View.Manager.DoctorHomepage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.Manager"
+        mc:Ignorable="d"
+        Title="DoctorHomepage" Height="450" Width="800">
+    <Grid>
+        <Button Content="Log out" HorizontalAlignment="Left" Margin="613,307,0,0" VerticalAlignment="Top" Height="48" Width="102" Click="LogOutButton_Click"/>
+        <Button Content="Appointments" HorizontalAlignment="Left" Margin="289,79,0,0" VerticalAlignment="Top" Height="52" Width="216" Click="Appointments_Click"/>
+    </Grid>
+</Window>

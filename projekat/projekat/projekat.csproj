@@ -104,6 +104,9 @@
     <Compile Include="View\Dialogs\GuesstAccount.xaml.cs">
       <DependentUpon>GuesstAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\DoctorLogin.xaml.cs">
+      <DependentUpon>DoctorLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\ManagerLogin.xaml.cs">
       <DependentUpon>ManagerLogin.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,9 @@
     <Compile Include="View\Dialogs\UpdateRoomDialog.xaml.cs">
       <DependentUpon>UpdateRoomDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Doctor\DoctorHomepage.xaml.cs">
+      <DependentUpon>DoctorHomepage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\ManagerHomepage.xaml.cs">
       <DependentUpon>ManagerHomepage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <Compile Include="View\ModelView\AppointmentDataView.xaml.cs">
       <DependentUpon>AppointmentDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\AppViewByDoc.xaml.cs">
+      <DependentUpon>AppViewByDoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ModelView\AppointmentsView.xaml.cs">
       <DependentUpon>AppointmentsView.xaml</DependentUpon>
@@ -165,6 +174,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Dialogs\DoctorLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Dialogs\ManagerLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,6 +205,10 @@
     <Page Include="View\Dialogs\UpdateRoomDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Doctor\DoctorHomepage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -231,6 +248,10 @@
     <Page Include="View\ModelView\AppointmentDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\AppViewByDoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ModelView\AppointmentsView.xaml">
       <SubType>Designer</SubType>

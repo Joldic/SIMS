@@ -1,6 +1,5 @@
-﻿using Model;
-using projekat.Controller;
-using projekat.View.Dialogs;
+﻿using projekat.Controller;
+using projekat.View.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,32 +14,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-namespace projekat.View
+using Model;
+namespace projekat.View.Dialogs
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ManagerLogin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DoctorLogin : Window
     {
         private string _username;
         private string _password;
-        private SecretaryController _secretaryController;
-        public MainWindow()
+        private DoctorController _docotrController;
+        public uint _IdLoggedIn;
+
+        public DoctorLogin()
         {
             InitializeComponent();
             DataContext = this;
-
-        
-
-
-
+            _IdLoggedIn = 555;
             var app = Application.Current as App;
-            _secretaryController = app.SecretaryController;
+            _docotrController = app.DoctorController;
         }
-
         public string Username
         {
             get => _username;
@@ -53,7 +48,6 @@ namespace projekat.View
                 }
             }
         }
-
         public string Password
         {
             get => _password;
@@ -66,20 +60,20 @@ namespace projekat.View
                 }
             }
         }
-
-        void Execute(object parameter, RoutedEventArgs e)
+        private void Execute(object sender, RoutedEventArgs e)
         {
 
-            //DataContext = this;
-
-
             var app = Application.Current as App;
-            _secretaryController = app.SecretaryController;
+            _docotrController = app.DoctorController;
             try
             {
-                Model.Secretary secretary = _secretaryController.FindSecretaryByUsername(Username);
-                //Secretary secretary = _secretaryController.GetSecretary(1);
-                if (secretary.Password != Password)
+                Model.Doctor doctor = _docotrController.FindDoctorByUsername(Username);
+                if (doctor == null)
+                {
+                    MessageBoxResult result = MessageBox.Show("Username " + Username + " doesn't exist");
+                    return;
+                }
+                if (doctor.Password != Password)
                 {
                     MessageBoxResult result;
 
@@ -87,9 +81,15 @@ namespace projekat.View
                 }
                 else
                 {
-                    MessageBoxResult result;
+                    _IdLoggedIn = doctor.Id;
 
-                    result = MessageBox.Show("DOBRA SIFRA");
+                    new DoctorHomepage(_IdLoggedIn)
+                    {
+                        Owner = Application.Current.MainWindow
+                    }
+                    .ShowDialog();
+                    this.Close();
+
                 }
             }
             catch
@@ -104,41 +104,5 @@ namespace projekat.View
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
-
-        private void Manager_Click(object sender, RoutedEventArgs e)
-        {
-            new ManagerLogin()
-            {
-                Owner = Application.Current.MainWindow
-            }.ShowDialog();
-            this.Close();
-        }
-
-        private void Secretary_Click(object sender, RoutedEventArgs e)
-        {
-            new SecretaryLogin()
-            {
-                Owner = Application.Current.MainWindow
-            }
-               .ShowDialog();
-            this.Close();
-            
-        }
-
-        private void Doctor_Click(object sender, RoutedEventArgs e)
-        {
-            new DoctorLogin()
-            {
-                Owner = Application.Current.MainWindow
-            }
-               .ShowDialog();
-            this.Close();
-        }
-
-        private void Patient_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
