@@ -31,11 +31,11 @@ namespace projekat.View.Dialogs
         private Gender _patientGender;
         private string _patientAdress;
         private string _patientEmail;
-        private Patient temp;
+        private Model.Patient temp;
 
         public string d;
     
-        public UpdatePatient(Patient patient)
+        public UpdatePatient(Model.Patient patient)
         {
             InitializeComponent();
             DataContext = this;

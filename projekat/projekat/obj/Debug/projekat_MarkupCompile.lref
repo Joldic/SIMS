@@ -1,24 +1,26 @@
-﻿C:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Components\BindablePasswordBox.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\EquipmentRelocation.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\GuesstAccount.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\LoginDialog.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\ManagerLogin.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\RenovationDialog.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\SecretaryLogin.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\UpdateAppointment.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\UpdateOperation.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\UpdatePatient.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Dialogs\UpdateRoomDialog.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\MainWindow.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Manager\ManagerHomepage.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\AllergensView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\AppointmentDataView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\AppointmentsView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\EquipmentView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\OperationsView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\PatientView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\ModelView\RoomView.xaml;;
-FC:\Users\Kiketa\OneDrive\Radna površina\SIMS\SIMS\projekat\projekat\View\Secretary\SecretaryHomepage.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Components\BindablePasswordBox.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\EquipmentRelocation.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\GuesstAccount.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\LoginDialog.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\PatientLogin.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\ManagerLogin.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\RenovationDialog.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\SecretaryLogin.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\UpdateAppointment.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\UpdateOperation.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\UpdatePatient.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Dialogs\UpdateRoomDialog.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\MainWindow.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Patientt\PatientHomepage.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Manager\ManagerHomepage.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\AllergensView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\AppointmentDataView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\AppointmentsView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\EquipmentView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\OperationsView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\PatientView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\ModelView\RoomView.xaml;;
+FC:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\View\Secretary\SecretaryHomepage.xaml;;
 

@@ -50,7 +50,7 @@ namespace projekat.View.ModelView
 
         public ObservableCollection<Appointment> Data { get; set; }
 
-        public ObservableCollection<Patient> People { get; set; }
+        public ObservableCollection<Model.Patient> People { get; set; }
 
         public ObservableCollection<Doctor> Doc { get; set; }
 
@@ -63,7 +63,7 @@ namespace projekat.View.ModelView
             _doctorController = app.DoctorController;
             _patientControler = app.PatientControler;
 
-            People = new ObservableCollection<Patient>(_patientControler.GetAll()); //**********************************************
+            People = new ObservableCollection<Model.Patient>(_patientControler.GetAll()); //**********************************************
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
 
@@ -73,7 +73,7 @@ namespace projekat.View.ModelView
             {
                 Room room = _roomController.FindRoom(Data[i].IdRoom);
                 Doctor doctor = _doctorController.ReadDoctor(Data[i].IdDoctor);
-                Patient patient = _patientControler.ReadPatient(Data[i].IdPatient);
+                Model.Patient patient = _patientControler.ReadPatient(Data[i].IdPatient);
                 Data[i].RoomName = room.Name;
                 Data[i].DoctorName = doctor.Name;
                 Data[i].DoctorSurname = doctor.Surname;
@@ -262,7 +262,7 @@ namespace projekat.View.ModelView
         private void OK_ButtonClick(object sender, RoutedEventArgs e)
         {
            // string patientUsername = (string)Patients.SelectedItem;
-            Patient patientItem = Patients.SelectedItem as Patient;
+            Model.Patient patientItem = Patients.SelectedItem as Model.Patient;
             string patientUsername = patientItem.Username;
 
             Doctor doctorItem = Doctors.SelectedItem as Doctor;
@@ -270,7 +270,7 @@ namespace projekat.View.ModelView
 
             DateTime date = dt;
 
-            Patient p = _patientControler.FindPatientByUsername(patientUsername);
+            Model.Patient p = _patientControler.FindPatientByUsername(patientUsername);
             Doctor doc = _doctorController.FindDoctorByUsername(doctorUsername);
 
             string[] words = t.Split(':');

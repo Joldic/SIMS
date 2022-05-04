@@ -47,6 +47,6 @@ namespace Controller
             return _service.GetAll();
       }
       
-   
+        
    }
 }

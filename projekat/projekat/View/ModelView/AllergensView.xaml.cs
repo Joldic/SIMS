@@ -22,7 +22,7 @@ namespace projekat.View.ModelView
     /// </summary>
     public partial class AllergensView : Window
     {
-        private Patient patientTemp;
+        private Model.Patient patientTemp;
         private uint IdPat;
         private AllergenController _allergenController;
 
@@ -37,7 +37,7 @@ namespace projekat.View.ModelView
 
 
 
-        public AllergensView(Patient patient)
+        public AllergensView(Model.Patient patient)
         {
             InitializeComponent();
             DataContext = this;

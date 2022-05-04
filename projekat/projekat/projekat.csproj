@@ -104,6 +104,9 @@
     <Compile Include="View\Dialogs\GuesstAccount.xaml.cs">
       <DependentUpon>GuesstAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\PatientLogin.xaml.cs">
+      <DependentUpon>PatientLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\ManagerLogin.xaml.cs">
       <DependentUpon>ManagerLogin.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,9 @@
     </Compile>
     <Compile Include="View\Dialogs\UpdateRoomDialog.xaml.cs">
       <DependentUpon>UpdateRoomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Patientt\PatientHomepage.xaml.cs">
+      <DependentUpon>PatientHomepage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\ManagerHomepage.xaml.cs">
       <DependentUpon>ManagerHomepage.xaml</DependentUpon>
@@ -164,6 +170,10 @@
     <Page Include="View\Dialogs\LoginDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\PatientLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Dialogs\ManagerLogin.xaml">
       <SubType>Designer</SubType>
@@ -220,6 +230,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Patientt\PatientHomepage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Manager\ManagerHomepage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

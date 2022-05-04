@@ -44,7 +44,7 @@ namespace projekat.View.Dialogs
 
             if(_patientController.FindPatientByUsername(Username) == null)
             {
-                Patient p = new Patient(Name, Surname, date_of_birth, Adress, Email, G, Password, Username);
+                Model.Patient p = new Model.Patient(Name, Surname, date_of_birth, Adress, Email, G, Password, Username);
                 _patientController.CreateNewPatient(p);
             }
             else

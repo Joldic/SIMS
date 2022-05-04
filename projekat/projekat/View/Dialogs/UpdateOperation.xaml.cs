@@ -39,7 +39,7 @@ namespace projekat.View.Dialogs
         DateTime dt;
         DateTime dt_end;
 
-        public ObservableCollection<Patient> Pat { get; set; }
+        public ObservableCollection<Model.Patient> Pat { get; set; }
 
         public ObservableCollection<Doctor> Doc { get; set; }
 
@@ -55,7 +55,7 @@ namespace projekat.View.Dialogs
 
             temp = appointment;
 
-            Pat = new ObservableCollection<Patient>(_patientControler.GetAll());
+            Pat = new ObservableCollection<Model.Patient>(_patientControler.GetAll());
             Doc = new ObservableCollection<Doctor>(_doctorController.GetAll());
 
             Patients.ItemsSource = Pat;
@@ -84,7 +84,7 @@ namespace projekat.View.Dialogs
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            Patient patientItem = Patients.SelectedItem as Patient;
+            Model.Patient patientItem = Patients.SelectedItem as Model.Patient;
             string patientUsername = patientItem.Username;
 
             Doctor doctorItem = Doctors.SelectedItem as Doctor;
@@ -93,7 +93,7 @@ namespace projekat.View.Dialogs
             DateTime date_begin = dt;
             DateTime date_end = dt_end;
 
-            Patient p = _patientControler.FindPatientByUsername(patientUsername);
+            Model.Patient p = _patientControler.FindPatientByUsername(patientUsername);
             Doctor doc = _doctorController.FindDoctorByUsername(doctorUsername);
 
 

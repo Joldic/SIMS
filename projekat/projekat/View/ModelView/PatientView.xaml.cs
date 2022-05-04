@@ -20,6 +20,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
+
 namespace projekat.View.ModelView
 {
     /// <summary>
@@ -36,11 +37,12 @@ namespace projekat.View.ModelView
         private Gender _patientGender;
         private string _patientAdress;
         private string _patientEmail;
-        private Patient temp;
+        private Model.Patient temp;
+        
 
         public string d;
 
-        public ObservableCollection<Patient> People { get; set; }
+        public ObservableCollection<Model.Patient> People { get; set; }
 
         public PatientView()
         {
@@ -50,7 +52,7 @@ namespace projekat.View.ModelView
             var app = Application.Current as App;
             _patientController = app.PatientControler;
 
-            People = new ObservableCollection<Patient>(_patientController.GetAll().ToList());
+            People = new ObservableCollection<Model.Patient>(_patientController.GetAll().ToList());
 
 
             for(int i=0; i< People.Count(); i++)
@@ -88,7 +90,7 @@ namespace projekat.View.ModelView
             InitializeComponent();
             DataContext = this;
 
-            Patient patient = DataGridXAML.SelectedItem as Patient;
+            Model.Patient patient = DataGridXAML.SelectedItem as Model.Patient;
             
 
             for(int i=0; i<People.Count(); i++)
@@ -105,8 +107,8 @@ namespace projekat.View.ModelView
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = DataGridXAML.SelectedItem as Patient;
-            Patient tempPatient = _patientController.ReadPatient(patient.Id);
+            Model.Patient patient = DataGridXAML.SelectedItem as Model.Patient;
+            Model.Patient tempPatient = _patientController.ReadPatient(patient.Id);
 
             new UpdatePatient(tempPatient)
             {
@@ -138,8 +140,8 @@ namespace projekat.View.ModelView
             username += rnd.Next(0, 9).ToString();
             username += rnd.Next(0, 9).ToString();
 
-            Patient p = new Patient(_patientName, _patientSurname, _patientBirthDate, _patientAdress,  _patientEmail, _patientGender, "123", username);
-            Patient x = _patientController.CreateNewPatient(p);
+            Model.Patient p = new Model.Patient(_patientName, _patientSurname, _patientBirthDate, _patientAdress,  _patientEmail, _patientGender, "123", username);
+            Model.Patient x = _patientController.CreateNewPatient(p);
 
             DataGridXAML.Items.Add(x);
 
@@ -159,8 +161,8 @@ namespace projekat.View.ModelView
 
         private void AllergensButton_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = DataGridXAML.SelectedItem as Patient;
-            Patient tempPatient = _patientController.ReadPatient(patient.Id);
+            Model.Patient patient = DataGridXAML.SelectedItem as Model.Patient;
+            Model.Patient tempPatient = _patientController.ReadPatient(patient.Id);
 
             new AllergensView(tempPatient)
             {
