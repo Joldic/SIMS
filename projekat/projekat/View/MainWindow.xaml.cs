@@ -128,7 +128,12 @@ namespace projekat.View
 
         private void Doctor_Click(object sender, RoutedEventArgs e)
         {
-
+            new DoctorLogin()
+            {
+                Owner = Application.Current.MainWindow
+            }
+               .ShowDialog();
+            this.Close();
         }
 
         private void Patient_Click(object sender, RoutedEventArgs e)

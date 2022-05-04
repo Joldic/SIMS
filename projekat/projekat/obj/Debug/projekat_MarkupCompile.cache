@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\obj\Debug\
+C:\Users\Kiketa\OneDrive\Radna površina\New folder\SIMS\projekat\projekat\obj\Debug\
 projekat
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\App.xaml
-23-111377960
+C:\Users\Kiketa\OneDrive\Radna površina\New folder\SIMS\projekat\projekat\App.xaml
+25-440556212
 
-781448669398
-18-352575420
-View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\GuesstAccount.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\PatientLogin.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\Dialogs\UpdateRoomDialog.xaml;View\MainWindow.xaml;View\Patientt\PatientHomepage.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AllergensView.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
+80-822060750
+18-242083472
+View\Components\BindablePasswordBox.xaml;View\Dialogs\DoctorLogin.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\GuesstAccount.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\PatientLogin.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\Dialogs\UpdateRoomDialog.xaml;View\Doctorr\DoctorHomepage.xaml;View\MainWindow.xaml;View\Patientt\PatientHomepage.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AllergensView.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
 
 False
 

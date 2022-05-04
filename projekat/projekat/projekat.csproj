@@ -98,6 +98,9 @@
     <Compile Include="Service\SecretaryService.cs" />
     <Compile Include="View\Converter\AbstractConverter.cs" />
     <Compile Include="View\Converter\AppointmentConverter.cs" />
+    <Compile Include="View\Dialogs\DoctorLogin.xaml.cs">
+      <DependentUpon>DoctorLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\EquipmentRelocation.xaml.cs">
       <DependentUpon>EquipmentRelocation.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,9 @@
     </Compile>
     <Compile Include="View\Dialogs\UpdateRoomDialog.xaml.cs">
       <DependentUpon>UpdateRoomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Doctorr\DoctorHomepage.xaml.cs">
+      <DependentUpon>DoctorHomepage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Patientt\PatientHomepage.xaml.cs">
       <DependentUpon>PatientHomepage.xaml</DependentUpon>
@@ -156,6 +162,10 @@
       <DependentUpon>SecretaryHomepage.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\DoctorLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Dialogs\UpdateRoomDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Doctorr\DoctorHomepage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

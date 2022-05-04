@@ -39,7 +39,7 @@ namespace projekat.View.Dialogs
 
         public ObservableCollection<Model.Patient> Pat { get; set; }
 
-        public ObservableCollection<Doctor> Doc { get; set; }
+        public ObservableCollection<Model.Doctor> Doc { get; set; }
         public UpdateAppointment(Appointment appointment)
         {
             InitializeComponent();
