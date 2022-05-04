@@ -54,7 +54,7 @@ namespace projekat.View.ModelView
 
         public ObservableCollection<Doctor> Doc { get; set; }
 
-        public AppViewByDoc()
+        public AppViewByDoc(uint idD)
         {
             InitializeComponent();
             var app = Application.Current as App;
@@ -63,7 +63,7 @@ namespace projekat.View.ModelView
             _doctorController = app.DoctorController;
             _patientControler = app.PatientControler;
 
-            People = new ObservableCollection<Patient>(_patientControler.GetAll()); //**********************************************
+            People = new ObservableCollection<Patient>(_patientControler.GetAll()); 
 
             Data = new ObservableCollection<Appointment>(_appointmentController.GetAll().ToList());
 
@@ -81,7 +81,10 @@ namespace projekat.View.ModelView
                 Data[i].PatientName = patient.Name;
                 Data[i].PatientSurname = patient.Surname;
 
-                DataGridXAML.Items.Add(Data[i]);
+                if(Data[i].IdDoctor == idD)
+                {
+                    DataGridXAML.Items.Add(Data[i]);
+                }
         
             }
 

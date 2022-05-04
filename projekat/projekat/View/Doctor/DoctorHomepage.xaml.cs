@@ -41,7 +41,7 @@ namespace projekat.View.Manager
 
         private void Appointments_Click(object sender, RoutedEventArgs e)
         {
-            new AppViewByDoc()
+            new AppViewByDoc(_id_logged_in)
             {
                 Owner = Application.Current.MainWindow
             }.ShowDialog();
