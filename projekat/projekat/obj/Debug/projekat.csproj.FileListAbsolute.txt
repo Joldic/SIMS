@@ -221,3 +221,9 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\PatientLogi
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Patientt\PatientHomepage.g.cs
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\PatientLogin.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Patientt\PatientHomepage.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\DrugsView.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\DrugsView.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateDrug.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateDrug.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\IngredientsView.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\IngredientsView.baml

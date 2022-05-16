@@ -33,6 +33,8 @@ namespace projekat
         private string APPOINTMENT_FILE = _projectPath + "\\Resources\\appointment.txt";
         private string EQUIPMENT_FILE = _projectPath + "\\Resources\\equipment.txt";
         private string ALLERGEN_FILE = _projectPath + "\\Resources\\allergen.txt";
+        private string DRUG_FILE = _projectPath + "\\Resources\\drug.txt";
+        private string INGREDIENT_FILE = _projectPath + "\\Resources\\ingredient.txt";
 
         private const string CSV_DELIMITER = ";";
         private const string DATETIME_FORMAT = "dd.MM.yyyy.";
@@ -55,6 +57,10 @@ namespace projekat
 
         public UserController UserController { get; set; }  
 
+        public DrugController DrugController { get; set; }
+
+        public IngredientController IngredientController { get; set; }
+
         public App()
         {
 
@@ -69,6 +75,8 @@ namespace projekat
             var equipmentRepo = new EquipmentRepository(EQUIPMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var allergenRepo = new AllergenRepository(ALLERGEN_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var userRepo = new UserRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var drugRepo = new DrugRepository(DRUG_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var ingredientRepo = new IngredientRepository(INGREDIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
      
             //var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
@@ -79,7 +87,8 @@ namespace projekat
             var equipmentService = new EquipmentService(equipmentRepo);
             var allergenService = new AllergenService(allergenRepo);
             var userService = new UserService(userRepo);
-        
+            var drugService = new DrugService(drugRepo);
+            var ingredientService = new IngredientService(ingredientRepo);
 
             //SecretaryController = new SecretaryController(secretaryService);
             AppointmentController = new AppointmentController(appointmentService);
@@ -90,6 +99,9 @@ namespace projekat
             EquipmentController = new EquipmentController(equipmentService);
             AllergenControler = new AllergenController(allergenService);
             UserController = new UserController(userService);
+            DrugController = new DrugController(drugService);
+            IngredientController = new IngredientController(ingredientService);
+
         }
     }
 }

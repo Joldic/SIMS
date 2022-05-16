@@ -1,0 +1,4 @@
+﻿1;natrijum
+2;azot
+3;ugljenik
+4;laktoza

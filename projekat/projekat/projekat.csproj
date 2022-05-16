@@ -69,12 +69,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\DrugController.cs" />
     <Compile Include="Controller\EquipmentController.cs" />
+    <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\ManagerController.cs" />
     <Compile Include="Controller\SecretaryController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Exception\NotFoundException.cs" />
     <Compile Include="Model\Drug.cs" />
+    <Compile Include="Model\DrugIngredientDTO.cs" />
+    <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\PatientAllergenDTO.cs" />
     <Compile Include="Model\RoomEquipmentDTO.cs" />
     <Compile Include="Model\RoomRenovationDTO.cs" />
@@ -83,7 +87,9 @@
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
     <Compile Include="Repository\DoctorRepository.cs" />
+    <Compile Include="Repository\DrugRepository.cs" />
     <Compile Include="Repository\EquipmentRepository.cs" />
+    <Compile Include="Repository\IngredientRepository.cs" />
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RecipeRepository.cs" />
@@ -94,7 +100,9 @@
     <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DoctorService.cs" />
+    <Compile Include="Service\DrugService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
+    <Compile Include="Service\IngredientService.cs" />
     <Compile Include="Service\ManagerService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RecipeService.cs" />
@@ -121,6 +129,9 @@
     <Compile Include="View\Dialogs\UpdateAppointment.xaml.cs">
       <DependentUpon>UpdateAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dialogs\UpdateDrug.xaml.cs">
+      <DependentUpon>UpdateDrug.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Dialogs\UpdateOperation.xaml.cs">
       <DependentUpon>UpdateOperation.xaml</DependentUpon>
     </Compile>
@@ -129,6 +140,12 @@
     </Compile>
     <Compile Include="View\Dialogs\UpdateRoomDialog.xaml.cs">
       <DependentUpon>UpdateRoomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\DrugsView.xaml.cs">
+      <DependentUpon>DrugsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\IngredientsView.xaml.cs">
+      <DependentUpon>IngredientsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Patientt\PatientHomepage.xaml.cs">
       <DependentUpon>PatientHomepage.xaml</DependentUpon>
@@ -196,6 +213,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Dialogs\UpdateDrug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Dialogs\UpdateOperation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,6 +256,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ModelView\DrugsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\IngredientsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Patientt\PatientHomepage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -356,6 +385,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\renovation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\drug.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ingredient.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DrugIngredient.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

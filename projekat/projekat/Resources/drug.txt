@@ -1,0 +1,4 @@
+1;Bromazepam;20;nervs;7
+2;Klonazepam;13;nervs;10
+3;Canesten;5;bacteria;17
+4;Probiotic;3;stomach;88

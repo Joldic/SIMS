@@ -15,24 +15,27 @@ namespace Model
 
         public string Category { get; set; }
 
+        public uint Quantity { get; set; }
         public Drug()
         {
 
         }
 
-        public Drug(uint id, string name, uint weight, string caregory)
+        public Drug(uint id, string name, uint weight, string caregory, uint quantity)
         {
             Id = id;
             Name = name;
             Weight = weight;
             Category = caregory;
+            Quantity = quantity;
         }
 
-        public Drug(string name, uint weight, string caregory)
+        public Drug(string name, uint weight, string caregory, uint quantity)
         {
             Name = name;
             Weight = weight;
             Category = caregory;
+            Quantity = quantity;
         }
     }
 }

@@ -66,6 +66,14 @@ namespace projekat.View.Manager
             }.ShowDialog();
         }
 
+        private void DrugsButton_Click(object sender, RoutedEventArgs e)
+        {
+            new DrugsView()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+        }
+
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
             _id_logged_in = 555;

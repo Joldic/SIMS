@@ -1,0 +1,69 @@
+﻿<Window x:Class="projekat.View.ModelView.DrugsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekat.View.ModelView"
+        mc:Ignorable="d"
+        Title="DrugsView" Height="540" Width="800">
+    <Grid>
+        <DataGrid  x:Name="DataGridXAML" ItemsSource="{Binding Data}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="780" Height="214" Margin="0,10,0,0">
+            <!-- Font Color / Style of Column Headings-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0, 0 , 1 ,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text & Bindings -->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Drug ID" Binding="{Binding Id}" Width="130"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="130"/>
+                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="130"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="130"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="130"/>
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Delete"  Click="DeleteButton_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Update"  Click="UpdateButton_Click">Update</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Ingredients"  Click="Ingredients_Click">Ingredients</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Add new drug" HorizontalAlignment="Left" FontWeight="Bold" Margin="371,0,0,0" VerticalAlignment="Center"/>
+        <TextBox Name="Name_tb" HorizontalAlignment="Left" Margin="356,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Weight_tb" HorizontalAlignment="Left" Margin="356,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Category_tb" HorizontalAlignment="Left" Margin="356,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Quantity_tb" HorizontalAlignment="Left" Margin="356,425,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="297,289,0,0" VerticalAlignment="Top"/>
+        <Label Content="Weight" HorizontalAlignment="Left" Margin="297,330,0,0" VerticalAlignment="Top"/>
+        <Label Content="Category" HorizontalAlignment="Left" Margin="297,372,0,0" VerticalAlignment="Top"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" Margin="297,421,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="400,467,0,0" VerticalAlignment="Top" Click="AddButton_Click"/>
+
+    </Grid>
+</Window>
