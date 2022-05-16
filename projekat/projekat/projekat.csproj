@@ -72,10 +72,13 @@
     <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\ManagerController.cs" />
     <Compile Include="Controller\SecretaryController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Exception\NotFoundException.cs" />
+    <Compile Include="Model\Drug.cs" />
     <Compile Include="Model\PatientAllergenDTO.cs" />
     <Compile Include="Model\RoomEquipmentDTO.cs" />
     <Compile Include="Model\RoomRenovationDTO.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Repository\AllergenRepository.cs" />
     <Compile Include="Repository\AnamnesisRepository.cs" />
     <Compile Include="Repository\AppointmentRepository.cs" />
@@ -86,6 +89,7 @@
     <Compile Include="Repository\RecipeRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Service\AllergenService.cs" />
     <Compile Include="Service\AnamnesisService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
@@ -96,6 +100,7 @@
     <Compile Include="Service\RecipeService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SecretaryService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="View\Converter\AbstractConverter.cs" />
     <Compile Include="View\Converter\AppointmentConverter.cs" />
     <Compile Include="View\Dialogs\EquipmentRelocation.xaml.cs">

@@ -1,1 +1,1 @@
-﻿1;dunja;123;dunja;bogdanovic;mic72;dunja@gmail.com;F;04.04.2010.;SECRETARY
+﻿1;nenad;123;nenad;jodlic;mic72;nenad@gmail.com;01/1/2020 10:00:00 AM;f;manager;none

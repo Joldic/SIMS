@@ -30,6 +30,7 @@ namespace projekat.View.Manager
 
             InitializeComponent();
             DataContext = this;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
 

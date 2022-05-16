@@ -15,6 +15,7 @@ namespace Model
       orl,
       ophtamologist,
       gynecologist,
-      neurologist
+      neurologist,
+      none
    }
 }

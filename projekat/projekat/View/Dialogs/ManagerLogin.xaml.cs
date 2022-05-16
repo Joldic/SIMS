@@ -26,6 +26,7 @@ namespace projekat.View.Dialogs
         private string _username;
         private string _password;
         private ManagerController _managerController;
+        private UserController _userController;
         public uint _IdLoggedIn;
 
         public ManagerLogin()
@@ -39,6 +40,7 @@ namespace projekat.View.Dialogs
 
             var app = Application.Current as App;
             _managerController = app.ManagerController;
+            _userController = app.UserController;
         }
         public string Username
         {
@@ -74,13 +76,14 @@ namespace projekat.View.Dialogs
             _managerController = app.ManagerController;
             try
             {
-                Model.Manager manager = _managerController.FindManagerByUsername(Username);
-                if (manager == null)
+                //Model.Manager manager = _managerController.FindManagerByUsername(Username);
+                Model.User user = _userController.FindUserByUsername(Username);
+                if (user == null)
                 {
                     MessageBoxResult result = MessageBox.Show("Username " + Username + " doesn't exist");
                     return;
                 }
-                if (manager.Password != Password)
+                if (user.Password != Password)
                 {
                     MessageBoxResult result;
 
@@ -88,7 +91,7 @@ namespace projekat.View.Dialogs
                 }
                 else
                 {
-                    _IdLoggedIn = manager.Id;
+                    _IdLoggedIn = user.Id;
 
                     new ManagerHomepage(_IdLoggedIn)
                     {

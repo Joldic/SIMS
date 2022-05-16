@@ -29,6 +29,7 @@ namespace projekat.View.ModelView
         private string _name;
         private EquipmentType _type;
         private uint _quantity;
+        private string _textToFilter;
 
         public ObservableCollection<Equipment> Data { get; set; }
 
@@ -88,6 +89,8 @@ namespace projekat.View.ModelView
             }
         }
 
+   
+
         public EquipmentType tYPE
         {
             get => _type;
@@ -111,5 +114,7 @@ namespace projekat.View.ModelView
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+      
     }
 }

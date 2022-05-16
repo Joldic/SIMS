@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="EquipmentView" Height="450" Width="800">
     <Grid>
-        <DataGrid  x:Name="DataGridXAML" HorizontalAlignment="Center" VerticalAlignment="Top" Width="780" Height="300">
+        <DataGrid  x:Name="DataGridXAML" ItemsSource="{Binding Data}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="780" Height="300" Margin="0,92,0,0">
             <!-- Font Color / Style of Column Headings-->
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}" >
@@ -36,5 +36,6 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox HorizontalAlignment="Left" Margin="23,29,0,0" TextWrapping="Wrap" Text="{Binding TextToFilter}" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

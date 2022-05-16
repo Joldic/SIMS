@@ -53,21 +53,24 @@ namespace projekat
         public PatientControler PatientControler { get; set; }
         public AllergenController AllergenControler { get; set; }
 
+        public UserController UserController { get; set; }  
+
         public App()
         {
 
 
 
             var appointmentRepo = new AppointmentRepository(APPOINTMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
-            var secretaryRepo = new SecretaryRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            //var secretaryRepo = new SecretaryRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var roomRepo = new RoomRepository(ROOM_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var doctorRepo = new DoctorRepository(DOCTOR_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var patientRepo = new PatientRepository(PATIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var managerRepo = new ManagerRepository(MANAGER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var equipmentRepo = new EquipmentRepository(EQUIPMENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var allergenRepo = new AllergenRepository(ALLERGEN_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var userRepo = new UserRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
      
-            var secretaryService = new SecretaryService(secretaryRepo);
+            //var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
             var roomService = new RoomService(roomRepo);
             var doctorService = new DoctorService(doctorRepo);
@@ -75,9 +78,10 @@ namespace projekat
             var managerService = new ManagerService(managerRepo);
             var equipmentService = new EquipmentService(equipmentRepo);
             var allergenService = new AllergenService(allergenRepo);
+            var userService = new UserService(userRepo);
         
 
-            SecretaryController = new SecretaryController(secretaryService);
+            //SecretaryController = new SecretaryController(secretaryService);
             AppointmentController = new AppointmentController(appointmentService);
             RoomControler = new RoomControler(roomService);
             DoctorController = new DoctorController(doctorService);
@@ -85,6 +89,7 @@ namespace projekat
             ManagerController = new ManagerController(managerService);
             EquipmentController = new EquipmentController(equipmentService);
             AllergenControler = new AllergenController(allergenService);
+            UserController = new UserController(userService);
         }
     }
 }

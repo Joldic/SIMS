@@ -217,3 +217,7 @@ C:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\obj\Debug\View\Dialogs
 C:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\obj\Debug\View\Patientt\PatientHomepage.g.cs
 C:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\obj\Debug\View\Dialogs\PatientLogin.baml
 C:\Users\User\Desktop\projekatSIMS\SIMS\projekat\projekat\obj\Debug\View\Patientt\PatientHomepage.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\PatientLogin.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Patientt\PatientHomepage.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\PatientLogin.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Patientt\PatientHomepage.baml
