@@ -36,6 +36,11 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox HorizontalAlignment="Left" Margin="23,29,0,0" TextWrapping="Wrap" Text="{Binding TextToFilter}" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Name_tb" HorizontalAlignment="Left" Margin="21,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="177,20,0,0" VerticalAlignment="Top" Width="54" Height="28" Click="SearchButton_Click"/>
+        <TextBox Name="Type_tb" HorizontalAlignment="Left" Margin="318,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Search by type" HorizontalAlignment="Left" Margin="472,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.234,-0.053" Width="86" Height="24" Click="TypeButton_Click"/>
+        <!--<TextBox HorizontalAlignment="Left" Margin="23,29,0,0" TextWrapping="Wrap" Text="{Binding TextToFilter}" VerticalAlignment="Top" Width="120"/>-->
+
     </Grid>
 </Window>

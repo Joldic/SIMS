@@ -115,6 +115,49 @@ namespace projekat.View.ModelView
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-      
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            ClearDataGrid();
+            string name = Name_tb.Text;
+            FindByName(name);
+         
+        }
+
+        private void ClearDataGrid()
+        {
+            for (int i = 0; i < Data.Count(); i++)
+            {
+                DataGridXAML.Items.Remove(Data[i]);
+            }
+        }
+
+        private void FindByName(string name)
+        {
+            for (int i = 0; i < Data.Count(); i++)
+            {
+                if (Data[i].Name == name)
+                {
+                    DataGridXAML.Items.Add(Data[i]);
+                }
+            }
+        }
+
+        private void TypeButton_Click(object sender, RoutedEventArgs e)
+        {
+            ClearDataGrid();
+            string type = Type_tb.Text;
+            FindByType(type);
+        }
+
+        private void FindByType(string type)
+        {
+            for (int i = 0; i < Data.Count(); i++)
+            {
+                if (Data[i].Type.ToString() == type)
+                {
+                    DataGridXAML.Items.Add(Data[i]);
+                }
+            }
+        }
     }
 }
