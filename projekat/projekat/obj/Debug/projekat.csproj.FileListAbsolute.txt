@@ -229,3 +229,5 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\Ingredien
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\IngredientsView.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\MergeDialog.g.cs
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\MergeDialog.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\SeperateDialog.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\SeperateDialog.baml

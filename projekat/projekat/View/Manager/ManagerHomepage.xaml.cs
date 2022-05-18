@@ -95,7 +95,11 @@ namespace projekat.View.Manager
 
         private void SeparateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            new SeperateDialog()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
         }
     }
 }

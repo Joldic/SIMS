@@ -37,5 +37,7 @@ namespace Model
             Category = caregory;
             Quantity = quantity;
         }
+
+
     }
 }
