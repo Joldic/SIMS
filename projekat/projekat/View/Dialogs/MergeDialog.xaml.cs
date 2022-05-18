@@ -24,9 +24,12 @@ namespace projekat.View.Dialogs
     {
         private RoomControler _roomController;
         public string time;
+        public string time_end;
         public string date;
+        public string date_end;
 
         DateTime date_time;
+        DateTime date_time_end;
 
         public ObservableCollection<Room> Rooms { get; set; }
         public ObservableCollection<string> RoomTypes { get; set; }
@@ -82,6 +85,21 @@ namespace projekat.View.Dialogs
             }
         }
 
+        private void DP1_SelectedDateChanged_Copy(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem cboitem = cboTP1.SelectedItem as ComboBoxItem;
+            if (cboitem.Content != null)
+            {
+                time_end= cboitem.Content.ToString();
+                //t2 = cboitem2.Content.ToString();
+                date_end = DP1.Text;
+
+                date_time_end = DateTime.Parse(date_end + " " + time_end);
+                // dt_end = DateTime.Parse(d + " " + t2);
+            }
+
+        }
+
         private void MergeButton_Click(object sender, RoutedEventArgs e)
         {
             Room room_1 = Rooms_1.SelectedItem as Room;
@@ -89,7 +107,8 @@ namespace projekat.View.Dialogs
 
             Room new_room = new Room();
 
-            DateTime dateOfMerging = date_time;
+            DateTime start_date = date_time;
+            DateTime end_date = date_time_end;
             uint squareFootage = room_1.SquareFootage + room_2.SquareFootage;
 
 
@@ -105,7 +124,8 @@ namespace projekat.View.Dialogs
                 new_room.Type = roomType;
                 new_room.SquareFootage = squareFootage;
                 new_room.Availability = true;
-                _roomController.CreateNewRoom(new_room);
+                new_room = _roomController.CreateNewRoom(new_room);
+                SetRenovation(new_room.Id, start_date, end_date);
                 
             }
             else
@@ -114,8 +134,19 @@ namespace projekat.View.Dialogs
             }
 
 
+
         }
 
+        private void SetRenovation(uint id, DateTime start, DateTime end)
+        {
+            RoomRenovationDTO dto = new RoomRenovationDTO(id, start, end);
+            Success();
+        }
+
+        private void Success()
+        {
+            MessageBoxResult result = MessageBox.Show("Merge succesfully done");
+        }
         
 
         private Boolean isMergePossible(Room room1, Room room2)

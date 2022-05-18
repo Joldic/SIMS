@@ -28,6 +28,14 @@ namespace projekat.View.Dialogs
         private string _name;
         private RoomType _roomType;
 
+        public string time;
+        public string time_end;
+        public string date;
+        public string date_end;
+
+        DateTime date_time;
+        DateTime date_time_end;
+
         public ObservableCollection<string> RoomTypes { get; set; }
         public ObservableCollection<Room> Rooms { get; set; }
         public SeperateDialog()
@@ -71,6 +79,35 @@ namespace projekat.View.Dialogs
             }
         }
 
+
+        private void DP1_SelectedDateChanged(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem cboitem = cboTP.SelectedItem as ComboBoxItem;
+            if (cboitem.Content != null)
+            {
+                time = cboitem.Content.ToString();
+                date = DP1.Text;
+
+                date_time = DateTime.Parse(date + " " + time);
+            }
+        }
+
+        private void DP1_SelectedDateChanged_Copy(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem cboitem = cboTP1.SelectedItem as ComboBoxItem;
+            if (cboitem.Content != null)
+            {
+                time_end = cboitem.Content.ToString();
+                //t2 = cboitem2.Content.ToString();
+                date_end = DP1.Text;
+
+                date_time_end = DateTime.Parse(date_end + " " + time_end);
+                // dt_end = DateTime.Parse(d + " " + t2);
+            }
+
+        }
+
+
         private void SeperateButton_Click(object sender, RoutedEventArgs e)
         {
             Room room = Rooms_tb.SelectedItem as Room;
@@ -85,6 +122,7 @@ namespace projekat.View.Dialogs
         }
         private void CreateNewRooms(Room room)
         {
+            
             _roomController.DeleteRoom(room.Id);
 
             string room1_name = Room1_name.Text;
@@ -104,6 +142,12 @@ namespace projekat.View.Dialogs
         private void ShowError()
         {
             MessageBoxResult result = MessageBox.Show("Room can't be seperated because it's in use!!!");
+        }
+
+        private void SetRenovation(uint id, DateTime start, DateTime end)
+        {
+            RoomRenovationDTO dto = new RoomRenovationDTO(id, start, end);
+            Success();
         }
 
         private void Success()

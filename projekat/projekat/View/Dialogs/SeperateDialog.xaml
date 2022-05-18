@@ -14,13 +14,62 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox Name="Room1_name" HorizontalAlignment="Left" Margin="66,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Room1_square_footage" HorizontalAlignment="Left" Margin="66,167,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Room1_name" HorizontalAlignment="Left" Margin="66,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Room1_square_footage" HorizontalAlignment="Left" Margin="66,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <ComboBox Name ="Client1" HorizontalAlignment="Left" Margin="66,217,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding RoomTypes}"/>
-        <TextBox  Name="Room2_name" HorizontalAlignment="Left" Margin="568,106,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Room2_square_footage" HorizontalAlignment="Left" Margin="568,176,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox  Name="Room2_name" HorizontalAlignment="Left" Margin="568,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Room2_square_footage" HorizontalAlignment="Left" Margin="568,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name ="Client2" HorizontalAlignment="Left" Margin="568,223,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding RoomTypes}"/>
         <Button Content="Seperate" HorizontalAlignment="Center" Margin="0,333,0,0" VerticalAlignment="Top" Height="32" Width="76" Click="SeperateButton_Click"/>
+        <DatePicker x:Name="DP1" SelectedDateChanged="DP1_SelectedDateChanged" HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,176,0,0" VerticalAlignment="Top" Width="120" x:Name="cboTP">
+            <ComboBoxItem Content="08:00"/>
+            <ComboBoxItem Content="08:30"/>
+            <ComboBoxItem Content="09:00"/>
+            <ComboBoxItem Content="09:30"/>
+            <ComboBoxItem Content="10:00"/>
+            <ComboBoxItem Content="10:30"/>
+            <ComboBoxItem Content="11:00"/>
+            <ComboBoxItem Content="11:30"/>
+        </ComboBox>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="268,127,0,0" VerticalAlignment="Top"/>
+        <Label Content="Time" HorizontalAlignment="Left" Margin="268,172,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DP1_Copy" SelectedDateChanged="DP1_SelectedDateChanged_Copy" HorizontalAlignment="Center" Margin="0,215,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,264,0,0" VerticalAlignment="Top" Width="120" x:Name="cboTP1" RenderTransformOrigin="0.544,-2.879">
+            <ComboBoxItem Content="08:00"/>
+            <ComboBoxItem Content="08:30"/>
+            <ComboBoxItem Content="09:00"/>
+            <ComboBoxItem Content="09:30"/>
+            <ComboBoxItem Content="10:00"/>
+            <ComboBoxItem Content="10:30"/>
+            <ComboBoxItem Content="11:00"/>
+            <ComboBoxItem Content="11:30"/>
+        </ComboBox>
+        <Label Content="Date end" HorizontalAlignment="Left" Margin="257,223,0,0" VerticalAlignment="Top"/>
+        <Label Content="Time end" HorizontalAlignment="Left" Margin="256,254,0,0" VerticalAlignment="Top"/>
+        <Label Content="Separation" HorizontalAlignment="Center" FontWeight="Heavy" FontSize="22" VerticalAlignment="Top"/>
+        <Label Content="Room" HorizontalAlignment="Left" Margin="268,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="SquareFt" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+        <Grid>
+       
+            
+            <Label Content="Date" HorizontalAlignment="Left" Margin="268,127,0,0" VerticalAlignment="Top"/>
+            <Label Content="Time" HorizontalAlignment="Left" Margin="268,172,0,0" VerticalAlignment="Top"/>
+     
+            <Label Content="Date end" HorizontalAlignment="Left" Margin="257,223,0,0" VerticalAlignment="Top"/>
+            <Label Content="Time end" HorizontalAlignment="Left" Margin="256,254,0,0" VerticalAlignment="Top"/>
+            <Label Content="Separation" HorizontalAlignment="Center" FontWeight="Heavy" FontSize="22" VerticalAlignment="Top"/>
+            <Label Content="Room" HorizontalAlignment="Left" Margin="268,46,0,0" VerticalAlignment="Top"/>
+            <Label Content="Name" HorizontalAlignment="Left" Margin="512,97,0,0" VerticalAlignment="Top"/>
+            <Label Content="SquareFt" HorizontalAlignment="Left" Margin="497,174,0,0" VerticalAlignment="Top"/>
+            <Label Content="Type" HorizontalAlignment="Left" Margin="508,223,0,0" VerticalAlignment="Top"/>
+            <Label Content="Room1" HorizontalAlignment="Left" Margin="107,67,0,0" VerticalAlignment="Top"/>
+            <Label Content="Room2" HorizontalAlignment="Left" Margin="609,59,0,0" VerticalAlignment="Top"/>
+
+
+        </Grid>
 
 
     </Grid>

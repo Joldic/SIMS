@@ -3,5 +3,5 @@
 3;soba 100A;relaxationRoom;78;true
 4;soba 205A;operatingRoom;80;true
 6;update;relaxationRoom;68;true
-10;soba1;operatingRoom;5;true
-11;soba2;relaxationRoom;7;true
+8;soba1;operatingRoom;22;True
+9;soba2;ordinaryRoom;33;True
