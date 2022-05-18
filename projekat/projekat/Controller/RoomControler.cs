@@ -60,6 +60,12 @@ namespace Controller
         {
             return _service.AddRenovation(r);
         }
-   
+
+        public Boolean AvailableForDeletion(uint id)
+        {
+            return _service.AvailableForDeletion(id);
+        }
+
+
    }
 }

@@ -63,5 +63,10 @@ namespace Service
             return _repo.AddRenovation(r);
         }
 
+        public Boolean AvailableForDeletion(uint id)
+        {
+            return _repo.AvailableForDeletion(id);
+        }
+
     }
 }

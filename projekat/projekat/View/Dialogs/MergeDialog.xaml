@@ -26,8 +26,8 @@
 
         <ComboBox Name ="Client" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding RoomTypes}"/>
 
-        <DatePicker x:Name="DP1_Copy" SelectedDateChanged="DP1_SelectedDateChanged" HorizontalAlignment="Center" Margin="0,292,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="120" x:Name="cboTP1">
+        <DatePicker x:Name="DP1" SelectedDateChanged="DP1_SelectedDateChanged" HorizontalAlignment="Center" Margin="0,292,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="120" x:Name="cboTP">
             <ComboBoxItem Content="08:00"/>
             <ComboBoxItem Content="08:30"/>
             <ComboBoxItem Content="09:00"/>
@@ -44,6 +44,7 @@
         <Label Content="Date" HorizontalAlignment="Left" Margin="273,292,0,0" VerticalAlignment="Top"/>
         <Label Content="Time" HorizontalAlignment="Left" Margin="273,331,0,0" VerticalAlignment="Top"/>
         <Label Content="Merge" HorizontalAlignment="Left" Margin="363,41,0,0" FontSize="22" FontWeight="Heavy" VerticalAlignment="Top"/>
+        <Button Content="Merge" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="92" Height="33" Click="MergeButton_Click"/>
 
 
 
