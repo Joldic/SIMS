@@ -227,3 +227,5 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateDrug.
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\UpdateDrug.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\IngredientsView.g.cs
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\IngredientsView.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\MergeDialog.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\MergeDialog.baml

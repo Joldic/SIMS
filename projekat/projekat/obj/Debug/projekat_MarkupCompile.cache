@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\App.xaml
-26882187794
+27-1743738788
 
-941231971978
+95651671680
 18-1820575708
-View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\GuesstAccount.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\PatientLogin.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateDrug.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\Dialogs\UpdateRoomDialog.xaml;View\MainWindow.xaml;View\ModelView\DrugsView.xaml;View\ModelView\IngredientsView.xaml;View\Patientt\PatientHomepage.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AllergensView.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
+View\Components\BindablePasswordBox.xaml;View\Dialogs\EquipmentRelocation.xaml;View\Dialogs\GuesstAccount.xaml;View\Dialogs\LoginDialog.xaml;View\Dialogs\MergeDialog.xaml;View\Dialogs\PatientLogin.xaml;View\Dialogs\ManagerLogin.xaml;View\Dialogs\RenovationDialog.xaml;View\Dialogs\SecretaryLogin.xaml;View\Dialogs\UpdateAppointment.xaml;View\Dialogs\UpdateDrug.xaml;View\Dialogs\UpdateOperation.xaml;View\Dialogs\UpdatePatient.xaml;View\Dialogs\UpdateRoomDialog.xaml;View\MainWindow.xaml;View\ModelView\DrugsView.xaml;View\ModelView\IngredientsView.xaml;View\Patientt\PatientHomepage.xaml;View\Manager\ManagerHomepage.xaml;View\ModelView\AllergensView.xaml;View\ModelView\AppointmentDataView.xaml;View\ModelView\AppointmentsView.xaml;View\ModelView\EquipmentView.xaml;View\ModelView\OperationsView.xaml;View\ModelView\PatientView.xaml;View\ModelView\RoomView.xaml;View\Secretary\SecretaryHomepage.xaml;
 
 False
 

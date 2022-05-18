@@ -13,5 +13,7 @@
         <Button Content="Realocation" HorizontalAlignment="Center" Margin="0,307,0,0" VerticalAlignment="Top" Width="114" Height="51" Click="RealocationButton_Click"/>
         <Button Content="Log out" HorizontalAlignment="Left" Margin="613,307,0,0" VerticalAlignment="Top" Height="48" Width="102" Click="LogOutButton_Click"/>
         <Button Content="Drugs" HorizontalAlignment="Left" Margin="596,62,0,0" VerticalAlignment="Top" Height="46" Width="119" Click="DrugsButton_Click"/>
+        <Button Content="Merge" HorizontalAlignment="Left" Margin="596,136,0,0" VerticalAlignment="Top" Height="46" Width="119" Click="MergeButton_Click"/>
+        <Button Content="Separation" HorizontalAlignment="Left" Margin="596,215,0,0" VerticalAlignment="Top" Height="46" Width="120" Click="SeparateButton_Click"/>
     </Grid>
 </Window>

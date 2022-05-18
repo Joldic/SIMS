@@ -83,5 +83,19 @@ namespace projekat.View.Manager
             }.ShowDialog();
             this.Close();
         }
+
+        private void MergeButton_Click(object sender, RoutedEventArgs e)
+        {
+            new MergeDialog()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
+        }
+
+        private void SeparateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
