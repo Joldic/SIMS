@@ -41,26 +41,6 @@ namespace Controller
         {
             return _service.GetAll();
         }
-      
-        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
-        {
-            return _service.GetAllRoomAndEquipment();
-        }
-        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
-        {
-            return _service.GetByRoomIdAndEquipmentName(id, name);
-        }
-
-        public Boolean SaveChangesToFile(RoomEquipmentDTO r)
-        {
-            return _service.SaveChangesToFile(r);
-        }
-
-        public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
-        {
-            return _service.AddRenovation(r);
-        }
-
         public Boolean AvailableForDeletion(uint id)
         {
             return _service.AvailableForDeletion(id);

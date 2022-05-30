@@ -21,7 +21,6 @@ namespace Repository
         private readonly string _delimeter;
         private readonly string _dateTimeFormat;
         private uint _roomMaxId;
-        private uint _renovationMaxId;
         private static string _projectPath = System.Reflection.Assembly.GetExecutingAssembly().Location
         .Split(new string[] { "bin" }, StringSplitOptions.None)[0];
 
@@ -34,7 +33,6 @@ namespace Repository
             _delimeter = delimeter;
             _dateTimeFormat = dateTimeFormat;
             _roomMaxId = GetMaxId(GetAll());
-            _renovationMaxId = GetMaxRenovationId(GetAllRenovation());
 
         }
 
@@ -42,12 +40,6 @@ namespace Repository
         {
             return rooms.Count() == 0 ? 0 : rooms.Max(room => room.Id);
         }
-
-        private uint GetMaxRenovationId(IEnumerable<RoomRenovationDTO> rooms)
-        {
-            return rooms.Count() == 0 ? 0 : rooms.Max(room => room.Id);
-        }
-
 
         public Room GetRoom(uint id)
         {
@@ -107,7 +99,6 @@ namespace Repository
 
         public void CheckInRenovations(ref uint counter, uint id)
         {
-            //IEnumerable<RoomRenovationDTO> renovations = GetAllRenovation();
             RenovationRepository _renovationRepository = new RenovationRepository(_projectPath + "\\Resources\\renovation.txt", ";");
             IEnumerable<RoomRenovationDTO> renovations = _renovationRepository.GetAllRenovation();
             foreach (RoomRenovationDTO r in renovations)
@@ -138,7 +129,9 @@ namespace Repository
 
         public void CheckInEquipment(ref uint counter, uint id)
         {
-            IEnumerable<RoomEquipmentDTO> dtos = GetAllRoomAndEquipment();
+            EquipmentRepository _equipmentRepository = new EquipmentRepository(_projectPath + "\\Resources\\RoomEquipment.txt", ";", "dd/MM/yyyy HH:mm:ss tt");
+            IEnumerable<RoomEquipmentDTO> dtos = _equipmentRepository.GetAllRoomAndEquipment();
+
 
             foreach (RoomEquipmentDTO dto in dtos)
             {
@@ -188,90 +181,11 @@ namespace Repository
             return room;
         }
 
-        public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
-        {
-            r.Id = ++_renovationMaxId;
-            string path_to_file = _projectPath + "\\Resources\\renovation.txt";
-            AppendLineToFile(path_to_file, ConvertRoomRenovationToCSVFormat(r));
-            return r;
-        }
-
-
-
         public IEnumerable<Room> GetAll()
         {
             return File.ReadAllLines(_path)
                     .Select(ConvertCSVFormatToRoom)
                     .ToList();
-        }
-
-        public IEnumerable<RoomRenovationDTO> GetAllRenovation()
-        {
-            string path_to_file = _projectPath + "\\Resources\\renovation.txt";
-            return File.ReadAllLines(path_to_file)
-                    .Select(ConvertCSVFormatToRoomRenovation)
-                    .ToList();
-        }
-
-        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
-        {
-            string path_to_file = _projectPath + "\\Resources\\RoomEquipment.txt";
-            return File.ReadAllLines(path_to_file)
-                .Select(ConvertCSVFormatToRoomEquipment).ToList();
-        }
-
-        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
-        {
-            string path_to_file = _projectPath + "\\Resources\\RoomEquipment.txt";
-            RoomEquipmentDTO dto = new RoomEquipmentDTO();
-
-            using (var sr = new StreamReader(path_to_file))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    RoomEquipmentDTO temp = ConvertCSVFormatToRoomEquipment(line);
-                    if (temp.RoomId == id & temp.EquipmentName == name)
-                    {
-                        dto = temp;
-                        break;
-                    }
-                }
-            }
-            return dto;
-        }
-
-        public Boolean SaveChangesToFile(RoomEquipmentDTO dto)
-        {
-            Boolean retVal = false;
-
-            string temp_file = _projectPath + "\\Resources\\tempRE.txt";
-            string dto_file = _projectPath + "\\Resources\\RoomEquipment.txt";
-
-
-            using (var sr = new StreamReader(dto_file))
-            using (var sw = new StreamWriter(temp_file))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string lineToWrite = ConvertRoomEquipmentToCSCFormat(dto);
-                    RoomEquipmentDTO tempRoom = ConvertCSVFormatToRoomEquipment(line);
-                    if (dto.Id != tempRoom.Id)
-                    {
-                        sw.WriteLine(line);
-                    }
-                    else
-                    {
-                        sw.WriteLine(lineToWrite);
-                        retVal = true;
-                    }
-                }
-            }
-            File.Delete(dto_file);
-            File.Move(temp_file, dto_file);
-
-            return retVal;
         }
 
         private Room ConvertCSVFormatToRoom(string roomCSVFormat)
@@ -294,48 +208,6 @@ namespace Repository
                 Availability
             );
         }
-
-        private RoomRenovationDTO ConvertCSVFormatToRoomRenovation(string roomCSVFormat)
-        {
-            Room room = new Room();
-            string[] tokens = roomCSVFormat.Split(_delimeter.ToCharArray());
-
-            uint Id = uint.Parse(tokens[0]);
-            uint RoomId = uint.Parse(tokens[1]);
-         
-
-
-            return new RoomRenovationDTO(
-                Id,
-                RoomId,
-                DateTime.Parse(tokens[2]),
-                DateTime.Parse(tokens[3])
-            );
-        }
-
-        private RoomEquipmentDTO ConvertCSVFormatToRoomEquipment(string roomEquipmentCSVFormat)
-        {
-            RoomEquipmentDTO roomEquipment = new RoomEquipmentDTO();
-            string[] tokens = roomEquipmentCSVFormat.Split(_delimeter.ToCharArray());
-            uint Id = uint.Parse(tokens[0]);
-            uint RoomId = uint.Parse(tokens[1]);
-            string RoomName = tokens[2];
-            Enum.TryParse(tokens[3], out RoomType type);
-            uint EquipmentId = uint.Parse(tokens[4]);
-            string EquipmentName = tokens[5];
-            uint Quantity = uint.Parse(tokens[6]);
-
-            return new RoomEquipmentDTO(
-                Id,
-                RoomId,
-                RoomName,
-                type,
-                EquipmentId,
-                EquipmentName,
-                Quantity
-                );
-        }
-
         private string ConvertRoomToCSVFormat(Room room)
         {
             return string.Join(_delimeter,
@@ -345,29 +217,6 @@ namespace Repository
                 room.SquareFootage,
                 room.Availability);
 
-        }
-
-        private string ConvertRoomRenovationToCSVFormat(RoomRenovationDTO room)
-        {
-            return string.Join(_delimeter,
-                room.Id,
-                room.IdRoom,
-                room.Start,
-                room.End);
-
-        }
-
-        private string ConvertRoomEquipmentToCSCFormat(RoomEquipmentDTO room)
-        {
-            return string.Join(_delimeter,
-                room.Id,
-                room.RoomId,
-                room.RoomName,
-                room.Type,
-                room.EquipmentId,
-                room.EquipmentName,
-                room.Quantity
-                );
         }
 
         private void AppendLineToFile(string path, string line)

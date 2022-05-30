@@ -43,5 +43,21 @@ namespace projekat.Controller
         {
             return _service.GetAll();
         }
+
+        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
+        {
+            return _service.GetAllRoomAndEquipment();
+        }
+       
+        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
+        {
+            return _service.GetByRoomIdAndEquipmentName(id, name);
+        }
+
+        public Boolean SaveChangesToFile(RoomEquipmentDTO r)
+        {
+            return _service.SaveChangesToFile(r);
+        }
+
     }
 }

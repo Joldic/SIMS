@@ -73,6 +73,102 @@ namespace projekat.Repository
                   .ToList();
         }
 
+        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
+        {
+            string path_to_file = _projectPath + "\\Resources\\RoomEquipment.txt";
+            return File.ReadAllLines(path_to_file)
+                .Select(ConvertCSVFormatToRoomEquipment).ToList();
+        }
+
+        public Boolean SaveChangesToFile(RoomEquipmentDTO dto)
+        {
+            Boolean retVal = false;
+
+            string temp_file = _projectPath + "\\Resources\\tempRE.txt";
+            string dto_file = _projectPath + "\\Resources\\RoomEquipment.txt";
+
+
+            using (var sr = new StreamReader(dto_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string lineToWrite = ConvertRoomEquipmentToCSCFormat(dto);
+                    RoomEquipmentDTO tempRoom = ConvertCSVFormatToRoomEquipment(line);
+                    if (dto.Id != tempRoom.Id)
+                    {
+                        sw.WriteLine(line);
+                    }
+                    else
+                    {
+                        sw.WriteLine(lineToWrite);
+                        retVal = true;
+                    }
+                }
+            }
+            File.Delete(dto_file);
+            File.Move(temp_file, dto_file);
+
+            return retVal;
+        }
+
+        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
+        {
+            string path_to_file = _projectPath + "\\Resources\\RoomEquipment.txt";
+            RoomEquipmentDTO dto = new RoomEquipmentDTO();
+
+            using (var sr = new StreamReader(path_to_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    RoomEquipmentDTO temp = ConvertCSVFormatToRoomEquipment(line);
+                    if (temp.RoomId == id & temp.EquipmentName == name)
+                    {
+                        dto = temp;
+                        break;
+                    }
+                }
+            }
+            return dto;
+        }
+        private RoomEquipmentDTO ConvertCSVFormatToRoomEquipment(string roomEquipmentCSVFormat)
+        {
+            RoomEquipmentDTO roomEquipment = new RoomEquipmentDTO();
+            string[] tokens = roomEquipmentCSVFormat.Split(_delimeter.ToCharArray());
+            uint Id = uint.Parse(tokens[0]);
+            uint RoomId = uint.Parse(tokens[1]);
+            string RoomName = tokens[2];
+            Enum.TryParse(tokens[3], out RoomType type);
+            uint EquipmentId = uint.Parse(tokens[4]);
+            string EquipmentName = tokens[5];
+            uint Quantity = uint.Parse(tokens[6]);
+
+            return new RoomEquipmentDTO(
+                Id,
+                RoomId,
+                RoomName,
+                type,
+                EquipmentId,
+                EquipmentName,
+                Quantity
+                );
+        }
+
+        private string ConvertRoomEquipmentToCSCFormat(RoomEquipmentDTO room)
+        {
+            return string.Join(_delimeter,
+                room.Id,
+                room.RoomId,
+                room.RoomName,
+                room.Type,
+                room.EquipmentId,
+                room.EquipmentName,
+                room.Quantity
+                );
+        }
+
         private Equipment ConvertCSVFormatToEquipment(string equipmentCSVFormat)
         {
             Equipment equipment = new Equipment();

@@ -20,49 +20,29 @@ namespace Service
         }
 
         public Room FindRoom(uint id)
-      {
+        {
             return _repo.GetRoom(id);
-      }
+        }
       
-      public Room ChangeRoom(Room room)
-      {
+        public Room ChangeRoom(Room room)
+        {
             return _repo.UpdateRoom(room);
-      }
+        }
       
-      public Boolean DeleteRoom(uint id)
-      {
+        public Boolean DeleteRoom(uint id)
+        {
             return _repo.RemoveRoom(id);
-      }
+        }
       
-      public Room CreateNewRoom(Room room)
-      {
+        public Room CreateNewRoom(Room room)
+        {
             return _repo.AddRoom(room);
-      }
+        }
       
-      public IEnumerable<Room> GetAll()
-      {
+        public IEnumerable<Room> GetAll()
+        {
             return _repo.GetAll();
-      }
-
-        public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
-        {
-            return _repo.GetAllRoomAndEquipment();
         }
-
-        public RoomEquipmentDTO GetByRoomIdAndEquipmentName(uint id, string name)
-        {
-            return _repo.GetByRoomIdAndEquipmentName(id, name);
-        }
-        public Boolean SaveChangesToFile(RoomEquipmentDTO r)
-        {
-            return _repo.SaveChangesToFile(r);
-        }
-
-        public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
-        {
-            return _repo.AddRenovation(r);
-        }
-
         public Boolean AvailableForDeletion(uint id)
         {
             return _repo.AvailableForDeletion(id);

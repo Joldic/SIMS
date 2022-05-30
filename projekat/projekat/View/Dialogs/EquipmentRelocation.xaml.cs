@@ -65,14 +65,12 @@ namespace projekat.View.Dialogs
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
             DataGridXAML.Items.Clear();
-            //name = Name.Text;
-            //name = Equipment_name_combo.SelectedItem as string;
             var eq = Equipment_name_combo.SelectedItem as Equipment;
             name = eq.Name;
             quantity = uint.Parse(Quantityy.Text);
             IList<RoomEquipmentDTO> temp = new List<RoomEquipmentDTO>();
 
-            IEnumerable<RoomEquipmentDTO> room_equipment_list = _roomController.GetAllRoomAndEquipment();
+            IEnumerable<RoomEquipmentDTO> room_equipment_list = _equipmentController.GetAllRoomAndEquipment();
             var Data = new ObservableCollection<RoomEquipmentDTO>();
 
             foreach (RoomEquipmentDTO room_equipment in room_equipment_list)
@@ -101,8 +99,8 @@ namespace projekat.View.Dialogs
             Room room_to = Room_to.SelectedItem as Room;
 
             //treba da napravim metodu koja ce da vrati iz RoomEquipment.txt RoomEquipmentDTO po id-u sobe i id ili imena equipmenta
-            RoomEquipmentDTO from = _roomController.GetByRoomIdAndEquipmentName(room_from.Id, name);
-            RoomEquipmentDTO to = _roomController.GetByRoomIdAndEquipmentName(room_to.Id, name);
+            RoomEquipmentDTO from = _equipmentController.GetByRoomIdAndEquipmentName(room_from.Id, name);
+            RoomEquipmentDTO to = _equipmentController.GetByRoomIdAndEquipmentName(room_to.Id, name);
 
             if(from.Quantity - quantity >= 0)
             {
@@ -112,7 +110,7 @@ namespace projekat.View.Dialogs
 
             // sada treba da upisem u fajl RoomEquipment.txt promene
 
-            if (_roomController.SaveChangesToFile(from) & _roomController.SaveChangesToFile(to))
+            if (_equipmentController.SaveChangesToFile(from) & _equipmentController.SaveChangesToFile(to))
             {
                 MessageBoxResult result = MessageBox.Show("Uspesno prebacivanje");
             }
