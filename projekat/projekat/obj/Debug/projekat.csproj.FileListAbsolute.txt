@@ -231,3 +231,5 @@ C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\MergeDialog
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\MergeDialog.baml
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\SeperateDialog.g.cs
 C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\Dialogs\SeperateDialog.baml
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\InvalidDrugsView.g.cs
+C:\Users\joldi\Desktop\SIMS\projekat\projekat\obj\Debug\View\ModelView\InvalidDrugsView.baml

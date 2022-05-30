@@ -32,6 +32,11 @@ namespace projekat.Service
             return _repo.RemoveDrug(id);
         }
 
+        public Boolean DeleteInvalidDrug(uint id)
+        {
+            return _repo.DeleteInvalidDrug(id);
+        }
+
         public Drug CreateNewDrug(Drug drug)
         {
             return _repo.AddDrug(drug);
@@ -40,6 +45,11 @@ namespace projekat.Service
         public IEnumerable<Drug> GetAll()
         {
             return _repo.GetAll();
+        }
+
+        public IEnumerable<Drug> GetAllInvalidDrugs()
+        {
+            return _repo.GetAllInvalidDrugs();
         }
 
         public IEnumerable<DrugIngredientDTO> GetDrugIngredients()

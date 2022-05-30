@@ -101,5 +101,14 @@ namespace projekat.View.Manager
             }.ShowDialog();
             this.Close();
         }
+
+        private void InvalidDrugsButton_Click(object sender, RoutedEventArgs e)
+        {
+            new InvalidDrugsView()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
+        }
     }
 }

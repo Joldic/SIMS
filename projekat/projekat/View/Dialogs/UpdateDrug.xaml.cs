@@ -48,5 +48,21 @@ namespace projekat.View.Dialogs
 
             _drugController.ChangeDrug(drug);
         }
+
+        private void InvalidButton_Click(object sender, RoutedEventArgs e)
+        {
+            string Name = Name_tb.Text;
+            uint Weight = uint.Parse(Weight_tb.Text);
+            string Category = Category_tb.Text;
+            uint Quantity = uint.Parse(Quantity_tb.Text);
+
+            drug.Name = Name;
+            drug.Weight = Weight;
+            drug.Quantity = Quantity;
+            drug.Category = Category;
+
+            _drugController.CreateNewDrug(drug);
+
+        }
     }
 }

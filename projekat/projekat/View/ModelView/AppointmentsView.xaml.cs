@@ -209,6 +209,7 @@ namespace projekat.View.ModelView
                     DataGridXAML.Items.Remove(Data[i]);
                 }
             }
+            
 
         }
 

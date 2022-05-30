@@ -153,6 +153,9 @@
     <Compile Include="View\ModelView\IngredientsView.xaml.cs">
       <DependentUpon>IngredientsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ModelView\InvalidDrugsView.xaml.cs">
+      <DependentUpon>InvalidDrugsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Patientt\PatientHomepage.xaml.cs">
       <DependentUpon>PatientHomepage.xaml</DependentUpon>
     </Compile>
@@ -275,6 +278,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ModelView\IngredientsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\InvalidDrugsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -408,6 +415,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\DrugIngredient.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InvalidDrugs.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

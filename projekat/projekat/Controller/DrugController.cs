@@ -36,9 +36,19 @@ namespace projekat.Controller
             return _service.DeleteDrug(id);
         }
 
+        public Boolean DeleteInvalidDrug(uint id)
+        {
+            return _service.DeleteInvalidDrug(id);
+        }
+
         public IEnumerable<Drug> GetAll()
         {
             return _service.GetAll();
+        }
+
+        public IEnumerable<Drug> GetAllInvalidDrugs()
+        {
+            return _service.GetAllInvalidDrugs();
         }
 
         public IEnumerable<DrugIngredientDTO> GetDrugIngredients()

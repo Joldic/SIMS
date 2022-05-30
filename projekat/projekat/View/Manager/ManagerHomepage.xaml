@@ -15,5 +15,6 @@
         <Button Content="Drugs" HorizontalAlignment="Left" Margin="596,62,0,0" VerticalAlignment="Top" Height="46" Width="119" Click="DrugsButton_Click"/>
         <Button Content="Merge" HorizontalAlignment="Left" Margin="596,136,0,0" VerticalAlignment="Top" Height="46" Width="119" Click="MergeButton_Click"/>
         <Button Content="Separation" HorizontalAlignment="Left" Margin="596,215,0,0" VerticalAlignment="Top" Height="46" Width="120" Click="SeparateButton_Click"/>
+        <Button Content="Invalid drugs" HorizontalAlignment="Left" Margin="35,65,0,0" VerticalAlignment="Top" Height="40" Width="98" Click="InvalidDrugsButton_Click"/>
     </Grid>
 </Window>

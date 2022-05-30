@@ -191,6 +191,35 @@ namespace projekat.Repository
             return retVal;
         }
 
+        public Boolean DeleteInvalidDrug(uint id)
+        {
+            Boolean retVal = false;
+           
+
+            string temp_file = _projectPath + "\\Resources\\tempDrug.txt";
+            string Drug_file = _projectPath + "\\Resources\\InvalidDrugs.txt";
+
+            using (var sr = new StreamReader(Drug_file))
+            using (var sw = new StreamWriter(temp_file))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Drug Drug = ConvertCSVFormatToDrug(line);
+                    if (Drug.Id != id)
+                    {
+                        retVal = true;
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+
+            File.Delete(Drug_file);
+            File.Move(temp_file, Drug_file);
+
+            return retVal;
+        }
+
 
 
 
@@ -199,6 +228,14 @@ namespace projekat.Repository
             return File.ReadAllLines(_path)
              .Select(ConvertCSVFormatToDrug)
              .ToList();
+        }
+
+        public IEnumerable<Drug> GetAllInvalidDrugs()
+        {
+            string project_path = _projectPath + "\\Resources\\InvalidDrugs.txt";
+            return File.ReadAllLines(project_path)
+                .Select(ConvertCSVFormatToDrug)
+                .ToList();
         }
 
         private Drug ConvertCSVFormatToDrug(string DrugCSVFormat)

@@ -4,3 +4,5 @@
 4;2;4;laktoza
 5;3;1;natrijum
 5;3;2;azot
+6;5;1;natrijum
+7;5;2;azot

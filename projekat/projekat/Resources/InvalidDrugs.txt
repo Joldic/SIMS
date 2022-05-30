@@ -1,0 +1,2 @@
+1;Probiotik;13;stomach;7
+2;Lorazepam;13;nervs;10
