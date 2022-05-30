@@ -1,5 +1,6 @@
 ﻿using Controller;
 using Model;
+using projekat.Controller;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,6 +26,7 @@ namespace projekat.View.Dialogs
     public partial class RenovationDialog : Window
     {
         private RoomControler _roomController;
+        private RenovationController _renovationController;
         public string t;
         public string t2;
         public string d;
@@ -38,6 +40,7 @@ namespace projekat.View.Dialogs
             InitializeComponent();
             var app = Application.Current as App;
             _roomController = app.RoomControler;
+            _renovationController = app.RenovationController;
 
             Roomss = new ObservableCollection<Room>(_roomController.GetAll().ToList());
             Rooms.ItemsSource = Roomss;
@@ -89,10 +92,8 @@ namespace projekat.View.Dialogs
 
             RoomRenovationDTO dto = new RoomRenovationDTO(roomItem.Id , date_begin, date_end);
 
-            _roomController.AddRenovation(dto);
+            _renovationController.AddRenovation(dto);
             MessageBoxResult result = MessageBox.Show("Uspesno zakazano renoviranje");
-
-
         }
     }
 }

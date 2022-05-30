@@ -35,6 +35,7 @@ namespace projekat
         private string ALLERGEN_FILE = _projectPath + "\\Resources\\allergen.txt";
         private string DRUG_FILE = _projectPath + "\\Resources\\drug.txt";
         private string INGREDIENT_FILE = _projectPath + "\\Resources\\ingredient.txt";
+        private string RENOVATION_FILE = _projectPath + "\\Resources\\renovation.txt";
 
         private const string CSV_DELIMITER = ";";
         private const string DATETIME_FORMAT = "dd.MM.yyyy.";
@@ -61,6 +62,8 @@ namespace projekat
 
         public IngredientController IngredientController { get; set; }
 
+        public RenovationController RenovationController { get; set; }
+
         public App()
         {
 
@@ -77,6 +80,7 @@ namespace projekat
             var userRepo = new UserRepository(USER_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var drugRepo = new DrugRepository(DRUG_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var ingredientRepo = new IngredientRepository(INGREDIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
+            var renovationRepo = new RenovationRepository(RENOVATION_FILE, CSV_DELIMITER);
      
             //var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
@@ -89,6 +93,7 @@ namespace projekat
             var userService = new UserService(userRepo);
             var drugService = new DrugService(drugRepo);
             var ingredientService = new IngredientService(ingredientRepo);
+            var renovationService = new RenovationService(renovationRepo);
 
             //SecretaryController = new SecretaryController(secretaryService);
             AppointmentController = new AppointmentController(appointmentService);
@@ -101,6 +106,7 @@ namespace projekat
             UserController = new UserController(userService);
             DrugController = new DrugController(drugService);
             IngredientController = new IngredientController(ingredientService);
+            RenovationController = new RenovationController(renovationService);
 
         }
     }

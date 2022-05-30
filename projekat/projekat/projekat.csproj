@@ -73,6 +73,7 @@
     <Compile Include="Controller\EquipmentController.cs" />
     <Compile Include="Controller\IngredientController.cs" />
     <Compile Include="Controller\ManagerController.cs" />
+    <Compile Include="Controller\RenovationController.cs" />
     <Compile Include="Controller\SecretaryController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Exception\NotFoundException.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Repository\ManagerRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RecipeRepository.cs" />
+    <Compile Include="Repository\RenovationRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
     <Compile Include="Repository\SecretaryRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Service\ManagerService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RecipeService.cs" />
+    <Compile Include="Service\RenovationService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\SecretaryService.cs" />
     <Compile Include="Service\UserService.cs" />

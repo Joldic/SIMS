@@ -10,6 +10,7 @@ using System.Linq;
 using Model;
 
 using projekat.Exception;
+using projekat.Repository;
 
 namespace Repository
 {
@@ -49,7 +50,7 @@ namespace Repository
 
 
         public Room GetRoom(uint id)
-      {
+        {
             try
             {
 
@@ -64,11 +65,10 @@ namespace Repository
             }
         }
       
-      public Room UpdateRoom(Room room)
-      {
+        public Room UpdateRoom(Room room)
+        {
             string temp_file = _projectPath + "\\Resources\\tempROO.txt";
             string _file = _projectPath + "\\Resources\\room.txt";
-
 
             using (var sr = new StreamReader(_file))
             using (var sw = new StreamWriter(temp_file))
@@ -86,20 +86,41 @@ namespace Repository
                     {
                         sw.WriteLine(lineToWrite);
                     }
-                    //sw.WriteLine(lineToWrite);
                 }
             }
             File.Delete(_file);
             File.Move(temp_file, _file);
-
-
 
             return room;
         }
 
         public Boolean AvailableForDeletion(uint id)
         {
-            Boolean retVal = false;
+            uint counter = 0;
+            CheckInAppointments(ref counter, id);
+            CheckInEquipment(ref counter, id);
+            CheckInRenovations(ref counter, id);
+
+            if (counter > 0) return false;
+            return true;
+        }
+
+        public void CheckInRenovations(ref uint counter, uint id)
+        {
+            //IEnumerable<RoomRenovationDTO> renovations = GetAllRenovation();
+            RenovationRepository _renovationRepository = new RenovationRepository(_projectPath + "\\Resources\\renovation.txt", ";");
+            IEnumerable<RoomRenovationDTO> renovations = _renovationRepository.GetAllRenovation();
+            foreach (RoomRenovationDTO r in renovations)
+            {
+                if (r.IdRoom == id)
+                {
+                    counter++;
+                }
+            }
+        }
+
+        public void CheckInAppointments(ref uint counter, uint id)
+        {
             string appointment_file = _projectPath + "\\Resources\\appointment.txt";
             AppointmentRepository _appointmentRepo = new AppointmentRepository(appointment_file, ";", "dd/MM/yyyy HH:mm:ss tt");
 
@@ -109,67 +130,32 @@ namespace Repository
             {
                 if (appointment.IdRoom == id)
                 {
-                    return retVal;
+                    counter++;
                 }
             }
 
+        }
+
+        public void CheckInEquipment(ref uint counter, uint id)
+        {
             IEnumerable<RoomEquipmentDTO> dtos = GetAllRoomAndEquipment();
 
             foreach (RoomEquipmentDTO dto in dtos)
             {
                 if (dto.RoomId == id)
                 {
-                    return retVal;
+                    counter++;
                 }
             }
-
-            IEnumerable<RoomRenovationDTO> renovations = GetAllRenovation();
-            foreach (RoomRenovationDTO r in renovations)
-            {
-                if (r.IdRoom == id)
-                {
-                    return retVal;
-                }
-            }
-
-            return true;
         }
 
-            public Boolean RemoveRoom(uint id)
-      {
+        public Boolean RemoveRoom(uint id)
+        {
             Boolean retVal = false;
-            string appointment_file = _projectPath + "\\Resources\\appointment.txt";
-            AppointmentRepository _appointmentRepo = new AppointmentRepository(appointment_file, ";", "dd/MM/yyyy HH:mm:ss tt") ;
-           
-            IEnumerable<Appointment> appointments = _appointmentRepo.GetAll();
-
-            foreach (Appointment appointment in appointments)
+            if (AvailableForDeletion(id) == false)
             {
-                if(appointment.IdRoom == id)
-                {
-                    return retVal;
-                }
+                return false;
             }
-
-            IEnumerable<RoomEquipmentDTO> dtos = GetAllRoomAndEquipment();
-            
-            foreach (RoomEquipmentDTO dto in dtos)
-            {
-                if(dto.RoomId == id)
-                {
-                    return retVal;
-                }
-            }
-
-            IEnumerable<RoomRenovationDTO> renovations = GetAllRenovation();
-            foreach (RoomRenovationDTO r in renovations)
-            {
-                if(r.IdRoom == id)
-                {
-                    return retVal;
-                }
-            }
-
 
             string temp_file = _projectPath + "\\Resources\\tempRD.txt";
             string room_file = _projectPath + "\\Resources\\room.txt";
@@ -195,12 +181,12 @@ namespace Repository
             return retVal;
         }
       
-      public Room AddRoom(Room room)
-      {
+        public Room AddRoom(Room room)
+        {
             room.Id = ++_roomMaxId;
             AppendLineToFile(_path, ConvertRoomToCSVFormat(room));
             return room;
-      }
+        }
 
         public RoomRenovationDTO AddRenovation(RoomRenovationDTO r)
         {
@@ -213,18 +199,18 @@ namespace Repository
 
 
         public IEnumerable<Room> GetAll()
-      {
+        {
             return File.ReadAllLines(_path)
-                  .Select(ConvertCSVFormatToRoom)
-                  .ToList();
-      }
+                    .Select(ConvertCSVFormatToRoom)
+                    .ToList();
+        }
 
         public IEnumerable<RoomRenovationDTO> GetAllRenovation()
         {
             string path_to_file = _projectPath + "\\Resources\\renovation.txt";
             return File.ReadAllLines(path_to_file)
-                  .Select(ConvertCSVFormatToRoomRenovation)
-                  .ToList();
+                    .Select(ConvertCSVFormatToRoomRenovation)
+                    .ToList();
         }
 
         public IEnumerable<RoomEquipmentDTO> GetAllRoomAndEquipment()
@@ -259,8 +245,6 @@ namespace Repository
         {
             Boolean retVal = false;
 
-
-
             string temp_file = _projectPath + "\\Resources\\tempRE.txt";
             string dto_file = _projectPath + "\\Resources\\RoomEquipment.txt";
 
@@ -282,13 +266,10 @@ namespace Repository
                         sw.WriteLine(lineToWrite);
                         retVal = true;
                     }
-                    //sw.WriteLine(lineToWrite);
                 }
             }
             File.Delete(dto_file);
             File.Move(temp_file, dto_file);
-
-
 
             return retVal;
         }
@@ -352,7 +333,7 @@ namespace Repository
                 EquipmentId,
                 EquipmentName,
                 Quantity
-             );
+                );
         }
 
         private string ConvertRoomToCSVFormat(Room room)

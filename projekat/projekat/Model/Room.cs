@@ -40,20 +40,5 @@ namespace Model
             SquareFootage = squareFootage;
             Availability = availability;
         }
-
-        public System.Collections.Generic.List<Appointment> appointment;
-
-        /// <summary>
-        /// Property for collection of Appointment
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.Generic.List<Appointment> Appointment;
-      
-      /// <summary>
-      /// Add a new Appointment in the collection
-      /// </summary>
-      /// <pdGenerated>Default Add</pdGenerated>
-     
-   
    }
 }
