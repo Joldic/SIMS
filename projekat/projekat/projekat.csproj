@@ -69,7 +69,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\DoctorController.cs" />
+    <Compile Include="Controller\FormController.cs" />
     <Compile Include="DrugIngredients\DrugController.cs" />
+    <Compile Include="Model\Form.cs" />
+    <Compile Include="DTO\FormDoctorDTO.cs" />
+    <Compile Include="DTO\FormHospitalDTO.cs" />
+    <Compile Include="Repository\FormRepository.cs" />
     <Compile Include="RoomEquipmentRenovation\EquipmentController.cs" />
     <Compile Include="DrugIngredients\IngredientController.cs" />
     <Compile Include="Controller\ManagerController.cs" />
@@ -105,6 +110,7 @@
     <Compile Include="DrugIngredients\DrugService.cs" />
     <Compile Include="RoomEquipmentRenovation\EquipmentService.cs" />
     <Compile Include="DrugIngredients\IngredientService.cs" />
+    <Compile Include="Service\FormService.cs" />
     <Compile Include="Service\ManagerService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RecipeService.cs" />
@@ -152,6 +158,12 @@
     </Compile>
     <Compile Include="View\ModelView\DrugsView.xaml.cs">
       <DependentUpon>DrugsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\FormsAboutDoctorsView.xaml.cs">
+      <DependentUpon>FormsAboutDoctorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModelView\FormsAboutHospitalView.xaml.cs">
+      <DependentUpon>FormsAboutHospitalView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ModelView\IngredientsView.xaml.cs">
       <DependentUpon>IngredientsView.xaml</DependentUpon>
@@ -277,6 +289,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\ModelView\DrugsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\FormsAboutDoctorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModelView\FormsAboutHospitalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -421,6 +441,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\InvalidDrugs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\form.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FormHospital.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FormDoctor.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,10 +21,6 @@ namespace projekat
     {
         private static string _projectPath = System.Reflection.Assembly.GetExecutingAssembly().Location
           .Split(new string[] { "bin" }, StringSplitOptions.None)[0];
-        private string CLIENT_FILE = _projectPath + "\\Resources\\Data\\clients.csv";
-        private string ACCOUNT_FILE = _projectPath + "\\Resources\\Data\\accounts.csv";
-        private string LOAN_FILE = _projectPath + "\\Resources\\Data\\loans.csv";
-        private string TRANSACTION_FILE = _projectPath + "\\Resources\\Data\\transactions.csv";
         private string ROOM_FILE = _projectPath + "\\Resources\\room.txt";
         private string USER_FILE = _projectPath + "\\Resources\\user.txt";
         private string MANAGER_FILE = _projectPath + "\\Resources\\manager.txt";
@@ -36,6 +32,7 @@ namespace projekat
         private string DRUG_FILE = _projectPath + "\\Resources\\drug.txt";
         private string INGREDIENT_FILE = _projectPath + "\\Resources\\ingredient.txt";
         private string RENOVATION_FILE = _projectPath + "\\Resources\\renovation.txt";
+        private string FORM_FILE = _projectPath + "\\Resources\\form.txt";
 
         private const string CSV_DELIMITER = ";";
         private const string DATETIME_FORMAT = "dd.MM.yyyy.";
@@ -64,6 +61,8 @@ namespace projekat
 
         public RenovationController RenovationController { get; set; }
 
+        public FormController FormController { get; set; }
+
         public App()
         {
 
@@ -81,6 +80,7 @@ namespace projekat
             var drugRepo = new DrugRepository(DRUG_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var ingredientRepo = new IngredientRepository(INGREDIENT_FILE, CSV_DELIMITER, DATETIME_FORMAT);
             var renovationRepo = new RenovationRepository(RENOVATION_FILE, CSV_DELIMITER);
+            var formRepo = new FormRepository(FORM_FILE, CSV_DELIMITER);
      
             //var secretaryService = new SecretaryService(secretaryRepo);
             var appointmentService = new AppointmentService(appointmentRepo);
@@ -94,6 +94,7 @@ namespace projekat
             var drugService = new DrugService(drugRepo);
             var ingredientService = new IngredientService(ingredientRepo);
             var renovationService = new RenovationService(renovationRepo);
+            var formService = new FormService(formRepo);
 
             //SecretaryController = new SecretaryController(secretaryService);
             AppointmentController = new AppointmentController(appointmentService);
@@ -107,6 +108,7 @@ namespace projekat
             DrugController = new DrugController(drugService);
             IngredientController = new IngredientController(ingredientService);
             RenovationController = new RenovationController(renovationService);
+            FormController = new FormController(formService);
 
         }
     }

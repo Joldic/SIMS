@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/invaliddrugs.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/formdoctor.txt")]
 
 

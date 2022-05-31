@@ -110,5 +110,23 @@ namespace projekat.View.Manager
             }.ShowDialog();
             this.Close();
         }
+
+        private void FormHospitalButton_Click(object sender, RoutedEventArgs e)
+        {
+            new FormsAboutHospitalView()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
+        }
+
+        private void FormDoctorButton_Click(object sender, RoutedEventArgs e)
+        {
+            new FormsAboutDoctorsView()
+            {
+                Owner = Application.Current.MainWindow
+            }.ShowDialog();
+            this.Close();
+        }
     }
 }

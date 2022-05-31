@@ -1,0 +1,2 @@
+﻿1;Da li vam se svidjaju usluge bolnice?;Sta mislite o ambijentu?;Sta bismo trebali da popravimo?
+2;Da li vam se svidja odnos doktora prema pacijentu?;Da li je doktor odradio svoj posao profesionalno?;Da li cete nastaviti da idete kod ovog doktora?
